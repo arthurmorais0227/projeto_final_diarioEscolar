@@ -10,7 +10,11 @@
     "type": "git",
     "url": "git+https://github.com/arthurmorais0227/projeto_final_diarioEscolar.git"
   },
-  "keywords": ["SENAI", "MySchoolDiary", "SiteCrafters"],
+  "keywords": [
+    "SENAI",
+    "MySchoolDiary",
+    "SiteCrafters"
+  ],
   "author": "SiteCrafters",
   "license": "MIT",
   "bugs": {
@@ -19,8 +23,10 @@
   "homepage": "https://github.com/arthurmorais0227/projeto_final_diarioEscolar#readme",
   "description": "My School Diary",
   "dependencies": {
+    "@prisma/client": "^6.18.0",
     "dotenv": "^17.2.3",
     "express": "^5.1.0",
-    "nodemon": "^3.1.10"
+    "nodemon": "^3.1.10",
+    "prisma": "^6.18.0"
   }
 }
