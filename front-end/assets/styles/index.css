@@ -11,18 +11,77 @@ body {
 }
 
 header {
-    display: flex;
-    background-color: #f5cbcf; 
-    color: rgb(250, 250, 239);
-    height: 100px;
-    align-items: center;
-    justify-content: center;
+  background-color: #A890BF;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 20px;
+}
+
+.marca {
+  display: flex;
+  align-items: center;
+  margin-right: 30px;
+}
+
+.marca img {
+  height: 100px;
+}
+
+
+.marca h1 {
+  font-size: 55px;
+  font-weight: bold;
+  font-family: Cinzel Decorative;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  gap: 0px;
+  padding-top: 30px;
+  align-items: center;
+}
+
+.menu a.login-link {
+  background-color: transparent;
+  width: auto;
+  height: auto;
+  padding: 0;
+}
+
+.menu a.login-link img.login {
+  width: 75px;
+  height: auto;
+
+}
+
+.menu a.menu-link {
+  width: 100px;
+  height: 36px;
+  color: white;
+  text-decoration: none;
+  font-size: 19px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10PX;
+  transition: transform 0.4s ease;
+}
+
+
+.menu a.menu-link:hover {
+  color: #fff1bc;   
+  transform: scale(1.1);
 }
 
 .titulos {
     display: flex;
     justify-content: space-evenly;
     color: #b296ca;
+    margin-bottom: 10px;
 }
 
 .objetos {
@@ -78,7 +137,6 @@ header {
 }
 
 .imagem-msd {
-    margin-top: 25px;
     display: flex;
     justify-content: center;
 }
