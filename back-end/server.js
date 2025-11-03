@@ -1,6 +1,7 @@
 // Importar pacotes/bibliotecas
 import express from "express";
 import dotenv from "dotenv";
+import postagemRoutes from './src/Routes/postagemRoutes.js'
 
 // Criar aplicação com Express e configurar para aceitar JSON
 const app = express();
@@ -16,7 +17,7 @@ app.get("/", (req, res) => {
 });
 
 
-// Aqui vão todas suas Rotas
+app.use('/postagens', postagemRoutes);
 
 
 // Iniciar servidor escutando na porta definida

@@ -29,7 +29,7 @@ export const listarTodos = async (req, res) => {
 export const listarUm = async (req, res) => {
     try {
         const id = parseInt(req.params.id);
-        const postagem = await postagemModel.encontreUm(id);
+        const postagem = await PostagemModel.encontreUm(id);
 
         if(!postagem){
             return res.status(404).json({
