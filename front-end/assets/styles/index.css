@@ -147,22 +147,45 @@ header {
 }
 
 .mid-text {
-    margin-top: 60px;
+    margin-top: 100px;
     width: 100%;
-    height: 200px;
+    height: auto;
     background-color: rgb(250, 250, 239);
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 300px;
 }
 
 .sobre {
+    margin-top: 20px;
     flex-direction: column;
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 600px;
+    text-align: left;
+}
+
+.fundo {
+    margin-top: 100px;
+    background-color: #fff1bc;
+    width: 700px;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.fundo:hover {
+    box-shadow: 0px 0px 15px 5px #b296ca;
+}
+
+.sobre p {
+    margin-bottom: 30px;
 }
 
 .sobre h1{
-    margin-bottom: 20px;
-    color: #004A9F;;
+    margin-bottom: 30px;
+    color: #b296ca;
 }
