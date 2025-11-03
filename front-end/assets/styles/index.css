@@ -12,44 +12,69 @@ body {
 
 header {
     display: flex;
-    background-color: #b296ca;
+    background-color: #f5cbcf; 
     color: rgb(250, 250, 239);
-    height: 80px;
+    height: 100px;
     align-items: center;
     justify-content: center;
+}
+
+.titulos {
+    display: flex;
+    justify-content: space-evenly;
+    color: #b296ca;
+}
+
+.objetos {
+    display: flex;
+    width: 215px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.super-hero {
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 
 .hero {
     display: flex;
     justify-content: space-evenly;
-    margin-top: 50px;
+    margin-top: 0px;
     width: 100%;
-    background-color: #ffcfe2;
+    background-image: radial-gradient(circle, #fff1bc, #f5b4b9);
     height: 300px; 
     border-radius: 10px;
     align-items: center;
 }
 
 .vertentes {
+    flex-direction: column;
     display: flex;
     background-color: #fff1bc;
-    color: rgb(250, 250, 239);
-    height: 250px;
+    color: #b296ca;
+    height: 280px;
     align-items: center;
     justify-content: center;
-    width: 200px;
+    width: 215px;
     border-radius: 10px;
-    transition: transform 0.4s ease;
 }
 
 .vertentes:hover {
-    transform: scale(1.1) rotate(0.2dg);
+    box-shadow: 0px 0px 15px 5px white;
 }
 
-.hero img {
-    width: 170px;
-    height: 225px;
+.vertentes img {
+    height: 250px;
+    width: 190px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    object-fit: cover;
     border-radius: 10px;
+}
+
+.vertentes img:hover {
+    transform: scale(1.07);
 }
 
 .imagem-msd {
@@ -60,7 +85,7 @@ header {
 
 .imagem-msd .img-msd {
     width: auto;
-    height: 300px;
+    height: 250px;
 }
 
 .mid-text {
