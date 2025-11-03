@@ -7,11 +7,10 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-// Exemplo de modelo
 model User {
   id        Int      @id @default(autoincrement())
-  email     String   @unique
-  name      String?
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  autor     String   @unique
+  descricao      String?
+  data DateTime @default(now())
+  imagem    String?
 }
