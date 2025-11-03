@@ -7,7 +7,7 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model User {
+model Postagem {
   id        Int      @id @default(autoincrement())
   autor     String   @unique
   descricao      String?
