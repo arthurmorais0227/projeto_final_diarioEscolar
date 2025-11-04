@@ -68,7 +68,6 @@ header {
 .marca h1 {
   font-size: 55px;
   font-weight: bold;
-  font-family: Cinzel Decorative;
 }
 
 .menu {
@@ -143,7 +142,6 @@ header {
     border: none;
     padding: 17px 45px 0px 0px;
     border-bottom: rgb(255, 255, 255) 2px solid;
-    font-family: Cambria;
     font-size: larger;
     margin-bottom: 30px;
     outline: none;
