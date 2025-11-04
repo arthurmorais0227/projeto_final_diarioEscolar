@@ -251,7 +251,6 @@ header {
 .publicacoes {
   display: flex;
   gap: 30px;
-  background-color: aliceblue;
   overflow-x: auto;
   overflow-y: hidden;
   white-space: nowrap;
@@ -280,6 +279,7 @@ header {
   height: 300px;
   flex: 0 0 auto;
   border-radius: 10px;
+  transition: transform 0.5s ease;
 }
 
 .feed img {
@@ -292,4 +292,14 @@ header {
 .feed h3 {
    margin-top: 10px;
    margin-bottom: 15px;
+   margin-left: 10px;
+}
+
+.feed p {
+  margin-left: 10px;
+}
+
+.feed:hover {
+  box-shadow: 0px 0px 15px 5px #fff1bc;
+  transform: scale(1.05);
 }
