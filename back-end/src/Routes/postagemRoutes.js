@@ -5,5 +5,6 @@ const router = Router();
 
 router.get("/", postagemController.listarTodos);
 router.get("/:id", postagemController.listarUm);
+router.post("/", postagemController.criar);
 
 export default router;
