@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -125,7 +127,8 @@ header {
   }
   
   .usuario,
-  .senha {
+  .senha, 
+  .email {
     display: flex;
     justify-content: center;
   }
@@ -181,11 +184,19 @@ header {
     font-family: Sour Gummy;
     background-color: white;
   }
+
   
-  .login a{
-    background-color: yellow;
-    display: flex;
-    justify-content: center;
+.login-encaminhar {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+  color: rgb(255, 255, 255);
+  
+}
+
+
+  .login-encaminhar a{
     text-decoration: none;
     color: rgb(255, 255, 255);
+    font-size: 18px;
   }
