@@ -23,3 +23,10 @@ export const criar = async (dado) => {
         }
     })
 }
+
+export const deletar = async (id) => {
+    return await prisma.postagem.delete({
+        where: { id: Number(id) }
+    })
+}
+

@@ -73,3 +73,32 @@ export const criar = async (req, res) => {
         })
     }
 }
+
+export const deletar = async (req, res) => {
+    try {
+        const id = parseInt(req.params.id)
+
+        const postagemExiste = await PostagemModel.encontreUm(id);
+
+        if(!postagemExiste){
+            return res.status(404).json({
+                erro: 'A postagem com esse id não foi encontrada',
+                id: id
+            })
+        }
+
+        await PostagemModel.deletar(id)
+
+        res.status(200).json({
+            message: 'Postagem apagada com sucesso',
+            postagemRemovida: postagemExiste
+        })
+
+    } catch (error) {
+        res.status(500).json({
+            erro: 'Erro ao apagar postagem',
+            detalhes: error.message
+        })
+        
+    }
+}
