@@ -30,3 +30,14 @@ export const deletar = async (id) => {
     })
 }
 
+export const atualizar = async (id, dado) => {
+    return await prisma.postagem.update({
+        where: { id: Number(id) },
+        data: {
+            ...(dado.autor && { autor: dado.autor }),
+            ...(dado.descricao && { descricao: dado.descricao }),
+            ...(dado.data && { data: dado.data }),
+            ...(dado.imagem && { imagem: dado.imagem })
+        }
+    })
+}

@@ -7,5 +7,6 @@ router.get("/", postagemController.listarTodos);
 router.get("/:id", postagemController.listarUm);
 router.post("/", postagemController.criar);
 router.delete("/:id", postagemController.deletar);
+router.put("/:id", postagemController.atualizar);
 
 export default router;
