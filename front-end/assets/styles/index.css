@@ -204,6 +204,7 @@ header {
 .sunshine {
   height: 400px;
   border-radius: 10px;
+  margin-left: 100px;
 }
 
 .sunshine:hover {
@@ -213,6 +214,7 @@ header {
 .imagem-sunshine {
   position: relative;
   display: inline-block;
+  margin-left: 100px;
 }
 
 .tooltip {
@@ -231,6 +233,7 @@ header {
   transition: opacity 0.3s ease;
   pointer-events: none;
   font-family: Sour Gummy;
+  margin-left: 50px;
 }
 
 .villain {
