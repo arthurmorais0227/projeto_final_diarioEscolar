@@ -168,25 +168,6 @@ header {
     font-size: 40px;
   }
   
-  .login-redes {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    gap: 10px;
-    margin-bottom: 20px;
-  }
-  
-  .login-redes img {
-    width: 400px;
-    height: 45px;
-    border-radius: 50px;
-    transition: 0.5s;
-  }
-  
-  .login-redes img:hover {
-    transform: scale(1.05);
-  }
-  
   .botao button {
     margin: 30px;
     width: 150px;
