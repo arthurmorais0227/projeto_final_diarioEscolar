@@ -52,3 +52,24 @@ export const listarUm = async (req, res) => {
         })
     }
 }
+
+export const criar = async (req, res) => {
+    try {
+        const { autor, descricao, data, imagem } = req.body;
+        
+        const dado = { autor, descricao, data, imagem }
+
+    const novaPostagem = await PostagemModel.criar(req.body)
+    
+    res.status(201).json({
+        mensagem: 'Postagem criada com sucesso!',
+        comida: novaPostagem
+    })
+
+    } catch (error) {
+        res.status(500).json({
+            erro: 'erro o enviar postagem',
+            detalhes: error.message
+        })
+    }
+}
