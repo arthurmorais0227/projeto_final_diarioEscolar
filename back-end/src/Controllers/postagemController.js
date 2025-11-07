@@ -102,3 +102,33 @@ export const deletar = async (req, res) => {
         
     }
 }
+
+export const atualizar = async (req, res) => {
+    try {
+    
+    const id = parseInt(req.params.id);
+    const dados = req.body;
+
+    const postagemExiste = await PostagemModel.encontreUm(id);
+
+    if(!postagemExiste) {
+        return res.status(404).json({
+            erro: 'Esse postagem não existe',
+            id: id
+        })
+    }
+
+    const postagemAtualizada = await PostagemModel.atualizar(id, dados)
+
+    return res.status(200).json({
+        mensagem: 'Postagem atualizada com sucesso!',
+        Postagem: postagemAtualizada
+    })
+
+    } catch (error) {
+        res.status(500).json({
+            erro: 'Erro ao atualizar a comida',
+            detalhes: error.message
+        })
+    }
+}
