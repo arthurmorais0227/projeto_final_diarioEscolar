@@ -3,16 +3,14 @@ import { PrismaClient } from '@prisma/client';
 const prisma = new PrismaClient();
 
 async function main() {
-  // 1. Excluir todas as postagens existentes
+
   await prisma.postagem.deleteMany({});
 
-  // 2. Resetar a sequência de auto incremento para começar do ID = 1
   await prisma.$executeRaw`ALTER SEQUENCE "Postagem_id_seq" RESTART WITH 1;`;  // Para PostgreSQL
 
-  // 3. Inserir dados novamente a partir do ID 1
   await prisma.postagem.create({
     data: {
-      autor: "João Silva",  // Autor único
+      autor: "João Silva",
       descricao: "Primeira postagem do blog.",
       imagem: "link_da_imagem_1.jpg",
     },
@@ -20,7 +18,7 @@ async function main() {
 
   await prisma.postagem.create({
     data: {
-      autor: "Maria Oliveira",  // Autor único
+      autor: "Maria Oliveira",
       descricao: "Postagem de exemplo para a segunda entrada.",
       imagem: "link_da_imagem_2.jpg",
     },
@@ -28,7 +26,7 @@ async function main() {
 
   await prisma.postagem.create({
     data: {
-      autor: "Carlos Souza",  // Autor único
+      autor: "Carlos Souza",
       descricao: "Mais um conteúdo legal!",
       imagem: "link_da_imagem_3.jpg",
     },
