@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(250, 250, 239);
+}
+
+header {
+  background-color: #A890BF;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 20px;
+  font-family: DynaPuff;
+}
+
+.marca {
+  display: flex;
+  align-items: center;
+  margin-right: 30px;
+}
+
+.marca img {
+  height: 100px;
+}
+
+
+.marca h1 {
+  font-size: 55px;
+  font-weight: bold;
+  font-family: Cinzel Decorative;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  gap: 0px;
+  padding-top: 30px;
+  align-items: center;
+}
+
+.menu a.login-link {
+  background-color: transparent;
+  width: auto;
+  height: auto;
+  padding: 0;
+}
+
+.menu a.login-link img.login {
+  width: 75px;
+  height: auto;
+
+}
+
+.menu a.menu-link {
+  width: 100px;
+  height: 36px;
+  color: white;
+  text-decoration: none;
+  font-size: 19px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10PX;
+  transition: transform 0.4s ease;
+}
+
+
+.menu a.menu-link:hover {
+  color: #fff1bc;
+  transform: scale(1.1);
+}
+
+.super-hero {
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  color: #b296ca;
+  margin-top: 50px;
+}
+
+.hero {
+  background-color: rgb(250, 250, 239);
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  padding: 50px;
+}
+
+.professor {
+  background-color: #fff1bc;
+  height: 300px;
+  border-radius: 26px;
+}
+
+.professor_hero {
+  display: flex;
+  align-items: center;
+  background-color: #f5b4b9;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  height: 50px;
+  padding-left: 30px;
+  color: white;
+}
