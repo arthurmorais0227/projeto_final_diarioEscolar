@@ -9,8 +9,8 @@ datasource db {
 
 model Postagem {
   id        Int      @id @default(autoincrement())
-  autor     String   @unique
-  descricao      String?
-  data DateTime @default(now())
+  autor     String
+  descricao String?
+  data      DateTime @default(now())
   imagem    String?
 }
