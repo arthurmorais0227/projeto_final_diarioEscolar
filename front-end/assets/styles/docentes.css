@@ -92,6 +92,7 @@ header {
   flex-direction: column;
   gap: 50px;
   padding: 50px;
+  align-items: center;
 }
 
 .professor {
@@ -99,6 +100,7 @@ header {
   height: 300px;
   border-radius: 26px;
   margin-bottom: 75px;
+  width: 70%;
 }
 
 .professor_hero {
@@ -110,7 +112,7 @@ header {
   height: 50px;
   padding-left: 30px;
   color: rgb(255, 255, 255);
-  font-family: Sour Gummy;
+  font-family: DynaPuff;
 }
 
 .professor_vilain {
@@ -121,11 +123,12 @@ header {
   height: 100%;
   border-bottom-left-radius: 25px;
   border-bottom-right-radius: 25px;
+  font-family: Sour Gummy;
 }
 
 .img {
   background-color: #fff1bc;
-  width: 50%;
+  width: 40%;
   height: 100%;
   border-bottom-left-radius: 25px;
   align-items: center;
@@ -141,24 +144,28 @@ header {
 }
 
 .descricao {
-  width: 50%;
+  width: 60%;
   height: 100%;
-  background-color: aqua;
   border-bottom-right-radius: 25px;
+  background-color :#bea3d4;
+  font-family: Sour Gummy;
+}
+
+.detalhes h2 {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
 }
 
 .detalhes {
-  background-color: tomato;
-  width: 400px;
-  margin-left: 80px;
+  margin-left: 40px;
   height: 80%;
 }
 
-.professor_villain img {
+.professor_villain .detalhes img {
   margin-top: 23px;
   height: 200px;
   width: 200px;
-  border-radius: 50%;
   margin-left: 30px;
 }
 
@@ -167,5 +174,23 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: aquamarine;
+}
+
+.logos {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.icones {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.logos img {   
+  width: 30px;
+  height: auto;
+
 }
