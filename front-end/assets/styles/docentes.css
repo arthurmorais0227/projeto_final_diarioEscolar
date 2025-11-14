@@ -112,7 +112,7 @@ header {
   height: 50px;
   padding-left: 30px;
   color: rgb(255, 255, 255);
-  font-family: Sour Gummy;
+  font-family: DynaPuff;
 }
 
 .professor_vilain {
@@ -123,6 +123,7 @@ header {
   height: 100%;
   border-bottom-left-radius: 25px;
   border-bottom-right-radius: 25px;
+  font-family: Sour Gummy;
 }
 
 .img {
@@ -147,6 +148,7 @@ header {
   height: 100%;
   border-bottom-right-radius: 25px;
   background-color :#bea3d4;
+  font-family: Sour Gummy;
 }
 
 .detalhes h2 {
