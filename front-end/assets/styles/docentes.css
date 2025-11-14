@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap");
 
 * {
   margin: 0;
@@ -13,7 +13,7 @@ body {
 }
 
 header {
-  background-color: #A890BF;
+  background-color: #a890bf;
   color: white;
   padding: 10px 20px;
   display: flex;
@@ -32,7 +32,6 @@ header {
 .marca img {
   height: 100px;
 }
-
 
 .marca h1 {
   font-size: 55px;
@@ -58,7 +57,6 @@ header {
 .menu a.login-link img.login {
   width: 75px;
   height: auto;
-
 }
 
 .menu a.menu-link {
@@ -70,10 +68,9 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 10PX;
+  border-radius: 10px;
   transition: transform 0.4s ease;
 }
-
 
 .menu a.menu-link:hover {
   color: #fff1bc;
@@ -100,6 +97,7 @@ header {
   background-color: #fff1bc;
   height: 300px;
   border-radius: 26px;
+  margin-bottom: 75px;
 }
 
 .professor_hero {
@@ -111,4 +109,45 @@ header {
   height: 50px;
   padding-left: 30px;
   color: white;
+}
+
+.professor_vilain {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: yellow;
+  height: 100%;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+
+.img {
+  background-color: #a890bf;
+  width: 50%;
+  height: 100%;
+  border-bottom-left-radius: 25px;
+  align-items: center;
+  display: flex;
+  justify-content: left;
+  padding-left: 25px;
+}
+
+.img img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+.descricao {
+  width: 50%;
+  height: 100%;
+  background-color: aqua;
+  border-bottom-right-radius: 25px;
+}
+
+.detalhes {
+  background-color: tomato;
+  width: 400px;
+  margin-left: 80px;
+  height: 80%;
 }
