@@ -8,3 +8,5 @@
   sunshine.addEventListener('mouseleave', () => {
     tooltip.style.opacity = '0';
   });
+
+  
