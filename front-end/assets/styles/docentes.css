@@ -144,11 +144,14 @@ header {
 }
 
 .descricao {
+  border-top: 3px dashed #8650b9;
+  border-bottom: 3px dashed #8650b9;
   width: 60%;
   height: 100%;
   border-bottom-right-radius: 25px;
   background-color :#bea3d4;
   font-family: Sour Gummy;
+  display: flex;
 }
 
 .detalhes h2 {
@@ -194,3 +197,76 @@ header {
   height: auto;
 
 }
+
+.materias {
+  width: 33.3%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  border-right: 3px dashed #8650b9;
+  border-left: 3px dashed #8650b9;
+}
+
+.imagens_materias {
+  display: flex;
+  gap: 40px;
+  margin-top: 60px;
+}
+
+.backend img, .projetos img {
+  width: 70px;
+}
+
+/*qualidades*/
+
+.qualidades {
+  width: 33.3%;
+  padding: 20px 10px 0px 10px;
+  border-right: 3px dashed #8650b9;
+}
+
+.qualidade_titulo {
+  display: flex;
+  justify-content: center;
+}
+
+.titulo {
+  margin-top: 20px;
+}
+
+.icones_qualidades {
+  flex-direction: row;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 10px;
+  margin-top: 5px;
+}
+
+.linguagens img, .itens img{
+  width: 40px;
+  height: auto;
+}
+
+.hobbies {
+  padding-top: 20px;
+  width: 33.4%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-right: 3px dashed #8650b9;
+  border-bottom-right-radius: 25px;
+}
+
+.itens {
+  margin-top: 10px;
+}
+
+.hp, .codar, .dar_prova {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
