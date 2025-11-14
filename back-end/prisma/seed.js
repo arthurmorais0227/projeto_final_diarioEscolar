@@ -12,7 +12,7 @@ async function main() {
     data: {
       autor: "Ana Clara Cremasco Luiz",
       descricao: "Estudando para a prova de matemática.",
-      imagem: "link_da_imagem_1.jpg",
+      imagem: "./assets/img/oberon.jpg",
     },
   });
 
@@ -20,7 +20,7 @@ async function main() {
     data: {
       autor: "Yasmin Crisostomo de Oliveira",
       descricao: "Participando do projeto de ciências com a turma.",
-      imagem: "link_da_imagem_2.jpg",
+      imagem: "./assets/img/oberon.jpg",
     },
   });
 
@@ -28,7 +28,7 @@ async function main() {
     data: {
       autor: "Danilo do Valle Marchiori Jorge",
       descricao: "Apresentando um trabalho sobre sustentabilidade.",
-      imagem: "link_da_imagem_3.jpg",
+      imagem: "./assets/img/oberon.jpg",
     },
   });
 
@@ -36,7 +36,7 @@ async function main() {
     data: {
       autor: "Maria Eduarda Braga Ferreira",
       descricao: "Fazendo anotações durante a aula de história.",
-      imagem: "link_da_imagem_4.jpg",
+      imagem: "./assets/img/oberon.jpg",
     },
   });
 
@@ -44,7 +44,7 @@ async function main() {
     data: {
       autor: "Maria Eduarda de Andrade",
       descricao: "Revisando o conteúdo de português para o teste.",
-      imagem: "link_da_imagem_5.jpg",
+      imagem: "./assets/img/oberon.jpg",
     },
   });
 
@@ -52,7 +52,7 @@ async function main() {
     data: {
       autor: "Gabriela Emi Yamamoto",
       descricao: "Estudando em grupo na biblioteca da escola.",
-      imagem: "link_da_imagem_6.jpg",
+      imagem: "./assets/img/oberon.jpg",
     },
   });
 
@@ -60,7 +60,7 @@ async function main() {
     data: {
       autor: "Julia Erlo Figueiredo de Miranda",
       descricao: "Trabalhando no cartaz do projeto de arte.",
-      imagem: "link_da_imagem_7.jpg",
+      imagem: "./assets/img/oberon.jpg",
     },
   });
 
@@ -68,7 +68,7 @@ async function main() {
     data: {
       autor: "Luiz Felipe",
       descricao: "Participando de uma oficina de robótica.",
-      imagem: "link_da_imagem_8.jpg",
+      imagem: "./assets/img/oberon.jpg",
     },
   });
 
@@ -76,7 +76,7 @@ async function main() {
     data: {
       autor: "Victor Ferreira de Oliveira",
       descricao: "Fazendo exercícios de química para o simulado.",
-      imagem: "link_da_imagem_9.jpg",
+      imagem: "./assets/img/oberon.jpg",
     },
   });
 
@@ -84,7 +84,7 @@ async function main() {
     data: {
       autor: "Rebeca Gabrielly Moreira Alves",
       descricao: "Organizando o caderno para a semana de provas.",
-      imagem: "link_da_imagem_10.jpg",
+      imagem: "./assets/img/oberon.jpg",
     },
   });
 
