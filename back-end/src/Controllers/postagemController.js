@@ -2,20 +2,23 @@ import * as PostagemModel from '../Models/postagemModel.js'
 
 export const listarTodos = async (req, res) => {
     try {
+        const limite = parseInt(req.query.limite) || 20;
         const postagens = await PostagemModel.encontreTodos();
+        const postagensFiltradas = postagens.slice(0, limite);
 
         if(!postagens || postagens.length === 0){
             res.status(404).json({
-                total: postagens.length,
+                total: 0,
                 mensagem: 'Não há postagens na lista.',
-                postagens
+                postagens: []
             })
+            return;
         }
 
         res.status(200).json({
-            total: postagens.length,
+            total: postagensFiltradas.length,
             mensagem: 'Lista de postagens:',
-            postagens
+            postagens: postagensFiltradas
         })
     } catch (error) {
         res.status(500).json({
