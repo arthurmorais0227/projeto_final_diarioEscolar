@@ -238,6 +238,7 @@ header {
   height: 400px;
   display: flex;
   flex-direction: column;
+  font-family: Sour Gummy;
 }
 
 .villain h1 {
