@@ -352,202 +352,7 @@ header {
   transform: scale(1.05);
 }
 
-@media (max-width: 1024px) {
-  header {
-    flex-direction: column;
-    padding: 15px 10px;
-  }
 
-  .marca {
-    margin-right: 0;
-    margin-bottom: 10px;
-  }
-
-  .marca img {
-    height: 70px;
-  }
-
-  .marca h1 {
-    font-size: 40px;
-  }
-
-  .menu {
-    padding-top: 10px;
-    flex-wrap: wrap;
-    gap: 15px;
-    justify-content: center;
-  }
-
-  .menu a.menu-link {
-    width: 80px;
-    font-size: 16px;
-  }
-
-  .titulos {
-    padding: 0 10px;
-    justify-content: center;
-    gap: 20px;
-  }
-
-  .hero {
-    flex-wrap: wrap;
-    height: auto;
-    padding: 20px 0;
-    justify-content: center;
-  }
-
-  .vertentes {
-    margin: 10px;
-    width: 45%;
-    height: 250px;
-  }
-
-  .vertentes img {
-    height: 230px;
-    width: 90%;
-  }
-
-  .mid-text {
-    flex-direction: column;
-    gap: 50px;
-    margin-top: 50px;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .imagem-sunshine {
-    margin-left: 0;
-    text-align: center;
-  }
-
-  .sunshine {
-    height: 350px;
-    margin-left: 0;
-  }
-
-  .tooltip {
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    margin-left: 0;
-  }
-
-  .fundo {
-    width: 90%;
-    padding: 20px;
-  }
-
-  .sobre {
-    width: 100%;
-    padding: 0 10px;
-  }
-
-  .villain h1 {
-    margin-left: 0;
-    text-align: center;
-  }
-
-  .publicacoes {
-    margin-left: 0;
-    padding: 10px;
-    justify-content: flex-start;
-  }
-}
-
-@media (max-width: 600px) {
-  .marca h1 {
-    font-size: 30px;
-  }
-
-  .marca img {
-    height: 50px;
-  }
-
-  .menu {
-    gap: 5px;
-    justify-content: space-evenly;
-    padding: 10px;
-    width: 100%;
-  }
-
-  .menu a.menu-link {
-    width: 70px;
-    height: 30px;
-    font-size: 14px;
-    padding: 0;
-  }
-
-  .menu a.login-link img.login {
-    width: 50px;
-  }
-
-  .titulos {
-    display: none;
-  }
-
-  .hero {
-    flex-direction: column;
-    height: auto;
-    padding: 10px 0;
-    align-items: center;
-  }
-
-  .vertentes {
-    width: 90%;
-    margin: 10px 5%;
-    height: 300px;
-  }
-
-  .vertentes img {
-    height: 280px;
-    width: 95%;
-  }
-
-  .sunshine {
-    height: 250px;
-  }
-
-  .fundo {
-    width: 95%;
-    padding: 15px;
-  }
-
-  .sobre h1 {
-    font-size: 24px;
-    text-align: center;
-  }
-
-  .sobre p {
-    font-size: 14px;
-    margin-bottom: 20px;
-  }
-
-  .villain h1 {
-    text-align: center;
-  }
-
-  .feed {
-    width: 250px;
-    height: 250px;
-  }
-
-  .feed img {
-    height: auto;
-  }
-
-  .feed h3 {
-    font-size: 16px;
-  }
-
-  .feed p {
-    font-size: 12px;
-  }
-
-  .publicacoes {
-    margin-left: 0;
-    padding: 10px;
-  }
-}
 
 .animar {
   opacity: 0;
@@ -592,7 +397,80 @@ header {
   right: 0;     
   width: 180px; 
   height: 60px; 
-
   background-color: #fefdf6;
   pointer-events: none; 
+}
+
+footer {
+  background-color: #a890bf;
+  color: white;
+  padding: 15px 0;
+  margin-top: 50px;
+  font-family: DynaPuff;
+}
+
+.titulo_footer {
+  padding-top: 100px;
+  border: 2px solid blue;
+  font-size: 35px;
+  margin-bottom: 20px;
+}
+
+.main_footer {
+  display: flex;
+  border: 2px solid red;
+  height: 200px;
+  gap: 30%;
+}
+
+.texto_botao {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  border: 2px solid green;
+  height: 100%;
+  width: 30%;
+}
+
+.texto_botao button {
+  width: 30%;
+}
+
+.contatos {
+  display: flex;
+  border: 2px solid yellow;
+  height: 100%;
+  width: 40%;
+  gap: 90px;
+}
+
+.fileira1, .fileira2 {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.fileira2 {
+  color: #fff1bc;
+}
+
+.logos_footer {
+  display: flex;
+  justify-content: end;
+  border: 2px solid purple;
+  height: 100px;
+}
+
+.icones_footer {
+  margin-right: 100px;
+  border: 2px solid aqua;
+  height: 100%;
+  width: 20%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.icones_footer img {
+  height: 60px;
+  width: auto;
 }
