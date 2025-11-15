@@ -297,24 +297,29 @@ header {
 
 .publicacoes::-webkit-scrollbar {
   height: 8px;
+  
 }
 
 .publicacoes::-webkit-scrollbar-thumb {
   background-color: #f5b4b9;
   border-radius: 10px;
+  
 }
 
 .publicacoes::-webkit-scrollbar-thumb:hover {
   background-color: #b296ca;
+  
 }
 
 .memorias-container::-webkit-scrollbar {
   height: 8px;
+  
 }
 
 .memorias-container::-webkit-scrollbar-thumb {
   background-color: #f5b4b9;
   border-radius: 10px;
+  
 }
 
 .memorias-container::-webkit-scrollbar-thumb:hover {
@@ -324,10 +329,12 @@ header {
 .feed {
   background-color: #fff1bc;
   width: 300px;
-  height: 300px;
+  height: 280px;
   flex: 0 0 auto;
   border-radius: 10px;
   transition: transform 0.5s ease;
+  border: 2px double #fde077;
+  margin-bottom: 100px;
 }
 
 .feed img {
@@ -351,8 +358,6 @@ header {
   box-shadow: 0px 0px 15px 5px #fff1bc;
   transform: scale(1.05);
 }
-
-
 
 .animar {
   opacity: 0;
@@ -402,43 +407,61 @@ header {
 }
 
 footer {
+  margin-top: 200px;
   background-color: #a890bf;
   color: white;
   padding: 15px 0;
   margin-top: 50px;
   font-family: DynaPuff;
+  border: 5px outset #9465c0;;
 }
 
 .titulo_footer {
-  padding-top: 100px;
-  border: 2px solid blue;
+  padding-top: 60px;
   font-size: 35px;
-  margin-bottom: 20px;
+  margin-bottom: 60px;
+  margin-left: 50px;
+  border-bottom: 2px solid #9465c0;
+  width: 650px;
+}
+
+.titulo_footer h1 {
+  margin-bottom: 10px;
 }
 
 .main_footer {
   display: flex;
-  border: 2px solid red;
   height: 200px;
   gap: 30%;
+  margin-left: 50px;
 }
 
 .texto_botao {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  border: 2px solid green;
   height: 100%;
   width: 30%;
 }
 
+
 .texto_botao button {
-  width: 30%;
+  width: 35%;
+  background-color: #f5b4b9;
+  border: none;
+  color: white;
+  font-size: 20px;
+  height: 55px;
+  font-family: DynaPuff;
+  border: 2px dashed #f58e97;
+}
+
+.texto p {
+  margin-bottom: 10px;
 }
 
 .contatos {
   display: flex;
-  border: 2px solid yellow;
   height: 100%;
   width: 40%;
   gap: 90px;
@@ -450,20 +473,23 @@ footer {
   gap: 20px;
 }
 
+.fileira1 {
+  font-size: 17px;
+}
+
 .fileira2 {
   color: #fff1bc;
+  font-family: Sour Gummy;
 }
 
 .logos_footer {
   display: flex;
   justify-content: end;
-  border: 2px solid purple;
   height: 100px;
 }
 
 .icones_footer {
   margin-right: 100px;
-  border: 2px solid aqua;
   height: 100%;
   width: 20%;
   display: flex;
@@ -473,4 +499,5 @@ footer {
 .icones_footer img {
   height: 60px;
   width: auto;
+
 }
