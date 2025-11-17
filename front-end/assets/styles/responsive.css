@@ -1,0 +1,84 @@
+img, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+body {
+  height: auto !important;
+  min-height: 100vh;
+  overflow-x: hidden !important;
+}
+
+main, .fundo, .hero, .professor, .video-container, .imagem-msd {
+  width: 100% !important;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+header .marca img {
+  max-height: 80px;
+  width: auto;
+}
+
+.menu {
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.menu a.menu-link {
+  padding: 6px 10px;
+  font-size: 1rem;
+}
+
+.feed, .vertentes, .publicacoes > div, .memorias-container > div {
+  width: 100% !important;
+  max-width: 380px;
+  box-sizing: border-box;
+}
+
+.publicacoes, .memorias-container {
+  padding-bottom: 8px;
+}
+
+@media (max-width: 900px) {
+  .hero, .mid-text, .super-hero, .professor_vilain, .professor {
+    flex-direction: column !important;
+    padding: 12px !important;
+    gap: 12px !important;
+    align-items: stretch !important;
+  }
+
+  .imagem-msd, .imagem_grande, .imagem-sunshine {
+    margin-left: 0 !important;
+    margin-top: 0 !important;
+    height: auto !important;
+  }
+
+  .bem_vindo h1 { font-size: clamp(1.6rem, 6vw, 2.6rem); }
+  .bem_vindo { margin-top: 20px; }
+
+  .feed { max-width: 100% !important; }
+  .fundo { width: auto !important; max-width: 100% !important; }
+}
+
+@media (max-width: 600px) {
+  header { padding: 8px 12px !important; }
+  .marca h1 { font-size: 1.4rem !important; }
+  .menu a.menu-link { font-size: 0.9rem !important; width: auto; }
+  .titulos { flex-direction: column; gap: 8px; }
+  .publicacoes { gap: 12px; padding-left: 12px; }
+  .video-cortado { height: auto !important; }
+  .imagem-msd .img-msd { height: auto !important; margin-top: 0 !important; }
+}
+
+.tooltip { left: 5% !important; transform: translateX(0) !important; }
+
+body.login-page main {
+  max-width: 450px !important;
+  margin-top: 50px !important;
+  padding-left: 18px !important;
+  padding-right: 18px !important;
+}

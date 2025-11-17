@@ -10,8 +10,8 @@
 body {
     position: relative;
     width: 100%;
-    height: 100vh;
-    overflow: hidden;
+    min-height: 100vh;
+    overflow-x: hidden;
   }
   
   body::before {
@@ -27,21 +27,20 @@ body {
   }
   
   main {
-    position: relative;
-    z-index: 1;
-    background-color: #A890BF;
-    padding: 32px 40px;
-    width: 500px;
-    margin: 90px auto 0 auto;
-    border-radius: 30px;
-    box-shadow: 0 2px 8px rgba(255, 255, 255, 0.4);
-    border: 4px solid rgb(255, 255, 255);
-    display: flex;
-    justify-content: center;
-    color: white;   
-    font-family: DynaPuff;
- 
-  }
+      position: relative;
+      z-index: 1;
+      background-color: #A890BF;
+      padding: 18px 20px;
+      width: 100%;
+      max-width: 450px; 
+      margin: 50px auto 20px auto;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+      border: 3px solid rgb(255, 255, 255);
+      display: block;
+      color: white;   
+      font-family: DynaPuff;
+    }
 
 header {
   background-color: #A890BF;
@@ -61,7 +60,8 @@ header {
 }
 
 .marca img {
-  height: 100px;
+  height: 80px;
+  width: auto;
 }
 
 
@@ -73,9 +73,10 @@ header {
 .menu {
   display: flex;
   justify-content: center;
-  gap: 0px;
-  padding-top: 30px;
+  gap: 8px;
+  padding-top: 18px;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .menu a.login-link {
@@ -92,15 +93,15 @@ header {
 }
 
 .menu a.menu-link {
-  width: 100px;
+  min-width: 80px;
   height: 36px;
   color: white;
   text-decoration: none;
-  font-size: 19px;
+  font-size: 18px;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 10PX;
+  border-radius: 10px;
   transition: transform 0.4s ease;
 }
 
@@ -131,20 +132,23 @@ header {
   .senha {
     display: flex;
     justify-content: center;
+    width: 100%;
   }
   
   .usuario input,
   .senha input {
     color: rgb(255, 255, 255);
-    height: 50px;
-    color: rgb(255, 255, 255);
+    height: 46px;
     background-color: transparent;
     border: none;
-    padding: 17px 45px 0px 0px;
+    padding: 10px 10px;
     border-bottom: rgb(255, 255, 255) 2px solid;
-    font-size: larger;
-    margin-bottom: 30px;
+    font-size: 1rem;
+    margin-bottom: 16px;
     outline: none;
+    width: 100%;
+    max-width: 320px; /* acompanha o tamanho reduzido do main */
+    box-sizing: border-box;
   }
   
   .usuario input::placeholder,
@@ -169,17 +173,34 @@ header {
   }
   
   .botao button {
-    margin: 30px;
-    width: 150px;
-    height: 47px;
-    border-radius: 25px;
+    margin: 20px auto;
+    display: block;
+    width: 140px;
+    height: 42px;
+    border-radius: 22px;
     border: none;
-    transition: all 0.5s ease;
-    transition: transform 0.4s ease;
-    font-size: 20px;
+    transition: all 0.2s ease;
+    font-size: 16px;
     font-weight: bold;
     font-family: Sour Gummy;
     background-color: white;
+  }
+
+  /* Ajustes específicos para telas pequenas */
+  @media (max-width: 480px) {
+    main {
+      margin: 80px 12px 20px 12px;
+      padding: 18px;
+      border-radius: 14px;
+    }
+
+    .marca img { height: 60px; }
+
+    .bem_vindo h1 { font-size: 1.2rem; }
+
+    .botao button { width: 100%; max-width: 360px; }
+    .usuario input, .senha input { font-size: 0.95rem; }
+    main h2 { font-size: 1.6rem; margin-bottom: 28px; }
   }
   
   .cadastro a{
