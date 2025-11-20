@@ -67,6 +67,7 @@ main.conteudo {
   display: grid;
   grid-template-columns: 50% 50%;
   gap: 20px;
+  background-image: radial-gradient(circle, #fff1bc, #f5b4b9);
 }
 
 /* --- ESQUERDA --- */
@@ -80,6 +81,7 @@ main.conteudo {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: DynaPuff;
 }
 
 .alunos_geral {
@@ -96,6 +98,8 @@ main.conteudo {
   background-color: #fff1bc;
   padding: 10px;
   border: 1px dashed #ffe37e;
+  border-radius: 10px;
+  font-family: DynaPuff;
 }
 
 .nome_aluno {
@@ -108,6 +112,7 @@ main.conteudo {
   width: 40px;
   height: 40px;
   border-radius: 50%;
+  border: 2px solid #5c3b6b;
 }
 
 .interacoes {
@@ -162,24 +167,43 @@ main.conteudo {
 
 /* --- DIREITA (GRID) --- */
 .grid {
+  margin-top: 20px;
   width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
   grid-gap: 2px;
   grid-auto-rows: minmax(80px, auto);
   grid-auto-flow: dense;
+
 }
 
-.c-1 { background: #1a535c; color: #ddd; }
-.c-2 { background: #4ecdc4; }
-.c-3 { background: #bfd7ea; }
-.c-4 { background: #ff6b6b; }
-.c-5 { background: #ffe66d; }
+.c-1 {
+  background: #1a535c;
+  color: #ddd;
+}
+
+.c-2 {
+  background: #4ecdc4;
+}
+
+.c-3 {
+  background: #bfd7ea;
+}
+
+.c-4 {
+  background: #ff6b6b;
+}
+
+.c-5 {
+  background: #ffe66d;
+}
 
 .card {
   min-height: 100px;
   background-size: cover;
   background-position: 50% 50%;
+  border-radius: 10px;
+  border: 3px outset #9465c0;
 }
 
 .span-2 {
@@ -192,4 +216,100 @@ main.conteudo {
   grid-column-end: span 3;
   grid-row-end: span 3;
   min-height: 400px;
+}
+
+footer {
+  background-color: #a890bf;
+  color: white;
+  padding: 15px 0;
+  font-family: DynaPuff;
+  border: 5px outset #9465c0;
+  ;
+}
+
+.titulo_footer {
+  padding-top: 60px;
+  font-size: 35px;
+  margin-bottom: 60px;
+  margin-left: 50px;
+  border-bottom: 2px solid #9465c0;
+  width: 650px;
+}
+
+.titulo_footer h1 {
+  margin-bottom: 10px;
+}
+
+.main_footer {
+  display: flex;
+  height: 200px;
+  gap: 30%;
+  margin-left: 50px;
+}
+
+.texto_botao {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  height: 100%;
+  width: 30%;
+}
+
+
+.texto_botao button {
+  width: 35%;
+  background-color: #f5b4b9;
+  border: none;
+  color: white;
+  font-size: 20px;
+  height: 55px;
+  font-family: DynaPuff;
+  border: 2px dashed #f58e97;
+}
+
+.texto p {
+  margin-bottom: 10px;
+}
+
+.contatos {
+  display: flex;
+  height: 100%;
+  width: 40%;
+  gap: 90px;
+}
+
+.fileira1,
+.fileira2 {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.fileira1 {
+  font-size: 17px;
+}
+
+.fileira2 {
+  color: #fff1bc;
+  font-family: Sour Gummy;
+}
+
+.logos_footer {
+  display: flex;
+  justify-content: end;
+  height: 100px;
+}
+
+.icones_footer {
+  margin-right: 100px;
+  height: 100%;
+  width: 20%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.icones_footer img {
+  height: 60px;
+  width: auto;
+
 }
