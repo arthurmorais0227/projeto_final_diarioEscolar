@@ -33,30 +33,12 @@ header {
   height: 100px;
 }
 
-.marca h1 {
-  font-size: 55px;
-  font-weight: bold;
-  font-family: Cinzel Decorative;
-}
-
 .menu {
   display: flex;
   justify-content: center;
   gap: 0px;
   padding-top: 30px;
   align-items: center;
-}
-
-.menu a.login-link {
-  background-color: transparent;
-  width: auto;
-  height: auto;
-  padding: 0;
-}
-
-.menu a.login-link img.login {
-  width: 75px;
-  height: auto;
 }
 
 .menu a.menu-link {
@@ -77,20 +59,22 @@ header {
   transform: scale(1.1);
 }
 
-main {
-  background-color: aqua;
+/* MAIN AGORA É 2 COLUNAS LADO A LADO */
+main.conteudo {
   width: 100%;
-  display: flex;
-  height: 100vh;
+  min-height: calc(100vh - 150px);
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  gap: 20px;
 }
 
+/* --- ESQUERDA --- */
 .alunos_pai {
-  background-color: lightgreen;
-  width: 50%;
+  width: 100%;
 }
 
 .titulo_alunos {
-  background-color: lightcoral;
   width: 100%;
   height: 100px;
   display: flex;
@@ -101,10 +85,12 @@ main {
 .alunos_geral {
   display: flex;
   flex-direction: column;
+  gap: 10px;
 }
 
 .aluno {
   display: flex;
+  justify-content: space-between;
   align-items: center;
   gap: 10px;
   background-color: #fff1bc;
@@ -113,14 +99,97 @@ main {
 }
 
 .nome_aluno {
-  background-color: lightpink;
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
-.aluno img {
+.nome_aluno img {
   width: 40px;
   height: 40px;
   border-radius: 50%;
+}
+
+.interacoes {
+  display: flex;
+  gap: 10px;
+}
+
+.int1,
+.int2 {
+  position: relative;
+  padding: 6px;
+  border-radius: 8px;
+}
+
+.int1 img,
+.int2 img {
+  width: 30px;
+}
+
+/* TOOLTIP */
+.tooltip {
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #5c3b6b;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 14px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.tooltip::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: #5c3b6b transparent transparent transparent;
+}
+
+.int1:hover .tooltip,
+.int2:hover .tooltip {
+  opacity: 1;
+}
+
+/* --- DIREITA (GRID) --- */
+.grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  grid-gap: 2px;
+  grid-auto-rows: minmax(80px, auto);
+  grid-auto-flow: dense;
+}
+
+.c-1 { background: #1a535c; color: #ddd; }
+.c-2 { background: #4ecdc4; }
+.c-3 { background: #bfd7ea; }
+.c-4 { background: #ff6b6b; }
+.c-5 { background: #ffe66d; }
+
+.card {
+  min-height: 100px;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.span-2 {
+  grid-column-end: span 2;
+  grid-row-end: span 2;
+  min-height: 200px;
+}
+
+.span-3 {
+  grid-column-end: span 3;
+  grid-row-end: span 3;
+  min-height: 400px;
 }
