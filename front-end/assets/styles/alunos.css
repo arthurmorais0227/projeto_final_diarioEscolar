@@ -63,16 +63,16 @@ header {
 main.conteudo {
   width: 100%;
   min-height: calc(100vh - 150px);
-  padding: 20px;
   display: grid;
   grid-template-columns: 50% 50%;
-  gap: 20px;
-  background-image: radial-gradient(circle, #fff1bc, #f5b4b9);
 }
 
 /* --- ESQUERDA --- */
 .alunos_pai {
   width: 100%;
+  background-image: radial-gradient(circle, #fff1bc, #f5b4b9);
+  padding-left: 20px;
+  padding-bottom: 30px;
 }
 
 .titulo_alunos {
@@ -82,6 +82,7 @@ main.conteudo {
   justify-content: center;
   align-items: center;
   font-family: DynaPuff;
+  color: #9465c0;
 }
 
 .alunos_geral {
@@ -166,15 +167,33 @@ main.conteudo {
 }
 
 /* --- DIREITA (GRID) --- */
+
+.grid_pai {
+  background-image: radial-gradient(circle, #fff1bc, #f5b4b9);
+  display: flex;
+  flex-direction: column;
+  padding-left: 15px;
+  padding-bottom: 30px;
+}
+
 .grid {
-  margin-top: 20px;
   width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
   grid-gap: 2px;
   grid-auto-rows: minmax(80px, auto);
   grid-auto-flow: dense;
+  padding-right: 20px;
+}
 
+.grid_titulo{
+  font-family: DynaPuff;
+  justify-content: center;
+  display: flex;
+  width: 100%;
+  height: 100px;
+  align-items: center;
+  color: #9465c0;
 }
 
 .c-1 {
@@ -224,7 +243,6 @@ footer {
   padding: 15px 0;
   font-family: DynaPuff;
   border: 5px outset #9465c0;
-  ;
 }
 
 .titulo_footer {
@@ -312,4 +330,46 @@ footer {
   height: 60px;
   width: auto;
 
+}
+
+#aviso-copiado {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #9465c0;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 12px;
+  font-family: DynaPuff;
+  font-size: 18px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 9999;
+}
+
+.copiado-popup {
+  position: absolute;
+  background-color: #9465c0;
+  color: white;
+  font-family: DynaPuff;
+  padding: 6px 12px;
+  font-size: 14px;
+  border-radius: 10px;
+  transform: translateY(10px);
+  opacity: 0;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  pointer-events: none;
+  z-index: 999;
+  white-space: nowrap;
+}
+
+.animar {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.7s ease-out;
+}
+
+.animar.mostrar {
+  opacity: 1;
+  transform: translateY(0);
 }

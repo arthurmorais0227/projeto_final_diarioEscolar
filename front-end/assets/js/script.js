@@ -145,6 +145,13 @@ let imagens = [
   "../assets/img/banco_fotos2/WIN_20251017_14_13_11_Pro.jpg"
 ];
 
+// **AQUI entra o passo 3**
+imagens = imagens.filter(src => {
+  const img = new Image();
+  img.src = src;
+  return img.complete || img.width > 0;
+});
+
 let grid = document.getElementById("grid");
 let n = 0;
 
@@ -160,6 +167,51 @@ while (n < 40) {
   div.style.backgroundImage = `url('${url}')`;
 
   grid.appendChild(div);
-  n++;
+  n++; 
 }
 });
+
+function criarAviso(elemento, mensagem) {
+  const aviso = document.createElement("div");
+  aviso.classList.add("copiado-popup");
+  aviso.textContent = mensagem;
+
+  elemento.style.position = "relative";
+  elemento.appendChild(aviso);
+
+  setTimeout(() => {
+    aviso.style.opacity = "1";
+    aviso.style.transform = "translateY(-25px)";
+  }, 10);
+
+  setTimeout(() => {
+    aviso.style.opacity = "0";
+    aviso.style.transform = "translateY(-10px)";
+    setTimeout(() => aviso.remove(), 250);
+  }, 500);
+}
+
+// --- Copiar EMAIL ---
+document.querySelectorAll(".int1 img").forEach(icon => {
+  icon.style.cursor = "pointer";
+
+  icon.addEventListener("click", () => {
+    const email = icon.previousElementSibling.textContent.trim();
+    navigator.clipboard.writeText(email);
+
+    criarAviso(icon.parentElement, "Email copiado!");
+  });
+});
+
+// --- Copiar TELEFONE ---
+document.querySelectorAll(".int2 img").forEach(icon => {
+  icon.style.cursor = "pointer";
+
+  icon.addEventListener("click", () => {
+    const telefone = icon.previousElementSibling.textContent.trim();
+    navigator.clipboard.writeText(telefone);
+
+    criarAviso(icon.parentElement, "Telefone copiado!");
+  });
+});
+
