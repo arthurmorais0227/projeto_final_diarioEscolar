@@ -265,3 +265,31 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+const botaoCriar = document.querySelector(".criar_memoria button");
+const popup = document.getElementById("popupCriar");
+const fechar = document.getElementById("fecharPopup");
+
+const inputImagem = document.querySelector("#popupCriar input[type='file']");
+const textareaDescricao = document.querySelector("#popupCriar textarea");
+
+function resetarCampos() {
+  inputImagem.value = "";
+  textareaDescricao.value = "";
+}
+
+botaoCriar.addEventListener("click", () => {
+  popup.style.display = "flex";
+});
+
+fechar.addEventListener("click", () => {
+  popup.style.display = "none";
+  resetarCampos();
+});
+
+popup.addEventListener("click", (e) => {
+  if (e.target === popup) {
+    popup.style.display = "none";
+    resetarCampos();
+  }
+});
+

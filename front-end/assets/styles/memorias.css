@@ -33,30 +33,12 @@ header {
   height: 100px;
 }
 
-.marca h1 {
-  font-size: 55px;
-  font-weight: bold;
-  font-family: Cinzel Decorative;
-}
-
 .menu {
   display: flex;
   justify-content: center;
   gap: 0px;
   padding-top: 30px;
   align-items: center;
-}
-
-.menu a.login-link {
-  background-color: transparent;
-  width: auto;
-  height: auto;
-  padding: 0;
-}
-
-.menu a.login-link img.login {
-  width: 75px;
-  height: auto;
 }
 
 .menu a.menu-link {
@@ -85,8 +67,26 @@ header {
   padding-top: 50px;
 }
 
+.criar_memoria {
+  font-family: DynaPuff;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.criar_memoria button{
+  width: 130px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 3px dashed #8f5fbb;
+  background-color: #dcc4f1;
+  font-family: DynaPuff;
+  color: #8f5fbb;
+  cursor: pointer;
+} 
+
 .memorias {
-  width: 45%;
+  width: 60%;
   height: 100%;
   gap: 30px;
   display: flex;
@@ -95,7 +95,10 @@ header {
 
 .memorias_titulo {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  font-family: DynaPuff;
+  color: #8f5fbb;
+  align-items: center;
 }
 
 .memoria_bloco {
@@ -106,24 +109,18 @@ header {
   gap: 20px;
 }
 
-.fileira1 {
+.fileira1, .fileira2 {
   height: 50%;
   width: 100%;
   display: flex;
   gap: 20px;
 }
 
-.fileira2 {
-  height: 50%;
-  width: 100%;
-  display: flex;
-  gap: 20px;
-}
-
+/* apenas isso modificado: agora 3 blocos */
 .recordacao {
   border: 3px outset yellow;
   height: 100%;
-  width: 50%;
+  width: 33.33%;
   background-color: #fff1bc;
   border-radius: 10px;
 }
@@ -141,24 +138,17 @@ header {
   margin-left: 10px;
 }
 
-.imagem_autor {
-  display: flex;
-  align-items: center;
-}
-
-.imagem_autor img{
+.imagem_autor img {
   width: 20px;
   border-radius: 50%;
 }
 
 .imagem_recordacao {
-
   display: flex;
   align-items: center;
-
 }
 
-.imagem_recordacao img{
+.imagem_recordacao img {
   width: 80%;
   border-radius: 10px;
   border: 2px outset purple;
@@ -175,23 +165,7 @@ header {
 }
 
 .icons img:hover {
-  scale: 1.1;
-}
-
-.interacoes img{
-  width: 20px;
-  transition: all 0.5s;
-}
-
-#interacoes {
-  margin-top: 5px;
-  display: none;
-  cursor: pointer;
-  margin-left: 5px;
-  gap: 5px;
-  width: min-content;
-  padding: 5px;
-  border-radius: 50px;
+  scale: 1.2;
 }
 
 #interacoes {
@@ -221,25 +195,14 @@ header {
   animation: aparecer 0.25s forwards ease;
 }
 
-#interacoes img:nth-child(1) { animation-delay: 0.05s; }
-#interacoes img:nth-child(2) { animation-delay: 0.10s; }
-#interacoes img:nth-child(3) { animation-delay: 0.15s; }
-#interacoes img:nth-child(4) { animation-delay: 0.20s; }
-
 #interacoes img:hover {
-  transform: scale(1.) translateY(-4px);
+  transform: scale(1.2) translateY(-4px);
   transition: 0.15s ease;
 }
 
 @keyframes aparecer {
-  0% {
-    opacity: 0;
-    transform: scale(0.6) translateY(8px);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1) translateY(0);
-  }
+  0% { opacity: 0; transform: scale(0.6) translateY(8px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
 }
 
 .confete {
@@ -253,12 +216,77 @@ header {
 }
 
 @keyframes cair {
-  0% {
-    transform: translateY(0) translateX(0) rotate(0deg);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(80px) translateX(calc(var(--deslocamento)*1px)) rotate(360deg);
+  0%   { transform: translateY(0) translateX(0) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(80px) translateX(calc(var(--deslocamento)*1px)) rotate(360deg); opacity: 0; }
+}
+
+
+.popup {
+  display: none; 
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.popup-conteudo {
+  background: white;
+  width: 400px;
+  padding: 25px;
+  border-radius: 15px;
+  font-family: DynaPuff;
+  color: #8f5fbb;
+  animation: popupAnimar 0.25s ease-out;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.popup-conteudo input,
+.popup-conteudo textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid #8f5fbb;
+  background-color: #f8eaff;
+  font-family: DynaPuff;
+}
+
+.popup-conteudo textarea {
+  resize: none;
+  height: 80px;
+}
+
+.popup-salvar {
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #dcc4f1;
+  border: 3px dashed #8f5fbb;
+  cursor: pointer;
+  font-family: DynaPuff;
+  color: #8f5fbb;
+}
+
+.popup-fechar {
+  font-size: 30px;
+  cursor: pointer;
+  float: right;
+  margin-top: -10px;
+  color: #8f5fbb;
+}
+
+@keyframes popupAnimar {
+  from {
+    transform: scale(0.6);
     opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
   }
 }
