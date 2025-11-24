@@ -14,3 +14,11 @@ model Postagem {
   data      DateTime @default(now())
   imagem    String?
 }
+
+model Alunos {
+  id        Int      @id @default(autoincrement())
+  nome     String?
+  numeroAluno     Int?
+  email String?
+  senha    String?
+}
