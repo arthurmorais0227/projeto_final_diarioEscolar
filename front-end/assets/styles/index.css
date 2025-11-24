@@ -237,8 +237,8 @@ header {
 
 .tooltip {
   position: absolute;
-  bottom: 60%;
-  left: 50%;
+  bottom: 110%;
+  left: 62%;
   transform: translate(-50%, 50%);
   background-color: #b296ca;
   color: white;
