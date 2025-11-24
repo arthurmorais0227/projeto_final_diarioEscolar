@@ -269,27 +269,88 @@ const botaoCriar = document.querySelector(".criar_memoria button");
 const popup = document.getElementById("popupCriar");
 const fechar = document.getElementById("fecharPopup");
 
-const inputImagem = document.querySelector("#popupCriar input[type='file']");
-const textareaDescricao = document.querySelector("#popupCriar textarea");
+const inputImagem = document.getElementById("inputImagem");
+const previewImagem = document.getElementById("previewImagem");
 
-function resetarCampos() {
+const descricao = document.getElementById("descricao");
+const contador = document.getElementById("contadorDesc");
+
+const btnSalvar = document.getElementById("salvarMemoria");
+
+
+// 🔹 Função para resetar o popup
+function resetarPopup() {
   inputImagem.value = "";
-  textareaDescricao.value = "";
+  previewImagem.src = "";
+  previewImagem.style.display = "none";
+
+  descricao.value = "";
+  contador.textContent = "0/100";
 }
 
+
+// 🔹 Abrir popup
 botaoCriar.addEventListener("click", () => {
   popup.style.display = "flex";
 });
 
-fechar.addEventListener("click", () => {
+
+// 🔹 Fechar popup
+function fecharPopup() {
   popup.style.display = "none";
-  resetarCampos();
-});
+  resetarPopup();
+}
 
+fechar.addEventListener("click", fecharPopup);
 popup.addEventListener("click", (e) => {
-  if (e.target === popup) {
-    popup.style.display = "none";
-    resetarCampos();
-  }
+  if (e.target === popup) fecharPopup();
 });
 
+
+// 🔹 Preview da imagem
+inputImagem.addEventListener("change", () => {
+  const arquivo = inputImagem.files[0];
+
+  if (!arquivo) {
+    previewImagem.style.display = "none";
+    return;
+  }
+
+  const url = URL.createObjectURL(arquivo);
+  previewImagem.src = url;
+  previewImagem.style.display = "block";
+});
+
+
+// 🔹 Contador de caracteres
+descricao.addEventListener("input", () => {
+  contador.textContent = `${descricao.value.length}/100`;
+});
+
+
+// 🔹 Botão salvar: envia ao backend
+btnSalvar.addEventListener("click", async () => {
+  const arquivo = inputImagem.files[0];
+  const texto = descricao.value;
+
+  if (!arquivo || texto.length === 0) {
+    alert("Preencha a imagem e a descrição!");
+    return;
+  }
+
+  const formData = new FormData();
+  formData.append("imagem", arquivo);
+  formData.append("descricao", texto);
+  formData.append("autor", "Arthur Morais"); // pode ser dinâmico
+
+  const resposta = await fetch("/api/postar", {
+    method: "POST",
+    body: formData
+  });
+
+  const resultado = await resposta.json();
+  console.log(resultado);
+
+  alert("Memória criada com sucesso!");
+  fecharPopup();
+});

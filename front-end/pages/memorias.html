@@ -152,19 +152,25 @@
     </div>
   </main>
   <div class="popup" id="popupCriar">
-    <div class="popup-conteudo">
-      <span class="popup-fechar" id="fecharPopup">&times;</span>
-      <h2>Criar Memória</h2>
+  <div class="popup-conteudo">
+    <span class="popup-fechar" id="fecharPopup">&times;</span>
 
-      <label>Imagem:</label>
-      <input type="file" accept="image/*">
+    <h2>Criar Memória</h2>
 
-      <label>Descrição (100 caracteres):</label>
-      <textarea placeholder="Digite uma descrição..." maxlength="100"></textarea>
+    <label>Imagem:</label>
+    <input type="file" id="inputImagem" accept="image/*">
 
-      <button class="popup-salvar">Salvar</button>
-    </div>
+    <!-- PREVIEW -->
+    <img id="previewImagem" style="display:none; width: 150px; margin-top: 10px; border-radius: 10px;">
+
+    <label>Descrição (100 caracteres):</label>
+    <textarea id="descricao" placeholder="Digite uma descrição..." maxlength="100"></textarea>
+    <p id="contadorDesc">0/100</p>
+
+    <button class="popup-salvar" id="salvarMemoria">Salvar</button>
   </div>
+</div>
+
   <script src="./../assets/js/script.js"></script>
 </body>
 
