@@ -1,0 +1,292 @@
+@import url("https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(250, 250, 239);
+}
+
+header {
+  background-color: #a890bf;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 20px;
+  font-family: DynaPuff;
+}
+
+.marca {
+  display: flex;
+  align-items: center;
+  margin-right: 30px;
+}
+
+.marca img {
+  height: 100px;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  gap: 0px;
+  padding-top: 30px;
+  align-items: center;
+}
+
+.menu a.menu-link {
+  width: 100px;
+  height: 36px;
+  color: white;
+  text-decoration: none;
+  font-size: 19px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  transition: transform 0.4s ease;
+}
+
+.menu a.menu-link:hover {
+  color: #fff1bc;
+  transform: scale(1.1);
+}
+
+.memorias_pai {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-image: radial-gradient(circle, #fff1bc, #f5b4b9);
+  padding-top: 50px;
+}
+
+.criar_memoria {
+  font-family: DynaPuff;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.criar_memoria button{
+  width: 130px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 3px dashed #8f5fbb;
+  background-color: #dcc4f1;
+  font-family: DynaPuff;
+  color: #8f5fbb;
+  cursor: pointer;
+} 
+
+.memorias {
+  width: 60%;
+  height: 100%;
+  gap: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.memorias_titulo {
+  display: flex;
+  justify-content: space-between;
+  font-family: DynaPuff;
+  color: #8f5fbb;
+  align-items: center;
+}
+
+.memoria_bloco {
+  width: 100%;
+  height: 650px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.fileira1, .fileira2 {
+  height: 50%;
+  width: 100%;
+  display: flex;
+  gap: 20px;
+}
+
+/* apenas isso modificado: agora 3 blocos */
+.recordacao {
+  border: 3px outset yellow;
+  height: 100%;
+  width: 33.33%;
+  background-color: #fff1bc;
+  border-radius: 10px;
+}
+
+.recordacao_titulo {
+  margin-top: 10px;
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.descricao {
+  margin-left: 10px;
+}
+
+.imagem_autor img {
+  width: 20px;
+  border-radius: 50%;
+}
+
+.imagem_recordacao {
+  display: flex;
+  align-items: center;
+}
+
+.imagem_recordacao img {
+  width: 80%;
+  border-radius: 10px;
+  border: 2px outset purple;
+  margin-left: 10px;
+}
+
+.icons img {
+  width: 20px;
+  cursor: pointer;
+  margin-left: 10px;
+  margin-top: 10px;
+  transition: all 0.5s;
+  margin-bottom: 10px;
+}
+
+.icons img:hover {
+  scale: 1.2;
+}
+
+#interacoes {
+  display: none;
+  position: relative;
+  backdrop-filter: blur(10px);
+  border-radius: 35px;
+  padding: 10px 12px;
+  gap: 10px;
+  align-items: center;
+  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.15);
+  transform: translateY(8px);
+  opacity: 0;
+  transition: all 0.25s ease;
+}
+
+#interacoes.mostrar {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#interacoes img {
+  width: 20px;
+  height: 20px;
+  opacity: 0;
+  transform: scale(0.6) translateY(8px);
+  animation: aparecer 0.25s forwards ease;
+}
+
+#interacoes img:hover {
+  transform: scale(1.2) translateY(-4px);
+  transition: 0.15s ease;
+}
+
+@keyframes aparecer {
+  0% { opacity: 0; transform: scale(0.6) translateY(8px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.confete {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: var(--cor);
+  border-radius: 2px;
+  pointer-events: none;
+  animation: cair 700ms ease-out forwards;
+}
+
+@keyframes cair {
+  0%   { transform: translateY(0) translateX(0) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(80px) translateX(calc(var(--deslocamento)*1px)) rotate(360deg); opacity: 0; }
+}
+
+
+.popup {
+  display: none; 
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.popup-conteudo {
+  background: white;
+  width: 400px;
+  padding: 25px;
+  border-radius: 15px;
+  font-family: DynaPuff;
+  color: #8f5fbb;
+  animation: popupAnimar 0.25s ease-out;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.popup-conteudo input,
+.popup-conteudo textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid #8f5fbb;
+  background-color: #f8eaff;
+  font-family: DynaPuff;
+}
+
+.popup-conteudo textarea {
+  resize: none;
+  height: 80px;
+}
+
+.popup-salvar {
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #dcc4f1;
+  border: 3px dashed #8f5fbb;
+  cursor: pointer;
+  font-family: DynaPuff;
+  color: #8f5fbb;
+}
+
+.popup-fechar {
+  font-size: 30px;
+  cursor: pointer;
+  float: right;
+  margin-top: -10px;
+  color: #8f5fbb;
+}
+
+@keyframes popupAnimar {
+  from {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

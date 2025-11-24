@@ -1,0 +1,210 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background-color: #fefdf6;
+}
+
+header {
+  background-color: #a890bf;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 20px;
+  font-family: DynaPuff;
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.marca {
+  display: flex;
+  align-items: center;
+  margin-right: 30px;
+}
+
+.marca img {
+  height: 100px;
+}
+
+.marca h1 {
+  font-size: 55px;
+  font-weight: bold;
+  font-family: Cinzel Decorative;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  gap: 0px;
+  padding-top: 30px;
+  align-items: center;
+}
+
+.menu a.login-link {
+  background-color: transparent;
+  width: auto;
+  height: auto;
+  padding: 0;
+}
+
+.menu a.login-link img.login {
+  width: 75px;
+  height: auto;
+}
+
+.menu a.menu-link {
+  width: 100px;
+  height: 36px;
+  color: white;
+  text-decoration: none;
+  font-size: 19px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  transition: transform 0.4s ease;
+}
+
+.menu a.menu-link:hover {
+  color: #fff1bc;
+  transform: scale(1.1);
+}
+
+footer {
+  margin-top: 200px;
+  background-color: #a890bf;
+  color: white;
+  padding: 15px 0;
+  margin-top: 50px;
+  font-family: DynaPuff;
+  border: 5px outset #9465c0;;
+}
+
+.titulo_footer {
+  padding-top: 60px;
+  font-size: 35px;
+  margin-bottom: 60px;
+  margin-left: 50px;
+  border-bottom: 2px solid #9465c0;
+  width: 650px;
+}
+
+.titulo_footer h1 {
+  margin-bottom: 10px;
+}
+
+.main_footer {
+  display: flex;
+  height: 200px;
+  gap: 30%;
+  margin-left: 50px;
+}
+
+.texto_botao {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  height: 100%;
+  width: 30%;
+}
+
+
+.texto_botao button {
+  width: 35%;
+  background-color: #f5b4b9;
+  border: none;
+  color: white;
+  font-size: 20px;
+  height: 55px;
+  font-family: DynaPuff;
+  border: 2px dashed #f58e97;
+}
+
+.texto p {
+  margin-bottom: 10px;
+}
+
+.contatos {
+  display: flex;
+  height: 100%;
+  width: 40%;
+  gap: 90px;
+}
+
+.fileira1, .fileira2 {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.fileira1 {
+  font-size: 17px;
+}
+
+.fileira2 {
+  color: #fff1bc;
+  font-family: Sour Gummy;
+}
+
+.logos_footer {
+  display: flex;
+  justify-content: end;
+  height: 100px;
+}
+
+.icones_footer {
+  margin-right: 100px;
+  height: 100%;
+  width: 20%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.icones_footer img {
+  height: 60px;
+  width: auto;
+
+}
+/* --- Estilo para docentes indisponíveis --- */
+
+.card-indisponivel {
+  position: relative;
+  transition: 0.3s ease;
+}
+
+/* Levantar + glow */
+.card-indisponivel:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 20px 5px rgba(143, 49, 226, 0.7);
+  border-radius: 15px;
+}
+
+/* Texto "Docente Indisponível" */
+.card-indisponivel::after {
+  content: "Docente Indisponível";
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  background: rgba(143, 49, 226, 0.85);
+  color: white;
+  padding: 8px 14px;
+  border-radius: 10px;
+  font-size: 15px;
+  opacity: 0;
+  transition: 0.3s ease;
+}
+
+/* Mostrar texto no hover */
+.card-indisponivel:hover::after {
+  opacity: 1;
+}

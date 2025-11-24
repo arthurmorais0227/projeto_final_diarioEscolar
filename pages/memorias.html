@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Memórias</title>
+  <link rel="stylesheet" href="/assets/styles/memorias.css" />
+  <link rel="stylesheet" href="/assets/styles/responsive.css" />
+  <link rel="icon" href="./assets/img/logo_claro.png" type="image/png">
+</head>
+
+<body>
+  <header>
+    <div class="marca">
+      <img src="/assets/img/logo_claro.png" alt="Logo dos Sitecrafters pixada com gotas de tinta na parede"
+        height="200" />
+    </div>
+    <div class="menu">
+      <div class="icones"></div>
+      <a href="/index.html" class="menu-link">Início</a>
+      <a href="/pages/memorias.html" class="menu-link">Memórias</a>
+      <a href="/pages/alunos.html" class="menu-link">Alunos</a>
+      <a href="/pages/docentes.html" class="menu-link login-link">Docentes</a>
+      <a href="/pages/login.html" class="menu-link">Login</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="memorias_pai">
+
+
+
+      <div class="memorias">
+
+        <div class="memorias_titulo">
+          <h1>Mural de Memórias</h1>
+          <div class="criar_memoria">
+            <button>+ Criar Memória</button>
+          </div>
+        </div>
+
+        <!-- BLOCO 1 -->
+        <div class="memoria_bloco">
+
+          <div class="fileira1">
+            <div class="recordacao">
+              <div class="recordacao_titulo">
+                <div class="imagem_autor">
+                  <img src="./../assets/img/alunos/arthur.png" alt="">
+                </div>
+                <div class="autor">
+                  <h3>Arthur Morais</h3>
+                </div>
+              </div>
+
+              <div class="imagem_recordacao">
+                <img src="./../assets/img/banco_fotos2/palhacada_gustavo.jpeg" alt="">
+              </div>
+
+              <div class="interacoes" id="interacoes">
+                <img src="./../assets/img/icons/heart.png" id="heart_option">
+                <img src="./../assets/img/icons/hands-clapping.png" id="hands_clapping">
+                <img src="./../assets/img/icons/laughing.png" id="laughing">
+                <img src="./../assets/img/icons/like.png" id="like">
+              </div>
+
+              <div class="icons">
+                <img src="./../assets/img/icons/heart.png" id="heart">
+              </div>
+
+              <div class="descricao">
+                <p>Fazendo palhaçada com o Gustavo kkkkk</p>
+              </div>
+            </div>
+
+            <div class="recordacao">
+              <p>m2</p>
+            </div>
+            <div class="recordacao">
+              <p>m3</p>
+            </div>
+          </div>
+
+          <div class="fileira2">
+            <div class="recordacao">
+              <p>m4</p>
+            </div>
+            <div class="recordacao">
+              <p>m5</p>
+            </div>
+            <div class="recordacao">
+              <p>m6</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- BLOCO 2 -->
+        <div class="memoria_bloco">
+          <div class="fileira1">
+            <div class="recordacao">
+              <p>m1</p>
+            </div>
+            <div class="recordacao">
+              <p>m2</p>
+            </div>
+            <div class="recordacao">
+              <p>m3</p>
+            </div>
+          </div>
+          <div class="fileira2">
+            <div class="recordacao">
+              <p>m4</p>
+            </div>
+            <div class="recordacao">
+              <p>m5</p>
+            </div>
+            <div class="recordacao">
+              <p>m6</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- BLOCO 3 -->
+        <div class="memoria_bloco">
+          <div class="fileira1">
+            <div class="recordacao">
+              <p>m1</p>
+            </div>
+            <div class="recordacao">
+              <p>m2</p>
+            </div>
+            <div class="recordacao">
+              <p>m3</p>
+            </div>
+          </div>
+          <div class="fileira2">
+            <div class="recordacao">
+              <p>m4</p>
+            </div>
+            <div class="recordacao">
+              <p>m5</p>
+            </div>
+            <div class="recordacao">
+              <p>m6</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+  <div class="popup" id="popupCriar">
+    <div class="popup-conteudo">
+      <span class="popup-fechar" id="fecharPopup">&times;</span>
+      <h2>Criar Memória</h2>
+
+      <label>Imagem:</label>
+      <input type="file" accept="image/*">
+
+      <label>Descrição (100 caracteres):</label>
+      <textarea placeholder="Digite uma descrição..." maxlength="100"></textarea>
+
+      <button class="popup-salvar">Salvar</button>
+    </div>
+  </div>
+  <script src="./../assets/js/script.js"></script>
+</body>
+
+</html>

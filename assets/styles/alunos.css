@@ -1,0 +1,375 @@
+@import url("https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(250, 250, 239);
+}
+
+header {
+  background-color: #a890bf;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 20px;
+  font-family: DynaPuff;
+}
+
+.marca {
+  display: flex;
+  align-items: center;
+  margin-right: 30px;
+}
+
+.marca img {
+  height: 100px;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  gap: 0px;
+  padding-top: 30px;
+  align-items: center;
+}
+
+.menu a.menu-link {
+  width: 100px;
+  height: 36px;
+  color: white;
+  text-decoration: none;
+  font-size: 19px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  transition: transform 0.4s ease;
+}
+
+.menu a.menu-link:hover {
+  color: #fff1bc;
+  transform: scale(1.1);
+}
+
+/* MAIN AGORA É 2 COLUNAS LADO A LADO */
+main.conteudo {
+  width: 100%;
+  min-height: calc(100vh - 150px);
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+/* --- ESQUERDA --- */
+.alunos_pai {
+  width: 100%;
+  background-image: radial-gradient(circle, #fff1bc, #f5b4b9);
+  padding-left: 20px;
+  padding-bottom: 30px;
+}
+
+.titulo_alunos {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: DynaPuff;
+  color: #9465c0;
+}
+
+.alunos_geral {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.aluno {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  background-color: #fff1bc;
+  padding: 10px;
+  border: 1px dashed #ffe37e;
+  border-radius: 10px;
+  font-family: DynaPuff;
+}
+
+.nome_aluno {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nome_aluno img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #5c3b6b;
+}
+
+.interacoes {
+  display: flex;
+  gap: 10px;
+}
+
+.int1,
+.int2 {
+  position: relative;
+  padding: 6px;
+  border-radius: 8px;
+}
+
+.int1 img,
+.int2 img {
+  width: 30px;
+}
+
+/* TOOLTIP */
+.tooltip {
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #5c3b6b;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 14px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.tooltip::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: #5c3b6b transparent transparent transparent;
+}
+
+.int1:hover .tooltip,
+.int2:hover .tooltip {
+  opacity: 1;
+}
+
+/* --- DIREITA (GRID) --- */
+
+.grid_pai {
+  background-image: radial-gradient(circle, #fff1bc, #f5b4b9);
+  display: flex;
+  flex-direction: column;
+  padding-left: 15px;
+  padding-bottom: 30px;
+}
+
+.grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  grid-gap: 2px;
+  grid-auto-rows: minmax(80px, auto);
+  grid-auto-flow: dense;
+  padding-right: 20px;
+}
+
+.grid_titulo{
+  font-family: DynaPuff;
+  justify-content: center;
+  display: flex;
+  width: 100%;
+  height: 100px;
+  align-items: center;
+  color: #9465c0;
+}
+
+.c-1 {
+  background: #1a535c;
+  color: #ddd;
+}
+
+.c-2 {
+  background: #4ecdc4;
+}
+
+.c-3 {
+  background: #bfd7ea;
+}
+
+.c-4 {
+  background: #ff6b6b;
+}
+
+.c-5 {
+  background: #ffe66d;
+}
+
+.card {
+  min-height: 100px;
+  background-size: cover;
+  background-position: 50% 50%;
+  border-radius: 10px;
+  border: 3px outset #9465c0;
+}
+
+.span-2 {
+  grid-column-end: span 2;
+  grid-row-end: span 2;
+  min-height: 200px;
+}
+
+.span-3 {
+  grid-column-end: span 3;
+  grid-row-end: span 3;
+  min-height: 400px;
+}
+
+footer {
+  background-color: #a890bf;
+  color: white;
+  padding: 15px 0;
+  font-family: DynaPuff;
+  border: 5px outset #9465c0;
+}
+
+.titulo_footer {
+  padding-top: 60px;
+  font-size: 35px;
+  margin-bottom: 60px;
+  margin-left: 50px;
+  border-bottom: 2px solid #9465c0;
+  width: 650px;
+}
+
+.titulo_footer h1 {
+  margin-bottom: 10px;
+}
+
+.main_footer {
+  display: flex;
+  height: 200px;
+  gap: 30%;
+  margin-left: 50px;
+}
+
+.texto_botao {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  height: 100%;
+  width: 30%;
+}
+
+
+.texto_botao button {
+  width: 35%;
+  background-color: #f5b4b9;
+  border: none;
+  color: white;
+  font-size: 20px;
+  height: 55px;
+  font-family: DynaPuff;
+  border: 2px dashed #f58e97;
+}
+
+.texto p {
+  margin-bottom: 10px;
+}
+
+.contatos {
+  display: flex;
+  height: 100%;
+  width: 40%;
+  gap: 90px;
+}
+
+.fileira1,
+.fileira2 {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.fileira1 {
+  font-size: 17px;
+}
+
+.fileira2 {
+  color: #fff1bc;
+  font-family: Sour Gummy;
+}
+
+.logos_footer {
+  display: flex;
+  justify-content: end;
+  height: 100px;
+}
+
+.icones_footer {
+  margin-right: 100px;
+  height: 100%;
+  width: 20%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.icones_footer img {
+  height: 60px;
+  width: auto;
+
+}
+
+#aviso-copiado {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #9465c0;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 12px;
+  font-family: DynaPuff;
+  font-size: 18px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 9999;
+}
+
+.copiado-popup {
+  position: absolute;
+  background-color: #9465c0;
+  color: white;
+  font-family: DynaPuff;
+  padding: 6px 12px;
+  font-size: 14px;
+  border-radius: 10px;
+  transform: translateY(10px);
+  opacity: 0;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  pointer-events: none;
+  z-index: 999;
+  white-space: nowrap;
+}
+
+.animar {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.7s ease-out;
+}
+
+.animar.mostrar {
+  opacity: 1;
+  transform: translateY(0);
+}
