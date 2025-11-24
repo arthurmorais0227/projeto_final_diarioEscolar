@@ -15,3 +15,10 @@ model Postagem {
 }
 
 
+model Alunos {
+  id        Int      @id @default(autoincrement())
+  nome     String?
+  numeroAluno     Int?
+  email String?
+  senha    String?
+}

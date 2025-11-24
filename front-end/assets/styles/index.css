@@ -238,8 +238,8 @@ header {
 .tooltip {
   position: absolute;
   bottom: 110%;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 62%;
+  transform: translate(-50%, 50%);
   background-color: #b296ca;
   color: white;
   padding: 8px 12px;
@@ -251,7 +251,10 @@ header {
   transition: opacity 0.3s ease;
   pointer-events: none;
   font-family: Sour Gummy;
-  margin-left: 50px;
+}
+
+.imagem-sunshine:hover .tooltip {
+  opacity: 1;
 }
 
 .villain {
