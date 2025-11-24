@@ -309,3 +309,39 @@ popup.addEventListener("click", (e) => {
   }
 });
 
+// ...existing code...
+(function () {
+  const indisponiveis = document.querySelectorAll('.img.indisponivel');
+
+  indisponiveis.forEach((container) => {
+    let popup = container.querySelector('.docente-popup');
+    if (!popup) {
+      popup = document.createElement('div');
+      popup.className = 'docente-popup';
+      popup.textContent = 'Docente Indisponível';
+      container.appendChild(popup);
+    }
+
+    let hideTimeout = null;
+
+    container.addEventListener('mouseenter', () => {
+      clearTimeout(hideTimeout);
+      container.classList.add('show-popup');
+    });
+
+    container.addEventListener('mouseleave', () => {
+      hideTimeout = setTimeout(() => {
+        container.classList.remove('show-popup');
+      }, 120);
+    });
+
+    container.addEventListener('click', (e) => {
+      e.stopPropagation();
+      clearTimeout(hideTimeout);
+      container.classList.add('show-popup');
+      hideTimeout = setTimeout(() => {
+        container.classList.remove('show-popup');
+      }, 2000);
+    });
+  });
+})();

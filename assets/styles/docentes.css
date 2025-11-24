@@ -396,5 +396,31 @@ footer {
 }
 
 
+.img.indisponivel {
+    position: relative;
+}
 
+.docente-popup {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0.95);
+    background: rgba(0,0,0,0.78);
+    color: #fff;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 160ms ease, transform 160ms ease;
+    white-space: nowrap;
+    z-index: 20;
+    text-align: center;
+}
+
+.img.indisponivel.show-popup .docente-popup {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
 
