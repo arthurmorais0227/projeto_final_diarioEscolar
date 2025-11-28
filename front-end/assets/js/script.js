@@ -171,6 +171,8 @@ document.addEventListener("DOMContentLoaded", () => {
     grid.appendChild(div);
     n++;
   }
+
+  
 });
 
 function criarAviso(elemento, mensagem) {
@@ -354,3 +356,7 @@ btnSalvar.addEventListener("click", async () => {
   alert("Memória criada com sucesso!");
   fecharPopup();
 });
+
+
+
+

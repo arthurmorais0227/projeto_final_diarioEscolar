@@ -80,12 +80,142 @@ header {
   transform: scale(1.1);
 }
 
+
+@media (max-width: 950px) {
+  .container {
+    grid-template-columns: 1fr;
+    padding: 20px;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+
+  .faq-question {
+    font-size: 16px;
+  }
+
+  .faq-toggle {
+    font-size: 26px;
+  }
+
+  .faq-answer {
+    font-size: 15px;
+    padding: 0px 15px;
+  }
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  color: #222;
+}
+
+.container {
+  align-items: center;
+  justify-content: center;
+  margin: 250px;
+  padding: 30px;
+  display: flex;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  color: #a890bf ;
+}
+
+.faq-item {
+  margin-bottom: 25px;
+  position: relative;
+  cursor: pointer;
+}
+
+.faq-question {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.faq-toggle {
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 30px;
+  line-height: 20px;
+  transition: 0.2s;
+  user-select: none;
+  color: #7878ff;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .4s ease;
+  margin-top: 10px;
+  background: #b8b8f5;
+  padding: 0px 20px; 
+  border-radius: 6px;
+  color: white;
+}
+
+.faq-answer.open {
+  padding: 20px;
+}
+
+.faq-answer ul {
+  padding-left: 18px;
+  line-height: 1.7em;
+  margin: 0;
+}
+
+.side {
+  text-align: center;
+}
+
+.side img {
+  width: 85%;
+  max-width: 450px;
+}
+
+.side p {
+  margin-top: 20px;
+  font-size: 18px;
+  line-height: 1.6em;
+  max-width: 450px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.credit {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #666;
+}
+
+.btn {
+  margin-top: 30px;
+  background: #b8b8f5;
+  padding: 18px 40px;
+  display: inline-block;
+  color: white;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  letter-spacing: 2px;
+  transition: 0.2s;
+  text-decoration: none;
+}
+
+.btn:hover {
+  opacity: 0.85;
+}
+
 footer {
   margin-top: 200px;
   background-color: #a890bf;
   color: white;
   padding: 15px 0;
-  margin-top: 50px;
+  margin-top: 40px;
   font-family: DynaPuff;
   border: 5px outset #9465c0;;
 }
@@ -174,4 +304,24 @@ footer {
   height: 60px;
   width: auto;
 
+}
+
+.faq-answer {
+  /* *** CHAVES PARA O FECHAMENTO/TRANSIÇÃO SUAVE *** */
+  max-height: 0; 
+  overflow: hidden;
+  transition: max-height .4s ease;
+  
+  /* ... Outras propriedades de estilo ... */
+  margin-top: 10px;
+  background: #b8b8f5;
+  padding: 0px 20px; 
+  border-radius: 6px;
+  color: white;
+}
+
+.faq-answer.open {
+  /* Esta classe é adicionada pelo JS */
+  padding: 20px; /* Altera o padding no estado aberto */
+  /* O max-height é definido pelo JavaScript */
 }
