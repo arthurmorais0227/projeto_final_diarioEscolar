@@ -268,6 +268,7 @@ footer {
 .button a  {
   text-decoration: none;
   cursor: pointer;
+  color: white;
 }
 
 .texto_botao {
