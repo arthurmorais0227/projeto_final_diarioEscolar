@@ -117,12 +117,37 @@ header {
 }
 
 /* apenas isso modificado: agora 3 blocos */
-.recordacao {
+.memorias_list {
+  /* layout em grid para exibir as memórias em 3 colunas (responsivo abaixo)
+     Os itens ('.recordacao') ajustarão seu tamanho automaticamente dentro do grid */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  align-items: start;
+  width: 100%;
+}
+
+/* regra mais específica para evitar sobrescritas por outros estilos */
+.memorias .memorias_list {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+}
+
+.memorias_list > .recordacao {
   border: 3px outset yellow;
-  height: 100%;
-  width: 33.33%;
   background-color: #fff1bc;
   border-radius: 10px;
+  box-sizing: border-box;
+  padding: 10px;
+  width: 100%;
+  height: auto; /* deixar o conteúdo determinar a altura */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.memorias_list > .recordacao:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.12);
 }
 
 .recordacao_titulo {
@@ -144,15 +169,42 @@ header {
 }
 
 .imagem_recordacao {
-  display: flex;
-  align-items: center;
+  display: block;
+  width: 100%;
+  height: 200px; /* altura fixa para cartões uniformes */
+  overflow: hidden;
+  border-radius: 10px;
 }
 
 .imagem_recordacao img {
-  width: 80%;
-  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* mantém o corte centralizado */
   border: 2px outset purple;
-  margin-left: 10px;
+  display: block;
+  margin: 0;
+}
+
+/* Responsividade: 2 colunas em telas médias, 1 coluna em telas pequenas */
+@media (max-width: 900px) {
+  .memorias_list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .memorias {
+    width: 90%; /* ocupa mais espaço em telas menores */
+  }
+}
+
+@media (max-width: 600px) {
+  .memorias_list {
+    grid-template-columns: 1fr;
+  }
+  .memorias {
+    width: 95%;
+  }
+  .imagem_recordacao img {
+    margin-left: 0;
+  }
 }
 
 .icons img {
