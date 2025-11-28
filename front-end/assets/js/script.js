@@ -267,95 +267,101 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-const botaoCriar = document.querySelector(".criar_memoria button");
-const popup = document.getElementById("popupCriar");
-const fechar = document.getElementById("fecharPopup");
+// Se estamos na página de memórias, o arquivo `script_memorias.js` já gerencia o popup e envio.
+// Para evitar handlers duplicados (dois autores aparecendo), só anexa estes listeners
+// caso NÃO estejamos na página de memórias.
+if (!document.getElementById('memoriasList')) {
+  const botaoCriar = document.querySelector(".criar_memoria button");
+  const popup = document.getElementById("popupCriar");
+  const fechar = document.getElementById("fecharPopup");
 
-const inputImagem = document.getElementById("inputImagem");
-const previewImagem = document.getElementById("previewImagem");
+  const inputImagem = document.getElementById("inputImagem");
+  const previewImagem = document.getElementById("previewImagem");
 
-const descricao = document.getElementById("descricao");
-const contador = document.getElementById("contadorDesc");
+  const descricao = document.getElementById("descricao");
+  const contador = document.getElementById("contadorDesc");
 
-const btnSalvar = document.getElementById("salvarMemoria");
+  const btnSalvar = document.getElementById("salvarMemoria");
 
+  // 🔹 Função para resetar o popup
+  function resetarPopup() {
+    if (inputImagem) inputImagem.value = "";
+    if (previewImagem) { previewImagem.src = ""; previewImagem.style.display = "none"; }
 
-// 🔹 Função para resetar o popup
-function resetarPopup() {
-  inputImagem.value = "";
-  previewImagem.src = "";
-  previewImagem.style.display = "none";
-
-  descricao.value = "";
-  contador.textContent = "0/100";
-}
-
-
-// 🔹 Abrir popup
-botaoCriar.addEventListener("click", () => {
-  popup.style.display = "flex";
-});
-
-
-// 🔹 Fechar popup
-function fecharPopup() {
-  popup.style.display = "none";
-  resetarPopup();
-}
-
-fechar.addEventListener("click", fecharPopup);
-popup.addEventListener("click", (e) => {
-  if (e.target === popup) fecharPopup();
-});
-
-
-// 🔹 Preview da imagem
-inputImagem.addEventListener("change", () => {
-  const arquivo = inputImagem.files[0];
-
-  if (!arquivo) {
-    previewImagem.style.display = "none";
-    return;
+    if (descricao) descricao.value = "";
+    if (contador) contador.textContent = "0/100";
   }
 
-  const url = URL.createObjectURL(arquivo);
-  previewImagem.src = url;
-  previewImagem.style.display = "block";
-});
-
-
-// 🔹 Contador de caracteres
-descricao.addEventListener("input", () => {
-  contador.textContent = `${descricao.value.length}/100`;
-});
-
-
-// 🔹 Botão salvar: envia ao backend
-btnSalvar.addEventListener("click", async () => {
-  const arquivo = inputImagem.files[0];
-  const texto = descricao.value;
-
-  if (!arquivo || texto.length === 0) {
-    alert("Preencha a imagem e a descrição!");
-    return;
+  // 🔹 Abrir popup
+  if (botaoCriar && popup) {
+    botaoCriar.addEventListener("click", () => {
+      popup.style.display = "flex";
+    });
   }
 
-  const formData = new FormData();
-  formData.append("imagem", arquivo);
-  formData.append("descricao", texto);
-  formData.append("autor", "Arthur Morais"); // pode ser dinâmico
+  // 🔹 Fechar popup
+  function fecharPopup() {
+    if (popup) popup.style.display = "none";
+    resetarPopup();
+  }
 
-  const resposta = await fetch("/api/postar", {
-    method: "POST",
-    body: formData
+  if (fechar) fechar.addEventListener("click", fecharPopup);
+  if (popup) popup.addEventListener("click", (e) => {
+    if (e.target === popup) fecharPopup();
   });
 
-  const resultado = await resposta.json();
-  console.log(resultado);
+  // 🔹 Preview da imagem
+  if (inputImagem && previewImagem) {
+    inputImagem.addEventListener("change", () => {
+      const arquivo = inputImagem.files[0];
 
-  alert("Memória criada com sucesso!");
-  fecharPopup();
-});
+      if (!arquivo) {
+        previewImagem.style.display = "none";
+        return;
+      }
+
+      const url = URL.createObjectURL(arquivo);
+      previewImagem.src = url;
+      previewImagem.style.display = "block";
+    });
+  }
+
+  // 🔹 Contador de caracteres
+  if (descricao && contador) {
+    descricao.addEventListener("input", () => {
+      contador.textContent = `${descricao.value.length}/100`;
+    });
+  }
+
+  // 🔹 Botão salvar: envia ao backend (comportamento antigo)
+  if (btnSalvar) {
+    btnSalvar.addEventListener("click", async () => {
+      const arquivo = inputImagem ? inputImagem.files[0] : null;
+      const texto = descricao ? descricao.value : '';
+
+      if (!arquivo || texto.length === 0) {
+        alert("Preencha a imagem e a descrição!");
+        return;
+      }
+
+      const formData = new FormData();
+      formData.append("imagem", arquivo);
+      formData.append("descricao", texto);
+      formData.append("autor", "Arthur Morais"); // pode ser dinâmico
+
+      const resposta = await fetch("/api/postar", {
+        method: "POST",
+        body: formData
+      });
+
+      const resultado = await resposta.json();
+      console.log(resultado);
+
+      alert("Memória criada com sucesso!");
+      fecharPopup();
+    });
+  }
+}
 
 
 

@@ -185,6 +185,17 @@ header {
   margin: 0;
 }
 
+/* lazy-load visual: imagem começa transparente e aparece ao carregar */
+.lazy-img {
+  opacity: 0;
+  transition: opacity 300ms ease-in-out, transform 300ms ease-in-out;
+  transform: translateY(6px);
+}
+.lazy-img.loaded {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* Responsividade: 2 colunas em telas médias, 1 coluna em telas pequenas */
 @media (max-width: 900px) {
   .memorias_list {

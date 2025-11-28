@@ -1,75 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Memórias</title>
+    <link rel="stylesheet" href="./../assets/styles/memorias.css" />
+    <link rel="stylesheet" href="/assets/styles/responsive.css" />
+    <link rel="icon" href="/assets/img/logo_claro.png" type="image/png" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Memórias</title>
-  <link rel="stylesheet" href="./../assets/styles/memorias.css" />
-  <link rel="stylesheet" href="/assets/styles/responsive.css" />
-  <link rel="icon" href="/assets/img/logo_claro.png" type="image/png">
-</head>
+  <body>
+    <header>
+      <div class="marca">
+        <img
+          src="/assets/img/logo_claro.png"
+          alt="Logo dos Sitecrafters pixada com gotas de tinta na parede"
+          height="200"
+        />
+      </div>
+      <div class="menu">
+        <div class="icones"></div>
+        <a href="/index.html" class="menu-link">Início</a>
+        <a href="/pages/memorias.html" class="menu-link">Memórias</a>
+        <a href="/pages/alunos.html" class="menu-link">Alunos</a>
+        <a href="/pages/docentes.html" class="menu-link login-link">Docentes</a>
+        <a href="/pages/login.html" class="menu-link">Login</a>
+      </div>
+    </header>
 
-<body>
-  <header>
-    <div class="marca">
-      <img src="/assets/img/logo_claro.png" alt="Logo dos Sitecrafters pixada com gotas de tinta na parede"
-        height="200" />
-    </div>
-    <div class="menu">
-      <div class="icones"></div>
-      <a href="/index.html" class="menu-link">Início</a>
-      <a href="/pages/memorias.html" class="menu-link">Memórias</a>
-      <a href="/pages/alunos.html" class="menu-link">Alunos</a>
-      <a href="/pages/docentes.html" class="menu-link login-link">Docentes</a>
-      <a href="/pages/login.html" class="menu-link">Login</a>
-    </div>
-  </header>
+    <main>
+      <div class="memorias_pai">
+        <div class="memorias">
+          <div class="memorias_titulo">
+            <h1>Mural de Memórias</h1>
+            <div style="display: flex; gap: 12px; align-items: center">
+              <input
+                id="filtroMemorias"
+                type="search"
+                placeholder="Pesquisar por id, autor ou descrição..."
+                style="
+                  padding: 8px 10px;
+                  border-radius: 8px;
+                  border: 1px solid #ccc;
+                  width: 320px;
+                "
+              />
+              <div class="criar_memoria">
+                <button id="abrirPopup">+ Criar Memória</button>
+              </div>
+            </div>
+          </div>
 
-  <main>
-    <div class="memorias_pai">
-
-
-
-      <div class="memorias">
-
-        <div class="memorias_titulo">
-          <h1>Mural de Memórias</h1>
-          <div class="criar_memoria">
-            <button>+ Criar Memória</button>
+          <!-- Container que será preenchido via JS com as memórias do back-end -->
+          <div id="memoriasList" class="memorias_list" aria-live="polite">
+            <!-- items serão injetados aqui -->
           </div>
         </div>
+      </div>
+    </main>
+    <div class="popup" id="popupCriar">
+      <div class="popup-conteudo">
+        <span class="popup-fechar" id="fecharPopup">&times;</span>
 
-        <!-- Container que será preenchido via JS com as memórias do back-end -->
-        <div id="memoriasList" class="memorias_list" aria-live="polite">
-          <!-- items serão injetados aqui -->
-        </div>
+        <h2>Criar Memória</h2>
 
+        <label>Autor:</label>
+        <input
+          type="text"
+          id="inputAutor"
+          placeholder="Seu nome (opcional)"
+          required
+        />
+
+        <label>Imagem:</label>
+        <input type="file" id="inputImagem" accept="image/*" />
+
+        <!-- PREVIEW -->
+        <img
+          id="previewImagem"
+          style="
+            display: none;
+            width: 150px;
+            margin-top: 10px;
+            border-radius: 10px;
+          "
+        />
+        <label>Descrição (100 caracteres):</label>
+        <textarea
+          id="descricao"
+          placeholder="Digite uma descrição..."
+          maxlength="100"
+        ></textarea>
+        <p id="contadorDesc">0/100</p>
+
+        <button class="popup-salvar" id="salvarMemoria">Salvar</button>
       </div>
     </div>
-  </main>
-  <div class="popup" id="popupCriar">
-  <div class="popup-conteudo">
-    <span class="popup-fechar" id="fecharPopup">&times;</span>
 
-    <h2>Criar Memória</h2>
-
-    <label>Imagem:</label>
-    <input type="file" id="inputImagem" accept="image/*">
-
-    <!-- PREVIEW -->
-    <img id="previewImagem" style="display:none; width: 150px; margin-top: 10px; border-radius: 10px;">
-
-    <label>Descrição (100 caracteres):</label>
-    <textarea id="descricao" placeholder="Digite uma descrição..." maxlength="100"></textarea>
-    <p id="contadorDesc">0/100</p>
-
-    <button class="popup-salvar" id="salvarMemoria">Salvar</button>
-  </div>
-</div>
-
-  <script src="./../assets/js/script.js"></script>
-  <script src="./../assets/js/script_memorias.js"></script>
-</body>
-
+    <script src="./../assets/js/script.js"></script>
+    <script src="./../assets/js/script_memorias.js"></script>
+  </body>
 </html>
