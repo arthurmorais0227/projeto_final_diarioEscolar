@@ -2,9 +2,9 @@ import * as PostagemModel from '../Models/postagemModel.js'
 
 export const listarTodos = async (req, res) => {
     try {
-        const limite = parseInt(req.query.limite) || 20;
+        // Se o cliente fornecer ?limite=N, usa esse limite; caso contrário retorna todas as postagens
+        const limite = req.query.limite ? parseInt(req.query.limite) : undefined;
         const postagens = await PostagemModel.encontreTodos();
-        const postagensFiltradas = postagens.slice(0, limite);
 
         if(!postagens || postagens.length === 0){
             res.status(404).json({
@@ -14,6 +14,8 @@ export const listarTodos = async (req, res) => {
             })
             return;
         }
+
+        const postagensFiltradas = typeof limite === 'number' && !isNaN(limite) ? postagens.slice(0, limite) : postagens;
 
         res.status(200).json({
             total: postagensFiltradas.length,
