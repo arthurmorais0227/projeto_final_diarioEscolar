@@ -99,9 +99,8 @@ console.log("Script carregado com sucesso!");
     }
   }
 
-
   document.addEventListener("DOMContentLoaded", () => {
-    // Lista de imagens da pasta banco_fotos2
+    // Lista de imagens do array
     let imagens = [
       "../assets/img/banco_fotos2/1000123118.jpeg",
       "../assets/img/banco_fotos2/1000138148.jpeg",
@@ -143,10 +142,10 @@ console.log("Script carregado com sucesso!");
       "../assets/img/banco_fotos2/WIN_20251009_13_59_14_Pro.jpg",
       "../assets/img/banco_fotos2/WIN_20251013_14_09_06_Pro.jpg",
       "../assets/img/banco_fotos2/WIN_20251017_08_05_08_Pro.jpg",
-      "../assets/img/banco_fotos2/WIN_20251017_14_13_11_Pro.jpg",
+      "../assets/img/banco_fotos2/WIN_20251017_14_13_11_Pro.jpg"
     ];
   
-    // Função para embaralhar o array de imagens (Fisher-Yates shuffle)
+    // Embaralhando as imagens (Fisher-Yates shuffle)
     function shuffleArray(array) {
       for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -155,10 +154,11 @@ console.log("Script carregado com sucesso!");
       return array;
     }
   
-    // Limita para 25 imagens
+    // Limita a quantidade de fotos para 25
     let maxFotos = 25;
-    imagens = shuffleArray(imagens).slice(0, maxFotos); // Embaralha as imagens e pega as primeiras 25
+    imagens = shuffleArray(imagens).slice(0, maxFotos); // Embaralha e pega as primeiras 25
   
+    // Obter o elemento da grid
     let grid = document.getElementById("grid");
     let n = 0;
   
@@ -166,17 +166,20 @@ console.log("Script carregado com sucesso!");
       let span = weightedRand({ 1: 0.7, 2: 0.2, 3: 0.1 });
       let color = weightedRand({ 1: 0.2, 2: 0.2, 3: 0.2, 4: 0.2, 5: 0.2 });
   
-      // Escolhe imagem única da lista embaralhada
+      // Pega a imagem correspondente do array
       let url = imagens[n];
   
+      // Cria uma nova div com a imagem
       let div = document.createElement("div");
       div.className = `card span-${span} c-${color}`;
-      div.style.backgroundImage = `url('${url}')`;
+      div.style.backgroundImage = `url('${url}')`;  // Define a imagem como background
   
+      // Adiciona a div na grid
       grid.appendChild(div);
       n++;
     }
   });
+  
 
 function criarAviso(elemento, mensagem) {
   const aviso = document.createElement("div");
