@@ -312,6 +312,27 @@ footer {
   margin-left: 50px;
 }
 
+.button {
+  width: 35%;
+  background-color: #f5b4b9;
+  border: none;
+  color: white;
+  font-size: 20px;
+  height: 55px;
+  font-family: DynaPuff;
+  border: 2px dashed #f58e97;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.button a  {
+  text-decoration: none;
+  cursor: pointer;
+}
+
 .texto_botao {
   display: flex;
   flex-direction: column;
