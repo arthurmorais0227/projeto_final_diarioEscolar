@@ -10,801 +10,801 @@ async function main() {
 
   await prisma.postagem.create({
     data: {
-      autor: "Ana Clara Cremasco Luiz",
-      descricao: "Estudando para a prova de matemática.",
-      imagem: "./assets/img/oberon.jpg",
+      autor: "Arhur Morais",
+      descricao: "Fazendo pose para a foto do github.",
+      imagem: "https://imgur.com/xmt2zAj",
     },
   });
 
   await prisma.postagem.create({
     data: {
-      autor: "Yasmin Crisostomo de Oliveira",
-      descricao: "Participando do projeto de ciências com a turma.",
-      imagem: "./assets/img/oberon.jpg",
+      autor: "Murilo Milan Brustolin",
+      descricao: "Eu, Arthur e Edu somos do Rock!.",
+      imagem: "https://imgur.com/kvaAXUS",
     },
   });
 
   await prisma.postagem.create({
     data: {
-      autor: "Danilo do Valle Marchiori Jorge",
-      descricao: "Apresentando um trabalho sobre sustentabilidade.",
-      imagem: "./assets/img/oberon.jpg",
+      autor: "Arthur Morais",
+      descricao: "Será que to com muita espinha??.",
+      imagem: "https://imgur.com/HbusjjJ",
     },
   });
 
   await prisma.postagem.create({
     data: {
-      autor: "Maria Eduarda Braga Ferreira",
-      descricao: "Fazendo anotações durante a aula de história.",
-      imagem: "./assets/img/oberon.jpg",
-    },
-  });
-
-  await prisma.postagem.create({
-    data: {
-      autor: "Maria Eduarda de Andrade",
-      descricao: "Revisando o conteúdo de português para o teste.",
-      imagem: "./assets/img/oberon.jpg",
+      autor: "Arthur Morais",
+      descricao: "Fica frio aí mano.",
+      imagem: "https://imgur.com/227tG0a",
     },
   });
 
   await prisma.postagem.create({
     data: {
       autor: "Gabriela Emi Yamamoto",
-      descricao: "Estudando em grupo na biblioteca da escola.",
-      imagem: "./assets/img/oberon.jpg",
+      descricao: "Eu, miotto e arthur fazendo trabalho aff.",
+      imagem: "https://imgur.com/0OWfbEi",
     },
   });
 
   await prisma.postagem.create({
     data: {
-      autor: "Julia Erlo Figueiredo de Miranda",
-      descricao: "Trabalhando no cartaz do projeto de arte.",
-      imagem: "./assets/img/oberon.jpg",
+      autor: "Gustavo Victor Ferreira",
+      descricao: "Eu e o Arthur recriando o poster de Memories of Murder.",
+      imagem: "https://imgur.com/JXnruxq",
     },
   });
 
   await prisma.postagem.create({
     data: {
-      autor: "Luiz Felipe",
-      descricao: "Participando de uma oficina de robótica.",
-      imagem: "./assets/img/oberon.jpg",
+      autor: "Arthur Morais",
+      descricao: "Eu e gustavo c cara de trouxa",
+      imagem: "https://imgur.com/lUPlO05",
     },
   });
 
   await prisma.postagem.create({
     data: {
-      autor: "Victor Ferreira de Oliveira",
-      descricao: "Fazendo exercícios de química para o simulado.",
-      imagem: "./assets/img/oberon.jpg",
+      autor: "Victor Ferreira",
+      descricao: "aiiiiaiiiiaiii cachorro html.",
+      imagem: "https://imgur.com/FYTA9VD",
     },
   });
 
   await prisma.postagem.create({
     data: {
-      autor: "Rebeca Gabrielly Moreira Alves",
-      descricao: "Organizando o caderno para a semana de provas.",
-      imagem: "./assets/img/oberon.jpg",
+      autor: "Gustavo Victor",
+      descricao: "A bang perfeitinha do gu.",
+      imagem: "https://imgur.com/f5uo8ng",
     },
   });
 
   await prisma.postagem.create({
     data: {
-      autor: "Emílio Henrique dos Santos Favoretto",
+      autor: "Murilo Brustolin",
+      descricao: "calças novas",
+      imagem: "https://imgur.com/Vuw97c9",
+    },
+  });
+
+  await prisma.postagem.create({
+    data: {
+      autor: "Victor Ferreira",
       descricao: "Estudando programação no laboratório de informática.",
-      imagem: "link_da_imagem_11.jpg",
-    },
-  });
-
-  await prisma.postagem.create({
-    data: {
-      autor: "Fabio Henrique Rabello Trevizolli",
-      descricao: "Apresentando o projeto de matemática com a equipe.",
-      imagem: "link_da_imagem_12.jpg",
-    },
-  });
-
-  await prisma.postagem.create({
-    data: {
-      autor: "Pedro Henrique Urbano Escapalete",
-      descricao: "Fazendo pesquisa para o trabalho de geografia.",
-      imagem: "link_da_imagem_13.jpg",
-    },
-  });
-
-  await prisma.postagem.create({
-    data: {
-      autor: "Yasmin Isabele Porto",
-      descricao: "Participando da feira de ciências da escola.",
-      imagem: "link_da_imagem_14.jpg",
+      imagem: "https://imgur.com/dg5mVzj",
     },
   });
 
   await prisma.postagem.create({
     data: {
       autor: "Bianca Luisa Teodoro Silva",
-      descricao: "Estudando gramática para a prova de português.",
-      imagem: "link_da_imagem_15.jpg",
+      descricao: "Tirando foto no banheiro rsrsrs",
+      imagem: "https://imgur.com/BPaIs2A",
     },
   });
 
   await prisma.postagem.create({
     data: {
-      autor: "Manuela Maestro",
-      descricao: "Organizando o material escolar para o novo bimestre.",
-      imagem: "link_da_imagem_16.jpg",
+      autor: "Bianca Luisa Teodoro Silva",
+      descricao: "Eu e meus pastéis",
+      imagem: "https://imgur.com/3JO9noM",
     },
   });
 
   await prisma.postagem.create({
     data: {
-      autor: "Murilo Milan Brustolin",
-      descricao: "Apresentando um seminário sobre literatura brasileira.",
-      imagem: "link_da_imagem_17.jpg",
-    },
-  });
-
-  await prisma.postagem.create({
-    data: {
-      autor: "Beatriz Miotto de Oliveira",
-      descricao: "Revisando os tópicos de biologia para o exame.",
-      imagem: "link_da_imagem_18.jpg",
-    },
-  });
-
-  await prisma.postagem.create({
-    data: {
-      autor: "Arthur Morais dos Santos",
-      descricao: "Escrevendo redação sobre meio ambiente.",
-      imagem: "link_da_imagem_19.jpg",
+      autor: "Bianca Luisa Teodoro Silva",
+      descricao: "Participando da feira de ciências da escola com meus pasteis.",
+      imagem: "https://imgur.com/oet5B39",
     },
   });
 
   await prisma.postagem.create({
     data: {
       autor: "Livia Oliveira Cruz",
-      descricao: "Estudando equações no reforço de matemática.",
-      imagem: "link_da_imagem_20.jpg",
+      descricao: "eu e a bia fazendo paaaaz",
+      imagem: "https://imgur.com/MEBtgcr",
     },
   });
 
   await prisma.postagem.create({
     data: {
-      autor: "Pedro Otávio de Andrade Braga",
-      descricao: "Fazendo um experimento de ciências no laboratório.",
-      imagem: "link_da_imagem_21.jpg",
+      autor: "Rebeca Gabrielly",
+      descricao: "Tirando foto no banheiro bem iconicas.",
+      imagem: "https://imgur.com/9vRkrit",
     },
   });
 
   await prisma.postagem.create({
     data: {
-      autor: "João Pedro Piva Nogueira",
-      descricao: "Lendo um livro de história para o trabalho em grupo.",
-      imagem: "link_da_imagem_22.jpg",
+      autor: "bianca luisa",
+      descricao: "Eu e a tsumoto.",
+      imagem: "https://imgur.com/bUXMq8E",
     },
   });
 
   await prisma.postagem.create({
     data: {
-      autor: "João Pedro Rodrigues Stopiglia",
-      descricao: "Criando uma apresentação sobre o sistema solar.",
-      imagem: "link_da_imagem_23.jpg",
-    },
-  });
-
-  await prisma.postagem.create({
-    data: {
-      autor: "Nicolly Rodrigues de Souza Santos",
-      descricao: "Fazendo um resumo para o estudo de geografia.",
-      imagem: "link_da_imagem_24.jpg",
-    },
-  });
-
-  await prisma.postagem.create({
-    data: {
-      autor: "Fernando Santos Evêncio da Silva",
-      descricao: "Pesquisando sobre revolução industrial para a aula.",
-      imagem: "link_da_imagem_25.jpg",
-    },
-  });
-
-  await prisma.postagem.create({
-    data: {
-      autor: "Rafael Santos Mendes",
-      descricao: "Estudando inglês com os colegas da turma.",
-      imagem: "link_da_imagem_26.jpg",
-    },
-  });
-
-  await prisma.postagem.create({
-    data: {
-      autor: "Gustavo Teixeira Lisboa",
-      descricao: "Organizando os slides do trabalho de química.",
-      imagem: "link_da_imagem_27.jpg",
-    },
-  });
-
-  await prisma.postagem.create({
-    data: {
-      autor: "Cauã Tupinambá Guimarães de Oliveira Pinto",
-      descricao: "Praticando cálculos de física para o simulado.",
-      imagem: "link_da_imagem_28.jpg",
-    },
-  });
-
-  await prisma.postagem.create({
-    data: {
-      autor: "João Victor da Silva Gomes",
-      descricao: "Participando da olimpíada de matemática.",
-      imagem: "link_da_imagem_29.jpg",
-    },
-  });
-
-  await prisma.postagem.create({
-    data: {
-      autor: "Gustavo Victor Ferreira",
-      descricao: "Anotando as explicações do professor de geografia.",
-      imagem: "link_da_imagem_30.jpg",
+      autor: "livia Oliveira",
+      descricao: "Sesi muuuuundo",
+      imagem: "https://imgur.com/ybt13lX",
     },
   });
 
   await prisma.postagem.create({
     data: {
       autor: "Daniel Casalli",
-      descricao: "Estudando história do Brasil para a prova final.",
-      imagem: "link_da_imagem_31.jpg",
-    },
-  });
-
-  await prisma.postagem.create({
-    data: {
-      autor: "Ana Clara Cremasco Luiz",
-      descricao: "Fazendo revisão para o exame de ciências.",
-      imagem: "link_da_imagem_32.jpg",
-    },
-  });
-
-  await prisma.postagem.create({
-    data: {
-      autor: "Yasmin Crisostomo de Oliveira",
-      descricao: "Montando cartaz sobre o meio ambiente.",
-      imagem: "link_da_imagem_33.jpg",
-    },
-  });
-
-  await prisma.postagem.create({
-    data: {
-      autor: "Danilo do Valle Marchiori Jorge",
-      descricao: "Fazendo resumo das aulas de português.",
-      imagem: "link_da_imagem_34.jpg",
-    },
-  });
-
-  await prisma.postagem.create({
-    data: {
-      autor: "Maria Eduarda Braga Ferreira",
-      descricao: "Trabalhando em equipe no projeto de história.",
-      imagem: "link_da_imagem_35.jpg",
-    },
-  });
-
-  await prisma.postagem.create({
-    data: {
-      autor: "Maria Eduarda de Andrade",
-      descricao: "Participando de grupo de estudos de matemática.",
-      imagem: "link_da_imagem_36.jpg",
-    },
-  });
-
-  await prisma.postagem.create({
-    data: {
-      autor: "Gabriela Emi Yamamoto",
-      descricao: "Lendo sobre a Segunda Guerra Mundial.",
-      imagem: "link_da_imagem_37.jpg",
-    },
-  });
-
-  await prisma.postagem.create({
-    data: {
-      autor: "Julia Erlo Figueiredo de Miranda",
-      descricao: "Estudando para o simulado de ciências humanas.",
-      imagem: "link_da_imagem_38.jpg",
-    },
-  });
-
-  await prisma.postagem.create({
-    data: {
-      autor: "Luiz Felipe",
-      descricao: "Pesquisando para o projeto de tecnologia.",
-      imagem: "link_da_imagem_39.jpg",
-    },
-  });
-
-  await prisma.postagem.create({
-    data: {
-      autor: "Victor Ferreira de Oliveira",
-      descricao: "Escrevendo relatório do experimento de física.",
-      imagem: "link_da_imagem_40.jpg",
-    },
-  });
-
-  await prisma.postagem.create({
-    data: {
-      autor: "Rebeca Gabrielly Moreira Alves",
-      descricao: "Fazendo atividade de leitura em grupo.",
-      imagem: "link_da_imagem_41.jpg",
-    },
-  });
-
-  await prisma.postagem.create({
-    data: {
-      autor: "Emílio Henrique dos Santos Favoretto",
-      descricao: "Montando maquete para o trabalho de geografia.",
-      imagem: "link_da_imagem_42.jpg",
-    },
-  });
-
-  await prisma.postagem.create({
-    data: {
-      autor: "Fabio Henrique Rabello Trevizolli",
-      descricao: "Praticando redação para o ENEM.",
-      imagem: "link_da_imagem_43.jpg",
-    },
-  });
-
-  await prisma.postagem.create({
-    data: {
-      autor: "Pedro Henrique Urbano Escapalete",
-      descricao: "Estudando o ciclo da água para a feira de ciências.",
-      imagem: "link_da_imagem_44.jpg",
-    },
-  });
-
-  await prisma.postagem.create({
-    data: {
-      autor: "Yasmin Isabele Porto",
-      descricao: "Revisando conteúdo de álgebra e geometria.",
-      imagem: "link_da_imagem_45.jpg",
-    },
-  });
-
-  await prisma.postagem.create({
-    data: {
-      autor: "Bianca Luisa Teodoro Silva",
-      descricao: "Apresentando poesia na aula de literatura.",
-      imagem: "link_da_imagem_46.jpg",
-    },
-  });
-
-  await prisma.postagem.create({
-    data: {
-      autor: "Manuela Maestro",
-      descricao: "Organizando um mural de curiosidades científicas.",
-      imagem: "link_da_imagem_47.jpg",
-    },
-  });
-
-  await prisma.postagem.create({
-    data: {
-      autor: "Murilo Milan Brustolin",
-      descricao: "Participando do clube de leitura da escola.",
-      imagem: "link_da_imagem_48.jpg",
-    },
-  });
-
-  await prisma.postagem.create({
-    data: {
-      autor: "Beatriz Miotto de Oliveira",
-      descricao: "Anotando fórmulas importantes de química.",
-      imagem: "link_da_imagem_49.jpg",
-    },
-  });
-
-  await prisma.postagem.create({
-    data: {
-      autor: "Arthur Morais dos Santos",
-      descricao: "Ajudando colegas com dúvidas de matemática.",
-      imagem: "link_da_imagem_50.jpg",
-    },
-  });
-
-  await prisma.postagem.create({
-    data: {
-      autor: "Livia Oliveira Cruz",
-      descricao: "Estudando biomas brasileiros para a prova.",
-      imagem: "link_da_imagem_51.jpg",
-    },
-  });
-
-  await prisma.postagem.create({
-    data: {
-      autor: "Pedro Otávio de Andrade Braga",
-      descricao: "Criando gráfico para o trabalho de estatística.",
-      imagem: "link_da_imagem_52.jpg",
-    },
-  });
-
-  await prisma.postagem.create({
-    data: {
-      autor: "João Pedro Piva Nogueira",
-      descricao: "Desenvolvendo apresentação sobre energia limpa.",
-      imagem: "link_da_imagem_53.jpg",
-    },
-  });
-
-  await prisma.postagem.create({
-    data: {
-      autor: "João Pedro Rodrigues Stopiglia",
-      descricao: "Estudando os períodos da história antiga.",
-      imagem: "link_da_imagem_54.jpg",
-    },
-  });
-
-  await prisma.postagem.create({
-    data: {
-      autor: "Nicolly Rodrigues de Souza Santos",
-      descricao: "Escrevendo texto sobre cidadania e ética.",
-      imagem: "link_da_imagem_55.jpg",
-    },
-  });
-
-  await prisma.postagem.create({
-    data: {
-      autor: "Fernando Santos Evêncio da Silva",
-      descricao: "Pesquisando invenções da revolução científica.",
-      imagem: "link_da_imagem_56.jpg",
-    },
-  });
-
-  await prisma.postagem.create({
-    data: {
-      autor: "Rafael Santos Mendes",
-      descricao: "Resolvendo exercícios de geometria plana.",
-      imagem: "link_da_imagem_57.jpg",
-    },
-  });
-
-  await prisma.postagem.create({
-    data: {
-      autor: "Gustavo Teixeira Lisboa",
-      descricao: "Ajudando na organização da gincana escolar.",
-      imagem: "link_da_imagem_58.jpg",
-    },
-  });
-
-  await prisma.postagem.create({
-    data: {
-      autor: "Cauã Tupinambá Guimarães de Oliveira Pinto",
-      descricao: "Revisando tópicos de biologia celular.",
-      imagem: "link_da_imagem_59.jpg",
-    },
-  });
-
-  await prisma.postagem.create({
-    data: {
-      autor: "João Victor da Silva Gomes",
-      descricao: "Lendo sobre a história da arte no renascimento.",
-      imagem: "link_da_imagem_60.jpg",
-    },
-  });
-
-  await prisma.postagem.create({
-    data: {
-      autor: "Gustavo Victor Ferreira",
-      descricao: "Participando de oficina de ciências ambientais.",
-      imagem: "link_da_imagem_61.jpg",
+      descricao: "eu de perto rs.",
+      imagem: "https://imgur.com/eAkc4Xe",
     },
   });
 
   await prisma.postagem.create({
     data: {
       autor: "Daniel Casalli",
-      descricao: "Apresentando seminário sobre ecossistemas.",
-      imagem: "link_da_imagem_62.jpg",
+      descricao: "eu e a miotto na aulinha top do thiago.",
+      imagem: "https://imgur.com/oR7ENyp",
     },
   });
 
   await prisma.postagem.create({
     data: {
-      autor: "Ana Clara Cremasco Luiz",
-      descricao: "Fazendo relatório da aula de laboratório.",
-      imagem: "link_da_imagem_63.jpg",
-    },
-  });
-
-  await prisma.postagem.create({
-    data: {
-      autor: "Yasmin Crisostomo de Oliveira",
-      descricao: "Desenhando cartaz educativo sobre reciclagem.",
-      imagem: "link_da_imagem_64.jpg",
+      autor: "daniel Casalli",
+      descricao: "you are my sunshine my only sunshine.",
+      imagem: "https://imgur.com/IROAAxX",
     },
   });
 
   await prisma.postagem.create({
     data: {
       autor: "Danilo do Valle Marchiori Jorge",
-      descricao: "Estudando expressões algébricas.",
-      imagem: "link_da_imagem_65.jpg",
+      descricao: "eu e a porto no jóia.",
+      imagem: "https://imgur.com/oBD3GHL",
     },
   });
 
   await prisma.postagem.create({
     data: {
-      autor: "Maria Eduarda Braga Ferreira",
-      descricao: "Lendo capítulo do livro de biologia.",
-      imagem: "link_da_imagem_66.jpg",
+      autor: "Emilio Henrique",
+      descricao: "emilio.",
+      imagem: "https://imgur.com/nJotLX3",
     },
   });
 
   await prisma.postagem.create({
     data: {
-      autor: "Maria Eduarda de Andrade",
-      descricao: "Escrevendo texto dissertativo sobre educação.",
-      imagem: "link_da_imagem_67.jpg",
-    },
-  });
-
-  await prisma.postagem.create({
-    data: {
-      autor: "Gabriela Emi Yamamoto",
-      descricao: "Montando slides sobre a fotossíntese.",
-      imagem: "link_da_imagem_68.jpg",
-    },
-  });
-
-  await prisma.postagem.create({
-    data: {
-      autor: "Julia Erlo Figueiredo de Miranda",
-      descricao: "Participando de competição de conhecimentos gerais.",
-      imagem: "link_da_imagem_69.jpg",
-    },
-  });
-
-  await prisma.postagem.create({
-    data: {
-      autor: "Luiz Felipe",
-      descricao: "Trabalhando com mapas na aula de geografia.",
-      imagem: "link_da_imagem_70.jpg",
-    },
-  });
-
-  await prisma.postagem.create({
-    data: {
-      autor: "Victor Ferreira de Oliveira",
-      descricao: "Analisando dados para o trabalho de estatística.",
-      imagem: "link_da_imagem_71.jpg",
-    },
-  });
-
-  await prisma.postagem.create({
-    data: {
-      autor: "Rebeca Gabrielly Moreira Alves",
-      descricao: "Praticando leitura de textos em inglês.",
-      imagem: "link_da_imagem_72.jpg",
-    },
-  });
-
-  await prisma.postagem.create({
-    data: {
-      autor: "Emílio Henrique dos Santos Favoretto",
-      descricao: "Fazendo atividade sobre movimentos literários.",
-      imagem: "link_da_imagem_73.jpg",
-    },
-  });
-
-  await prisma.postagem.create({
-    data: {
-      autor: "Fabio Henrique Rabello Trevizolli",
-      descricao: "Revisando tabela periódica para o teste.",
-      imagem: "link_da_imagem_74.jpg",
-    },
-  });
-
-  await prisma.postagem.create({
-    data: {
-      autor: "Pedro Henrique Urbano Escapalete",
-      descricao: "Anotando fórmulas de física clássica.",
-      imagem: "link_da_imagem_75.jpg",
-    },
-  });
-
-  await prisma.postagem.create({
-    data: {
-      autor: "Yasmin Isabele Porto",
-      descricao: "Criando resumos para estudar na semana de provas.",
-      imagem: "link_da_imagem_76.jpg",
-    },
-  });
-
-  await prisma.postagem.create({
-    data: {
-      autor: "Bianca Luisa Teodoro Silva",
-      descricao: "Montando cartaz sobre cultura indígena.",
-      imagem: "link_da_imagem_77.jpg",
-    },
-  });
-
-  await prisma.postagem.create({
-    data: {
-      autor: "Manuela Maestro",
-      descricao: "Estudando para o simulado de ciências da natureza.",
-      imagem: "link_da_imagem_78.jpg",
-    },
-  });
-
-  await prisma.postagem.create({
-    data: {
-      autor: "Murilo Milan Brustolin",
-      descricao: "Desenhando gráficos para o trabalho de matemática.",
-      imagem: "link_da_imagem_79.jpg",
-    },
-  });
-
-  await prisma.postagem.create({
-    data: {
-      autor: "Beatriz Miotto de Oliveira",
-      descricao: "Trabalhando com maquetes em artes visuais.",
-      imagem: "link_da_imagem_80.jpg",
-    },
-  });
-
-  await prisma.postagem.create({
-    data: {
-      autor: "Arthur Morais dos Santos",
-      descricao: "Resolvendo questões de física moderna.",
-      imagem: "link_da_imagem_81.jpg",
-    },
-  });
-
-  await prisma.postagem.create({
-    data: {
-      autor: "Livia Oliveira Cruz",
-      descricao: "Participando do grupo de estudos de literatura.",
-      imagem: "link_da_imagem_82.jpg",
+      autor: "Livia Oliveira",
+      descricao: "Felipe dev atento.",
+      imagem: "https://imgur.com/AIwnjZu",
     },
   });
 
   await prisma.postagem.create({
     data: {
       autor: "Pedro Otávio de Andrade Braga",
-      descricao: "Criando apresentação sobre biodiversidade.",
-      imagem: "link_da_imagem_83.jpg",
+      descricao: "trabalhando fazendo pasteis igual um condenado",
+      imagem: "https://imgur.com/JXnCMuD",
     },
   });
 
   await prisma.postagem.create({
     data: {
-      autor: "João Pedro Piva Nogueira",
-      descricao: "Estudando geopolítica mundial.",
-      imagem: "link_da_imagem_84.jpg",
+      autor: "Beatriz Miotto de Oliveira",
+      descricao: "eu e os sitecrafters codando",
+      imagem: "https://imgur.com/0OWfbEi",
     },
   });
 
   await prisma.postagem.create({
     data: {
-      autor: "João Pedro Rodrigues Stopiglia",
-      descricao: "Lendo reportagem sobre inovação na educação.",
-      imagem: "link_da_imagem_85.jpg",
-    },
-  });
-
-  await prisma.postagem.create({
-    data: {
-      autor: "Ana Clara Cremasco Luiz",
-      descricao: "",
-      imagem: "link_da_imagem_86.jpg",
-    },
-  });
-
-  await prisma.postagem.create({
-    data: {
-      autor: "Yasmin Crisostomo de Oliveira",
-      descricao: "",
-      imagem: "link_da_imagem_87.jpg",
-    },
-  });
-
-  await prisma.postagem.create({
-    data: {
-      autor: "Danilo do Valle Marchiori Jorge",
-      descricao: "",
-      imagem: "link_da_imagem_88.jpg",
-    },
-  });
-
-  await prisma.postagem.create({
-    data: {
-      autor: "Maria Eduarda Braga Ferreira",
-      descricao: "",
-      imagem: "link_da_imagem_89.jpg",
-    },
-  });
-
-  await prisma.postagem.create({
-    data: {
-      autor: "Maria Eduarda de Andrade",
-      descricao: "",
-      imagem: "link_da_imagem_90.jpg",
+      autor: "Fernando Santos Evêncio da Silva",
+      descricao: "codando c meus dois amores rs",
+      imagem: "https://imgur.com/Rd69wUT",
     },
   });
 
   await prisma.postagem.create({
     data: {
       autor: "Gabriela Emi Yamamoto",
-      descricao: "",
-      imagem: "link_da_imagem_91.jpg",
+      descricao: "comendo",
+      imagem: "https://imgur.com/qIktUI2",
     },
   });
 
   await prisma.postagem.create({
     data: {
-      autor: "Julia Erlo Figueiredo de Miranda",
-      descricao: "",
-      imagem: "link_da_imagem_92.jpg",
+      autor: "Gabriela Emi Yamamoto",
+      descricao: "instalação SO",
+      imagem: "https://imgur.com/CJB9VoY",
+    },
+  });
+
+  await prisma.postagem.create({
+    data: {
+      autor: "Fábio Henrique Rabello Trevizolli",
+      descricao: "recriando o poster de Clube dos 5",
+      imagem: "https://imgur.com/cbQ2iUW",
+    },
+  });
+
+  await prisma.postagem.create({
+    data: {
+      autor: "Gustavo Teixeira Lisboa",
+      descricao: "só codar codar codar e codar.",
+      imagem: "https://imgur.com/KFZfr7S",
+    },
+  });
+
+  await prisma.postagem.create({
+    data: {
+      autor: "Arthur Morais",
+      descricao: "eu, gu e sunshine",
+      imagem: "https://imgur.com/cRljj76",
+    },
+  });
+
+  await prisma.postagem.create({
+    data: {
+      autor: "Arthur Morais",
+      descricao: "eu e o gu fazendo palhaçada",
+      imagem: "https://imgur.com/uxwYOo4",
+    },
+  });
+
+  await prisma.postagem.create({
+    data: {
+      autor: "Gustavo Victor",
+      descricao: "não aguento mais só codar html",
+      imagem: "https://imgur.com/ljIAqhr",
+    },
+  });
+
+  await prisma.postagem.create({
+    data: {
+      autor: "Gustavo Victor",
+      descricao: "Meu talento é ser P.O",
+      imagem: "https://imgur.com/MwsxVfl",
+    },
+  });
+
+  await prisma.postagem.create({
+    data: {
+      autor: "Gustavo Victor",
+      descricao: "Fica frio aí arthur",
+      imagem: "https://imgur.com/24jKRBX",
+    },
+  });
+
+  await prisma.postagem.create({
+    data: {
+      autor: "Gustavo Victor",
+      descricao: "o mistério dos pastéis",
+      imagem: "https://imgur.com/6ymct3E",
+    },
+  });
+
+  await prisma.postagem.create({
+    data: {
+      autor: "Gustavo Victor Ferreira",
+      descricao: "diálogo com o pedro ",
+      imagem: "https://imgur.com/7dCvnBV",
+    },
+  });
+
+  await prisma.postagem.create({
+    data: {
+      autor: "Joao Stopiglia",
+      descricao: "henrico só com o pokémon",
+      imagem: "https://imgur.com/Iz3Jr5G",
+    },
+  });
+
+  await prisma.postagem.create({
+    data: {
+      autor: "Arthur Morais",
+      descricao: "instalando manjaro no SENAI",
+      imagem: "https://imgur.com/SuElxjI",
+    },
+  });
+
+  await prisma.postagem.create({
+    data: {
+      autor: "Maria Eduarda de Andrade",
+      descricao: "rock",
+      imagem: "https://imgur.com/VzXFLmf",
     },
   });
 
   await prisma.postagem.create({
     data: {
       autor: "Luiz Felipe",
-      descricao: "",
-      imagem: "link_da_imagem_93.jpg",
+      descricao: "eu e o jão ",
+      imagem: "https://imgur.com/2Y2hiA5",
     },
   });
 
   await prisma.postagem.create({
     data: {
-      autor: "Victor Ferreira de Oliveira",
-      descricao: "",
-      imagem: "link_da_imagem_94.jpg",
-    },
-  });
-
-  await prisma.postagem.create({
-    data: {
-      autor: "Rebeca Gabrielly Moreira Alves",
-      descricao: "",
-      imagem: "link_da_imagem_95.jpg",
-    },
-  });
-
-  await prisma.postagem.create({
-    data: {
-      autor: "Emílio Henrique dos Santos Favoretto",
-      descricao: "",
-      imagem: "link_da_imagem_96.jpg",
-    },
-  });
-
-  await prisma.postagem.create({
-    data: {
-      autor: "Fabio Henrique Rabello Trevizolli",
-      descricao: "",
-      imagem: "link_da_imagem_97.jpg",
+      autor: "João Stopiglia",
+      descricao: "Eu e a duuuuuda",
+      imagem: "https://imgur.com/oFy2nVC",
     },
   });
 
   await prisma.postagem.create({
     data: {
       autor: "Pedro Henrique Urbano Escapalete",
-      descricao: "",
-      imagem: "link_da_imagem_98.jpg",
+      descricao: "garrafa, joao e eu",
+      imagem: "https://imgur.com/lGuaCsA",
     },
   });
 
   await prisma.postagem.create({
     data: {
-      autor: "Yasmin Isabele Porto",
-      descricao: "",
-      imagem: "link_da_imagem_99.jpg",
+      autor: "Beatriz Miotto de Oliveira",
+      descricao: "fazendo biquinho na biblio",
+      imagem: "https://imgur.com/tmEEZ5R",
+    },
+  });
+
+  await prisma.postagem.create({
+    data: {
+      autor: "Gustavo teixeira Lisboa",
+      descricao: "Fazendo trabalho de pokemon",
+      imagem: "https://imgur.com/CPClVY8",
     },
   });
 
   await prisma.postagem.create({
     data: {
       autor: "Bianca Luisa Teodoro Silva",
-      descricao: "",
-      imagem: "link_da_imagem_100.jpg",
+      descricao: "Estou andando",
+      imagem: "https://imgur.com/xyTsQkq",
+    },
+  });
+
+  await prisma.postagem.create({
+    data: {
+      autor: "Beatriz Miotto de Oliveira",
+      descricao: "Com elas!!",
+      imagem: "https://imgur.com/vi34gKW",
+    },
+  });
+
+  await prisma.postagem.create({
+    data: {
+      autor: "Livia Oliveira Cruz",
+      descricao: "Com a minha metadinha eu me sinto tão segurinha",
+      imagem: "https://imgur.com/mN0kDq6",
+    },
+  });
+
+  await prisma.postagem.create({
+    data: {
+      autor: "Arthur Morais dos Santos",
+      descricao: "fazendo meu filme fav c o guuu",
+      imagem: "https://imgur.com/JXnruxq",
+    },
+  });
+
+  await prisma.postagem.create({
+    data: {
+      autor: "Livia Oliveira Cruz",
+      descricao: "Eu e a assombração",
+      imagem: "https://imgur.com/aJOEVjw",
+    },
+  });
+
+  await prisma.postagem.create({
+    data: {
+      autor: "Livia Oliveira Cruz",
+      descricao: "Mexendo no cardapio da minha pastelaria",
+      imagem: "https://imgur.com/mVVK4fo",
+    },
+  });
+
+  await prisma.postagem.create({
+    data: {
+      autor: "Luiz Felipe",
+      descricao: "?",
+      imagem: "https://imgur.com/V4mZvQI",
+    },
+  });
+
+  await prisma.postagem.create({
+    data: {
+      autor: "Livia Oliveira Cruz",
+      descricao: "Tatuagem inguaissss",
+      imagem: "https://imgur.com/pW7K0UM",
+    },
+  });
+
+  await prisma.postagem.create({
+    data: {
+      autor: "Daniel Casalli",
+      descricao: "Olhar de fallen angel",
+      imagem: "https://imgur.com/2f92e14",
+    },
+  });
+
+  await prisma.postagem.create({
+    data: {
+      autor: "Luiz Felipe",
+      descricao: "livia tirou foto nossa",
+      imagem: "https://imgur.com/ZLuHMRp",
+    },
+  });
+
+  await prisma.postagem.create({
+    data: {
+      autor: "Luiz Felipe",
+      descricao: "vendo as notas eita",
+      imagem: "https://imgur.com/ofdsedO",
+    },
+  });
+
+  await prisma.postagem.create({
+    data: {
+      autor: "Luiz Felipe",
+      descricao: "olho de peixe c o piva e a yasmin",
+      imagem: "https://imgur.com/7o5DzwX",
+    },
+  });
+
+  await prisma.postagem.create({
+    data: {
+      autor: "Bianca Luisa Teodoro Silva",
+      descricao: "Fazendo pose com as girls no auditório",
+      imagem: "https://imgur.com/O7L7va1",
+    },
+  });
+
+  await prisma.postagem.create({
+    data: {
+      autor: "Beatriz Miotto de Oliveira",
+      descricao: "fazendo beijo c a bibis",
+      imagem: "https://imgur.com/lbkJpSt",
+    },
+  });
+
+  await prisma.postagem.create({
+    data: {
+      autor: "Beatriz Miotto",
+      descricao: "Formatando pc no laboratório",
+      imagem: "https://imgur.com/1F0OkxK",
+    },
+  });
+
+  await prisma.postagem.create({
+    data: {
+      autor: "Rafael Santos Mendes",
+      descricao: "mesa dos goats.",
+      imagem: "https://imgur.com/wmaJDkx",
+    },
+  });
+
+  await prisma.postagem.create({
+    data: {
+      autor: "Murilo Milan Brustolin",
+      descricao: "recriando o poster de Stranger Things com o edu",
+      imagem: "https://imgur.com/a/Vz7v1BW#pegYGN6",
+    },
+  });
+
+  await prisma.postagem.create({
+    data: {
+      autor: "Joao Pedro Piva Nogueira",
+      descricao: "farmando aura",
+      imagem: "https://imgur.com/2mZyDGP",
+    },
+  });
+
+  await prisma.postagem.create({
+    data: {
+      autor: "João Pedro Piva Nogueira",
+      descricao: "Fazendo massagem no fernando",
+      imagem: "https://imgur.com/dvZuetd",
+    },
+  });
+
+  await prisma.postagem.create({
+    data: {
+      autor: "Livia oliveira Cruz",
+      descricao: "piva sendo piva.",
+      imagem: "https://imgur.com/9IjIDNl",
+    },
+  });
+
+  await prisma.postagem.create({
+    data: {
+      autor: "Livia Oliveira Cruz",
+      descricao: "recriando cena do clube dos 5 com os dois patetas",
+      imagem: "https://imgur.com/a/Vz7v1BW#PX0Yacs",
+    },
+  });
+
+  await prisma.postagem.create({
+    data: {
+      autor: "Fabio Henrique Rabello Trevizolli",
+      descricao: "recriando o poster de ET",
+      imagem: "https://imgur.com/SEEySTd",
+    },
+  });
+
+  await prisma.postagem.create({
+    data: {
+      autor: "Murilo Milan Brustolin",
+      descricao: "buuuuuu",
+      imagem: "https://imgur.com/fG5P1wV",
+    },
+  });
+
+  await prisma.postagem.create({
+    data: {
+      autor: "João Victor Gomes de Souza",
+      descricao: "Foto com a tropa",
+      imagem: "https://imgur.com/tmDfDQo",
+    },
+  });
+
+  await prisma.postagem.create({
+    data: {
+      autor: "Victor Ferreira de Oliveira",
+      descricao: "joia, login e muito codigo",
+      imagem: "https://imgur.com/BsHgyST",
+    },
+  });
+
+  await prisma.postagem.create({
+    data: {
+      autor: "Gustavo Victor Ferreira",
+      descricao: "Cachorro aiiaiaiaiaiai",
+      imagem: "https://imgur.com/FYTA9VD",
+    },
+  });
+
+  await prisma.postagem.create({
+    data: {
+      autor: "Emílio Henrique dos Santos Favoretto",
+      descricao: "sala 1tds1",
+      imagem: "https://imgur.com/XpCHDCL",
+    },
+  });
+
+  await prisma.postagem.create({
+    data: {
+      autor: "Fabio Henrique Rabello Trevizolli",
+      descricao: "beijinho com o tupi",
+      imagem: "https://imgur.com/OyjPFIm",
+    },
+  });
+
+  await prisma.postagem.create({
+    data: {
+      autor: "Pedro Henrique Urbano Escapalete",
+      descricao: "mesa dos goats by tupi",
+      imagem: "https://imgur.com/DrMYmHv",
+    },
+  });
+
+  await prisma.postagem.create({
+    data: {
+      autor: "Murilo Milan Brustolin",
+      descricao: "preciso urgentemente de uma calça nova",
+      imagem: "https://imgur.com/Vuw97c9",
+    },
+  });
+
+  await prisma.postagem.create({
+    data: {
+      autor: "Sunshine Sun",
+      descricao: "eu e meus bests.",
+      imagem: "https://imgur.com/IROAAxX",
+    },
+  });
+
+  await prisma.postagem.create({
+    data: {
+      autor: "Yasmin Crisóstomo",
+      descricao: "eu e meu momor codando e o luiz de vela.",
+      imagem: "https://imgur.com/Rd69wUT",
+    },
+  });
+
+  await prisma.postagem.create({
+    data: {
+      autor: "Daniel Casalli",
+      descricao: "Amo esse filme",
+      imagem: "https://imgur.com/cbQ2iUW",
+    },
+  });
+
+  await prisma.postagem.create({
+    data: {
+      autor: "Gustavo Victor Ferreira",
+      descricao: "Cena top c meus amigos tops",
+      imagem: "https://imgur.com/8tyOlpI",
+    },
+  });
+
+  await prisma.postagem.create({
+    data: {
+      autor: "Rafael Santos Mendes",
+      descricao: "amamos o gusteivo mané",
+      imagem: "https://imgur.com/6DXPa6C",
+    },
+  });
+
+  await prisma.postagem.create({
+    data: {
+      autor: "Daniel Casalli",
+      descricao: "apresentação medo",
+      imagem: "https://imgur.com/VzXFLmf",
+    },
+  });
+
+  await prisma.postagem.create({
+    data: {
+      autor: "Pedro Otávio de Andrade Braga",
+      descricao: "Comendo Halls",
+      imagem: "https://imgur.com/6zlnN9k",
+    },
+  });
+
+  await prisma.postagem.create({
+    data: {
+      autor: "João Pedro Piva Nogueira",
+      descricao: "👍",
+      imagem: "https://imgur.com/3ho8WPj",
+    },
+  });
+
+  await prisma.postagem.create({
+    data: {
+      autor: "João Pedro Piva Nogueira",
+      descricao: "loouuuuusa",
+      imagem: "https://imgur.com/ceTCdYF",
+    },
+  });
+
+  await prisma.postagem.create({
+    data: {
+      autor: "João Stopiglia",
+      descricao: "Eu e o lzn",
+      imagem: "https://imgur.com/2Y2hiA5",
+    },
+  });
+
+  await prisma.postagem.create({
+    data: {
+      autor: "Arthur Morais",
+      descricao: "Entrei no rasp",
+      imagem: "https://imgur.com/fw2vc8W",
+    },
+  });
+
+  await prisma.postagem.create({
+    data: {
+      autor: "Danilo do Valle Marchiori Jorge",
+      descricao: "rebeca nanando",
+      imagem: "https://imgur.com/bgthJq7",
+    },
+  });
+
+  await prisma.postagem.create({
+    data: {
+      autor: "Jão Stopiglia",
+      descricao: "eu e as duas",
+      imagem: "https://imgur.com/x1Vd2xL",
+    },
+  });
+
+  await prisma.postagem.create({
+    data: {
+      autor: "Rebeca Gabrielly Moreira Alves",
+      descricao: "prof mamprim",
+      imagem: "https://imgur.com/XC5sdnz",
+    },
+  });
+
+  await prisma.postagem.create({
+    data: {
+      autor: "Cauã Tupinambá",
+      descricao: "foto da sala",
+      imagem: "https://imgur.com/LD7twnj",
+    },
+  });
+
+  await prisma.postagem.create({
+    data: {
+      autor: "Lívia Oliveira Cruz",
+      descricao: "Felipe Dev personagem",
+      imagem: "https://imgur.com/XEyniLT",
+    },
+  });
+
+  await prisma.postagem.create({
+    data: {
+      autor: "Livia Oliveira Cruz",
+      descricao: "girls e a sunshine",
+      imagem: "https://imgur.com/3Ikcky3",
+    },
+  });
+
+  await prisma.postagem.create({
+    data: {
+      autor: "João Stopiglia",
+      descricao: "eu e o thales",
+      imagem: "https://imgur.com/f1a9oa5",
+    },
+  });
+
+  await prisma.postagem.create({
+    data: {
+      autor: "Arthur Morais",
+      descricao: "Gustavo codando",
+      imagem: "https://imgur.com/jIyWUWs",
+    },
+  });
+
+  await prisma.postagem.create({
+    data: {
+      autor: "Cauã Tupinambá",
+      descricao: "eu e o pivo só nas risadas",
+      imagem: "https://imgur.com/z9oe1zc",
+    },
+  });
+
+  await prisma.postagem.create({
+    data: {
+      autor: "Cauã Tupinambá",
+      descricao: "estou indignado",
+      imagem: "https://imgur.com/Fd3nTBG",
+    },
+  });
+
+  await prisma.postagem.create({
+    data: {
+      autor: "Maria Eduarda Braga",
+      descricao: "Eu e o joãozinho",
+      imagem: "https://imgur.com/lGuaCsA",
+    },
+  });
+
+  await prisma.postagem.create({
+    data: {
+      autor: "Cauã Tupinambá",
+      descricao: "olhar atento",
+      imagem: "https://imgur.com/hkvhYSf",
+    },
+  });
+
+  await prisma.postagem.create({
+    data: {
+      autor: "Cauã Tupinambá",
+      descricao: "positivo e eu",
+      imagem: "https://imgur.com/76NSeB6",
     },
   });
 
