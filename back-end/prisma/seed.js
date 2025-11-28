@@ -12,7 +12,7 @@ async function main() {
     data: {
       autor: "Arhur Morais",
       descricao: "Fazendo pose para a foto do github.",
-      imagem: "https://imgur.com/xmt2zAj",
+      imagem: "https://imgur.com/xmt2zAj.jpeg",
     },
   });
 
@@ -20,7 +20,7 @@ async function main() {
     data: {
       autor: "Murilo Milan Brustolin",
       descricao: "Eu, Arthur e Edu somos do Rock!.",
-      imagem: "https://imgur.com/kvaAXUS",
+      imagem: "https://imgur.com/kvaAXUS.jpeg",
     },
   });
 
@@ -28,7 +28,7 @@ async function main() {
     data: {
       autor: "Arthur Morais",
       descricao: "Será que to com muita espinha??.",
-      imagem: "https://imgur.com/HbusjjJ",
+      imagem: "https://imgur.com/HbusjjJ.jpeg",
     },
   });
 
@@ -36,7 +36,7 @@ async function main() {
     data: {
       autor: "Arthur Morais",
       descricao: "Fica frio aí mano.",
-      imagem: "https://imgur.com/227tG0a",
+      imagem: "https://imgur.com/227tG0a.jpeg",
     },
   });
 
@@ -44,7 +44,7 @@ async function main() {
     data: {
       autor: "Gabriela Emi Yamamoto",
       descricao: "Eu, miotto e arthur fazendo trabalho aff.",
-      imagem: "https://imgur.com/0OWfbEi",
+      imagem: "https://imgur.com/0OWfbEi.jpeg",
     },
   });
 
@@ -52,7 +52,7 @@ async function main() {
     data: {
       autor: "Gustavo Victor Ferreira",
       descricao: "Eu e o Arthur recriando o poster de Memories of Murder.",
-      imagem: "https://imgur.com/JXnruxq",
+      imagem: "https://imgur.com/JXnruxq.jpeg",
     },
   });
 
@@ -60,7 +60,7 @@ async function main() {
     data: {
       autor: "Arthur Morais",
       descricao: "Eu e gustavo c cara de trouxa",
-      imagem: "https://imgur.com/lUPlO05",
+      imagem: "https://imgur.com/lUPlO05.jpeg",
     },
   });
 
@@ -68,7 +68,7 @@ async function main() {
     data: {
       autor: "Victor Ferreira",
       descricao: "aiiiiaiiiiaiii cachorro html.",
-      imagem: "https://imgur.com/FYTA9VD",
+      imagem: "https://imgur.com/FYTA9VD.jpeg",
     },
   });
 
@@ -76,7 +76,7 @@ async function main() {
     data: {
       autor: "Gustavo Victor",
       descricao: "A bang perfeitinha do gu.",
-      imagem: "https://imgur.com/f5uo8ng",
+      imagem: "https://imgur.com/f5uo8ng.jpeg",
     },
   });
 
@@ -84,7 +84,7 @@ async function main() {
     data: {
       autor: "Murilo Brustolin",
       descricao: "calças novas",
-      imagem: "https://imgur.com/Vuw97c9",
+      imagem: "https://imgur.com/Vuw97c9.jpeg",
     },
   });
 
@@ -92,7 +92,7 @@ async function main() {
     data: {
       autor: "Victor Ferreira",
       descricao: "Estudando programação no laboratório de informática.",
-      imagem: "https://imgur.com/dg5mVzj",
+      imagem: "https://imgur.com/dg5mVzj.jpeg",
     },
   });
 
@@ -100,7 +100,7 @@ async function main() {
     data: {
       autor: "Bianca Luisa Teodoro Silva",
       descricao: "Tirando foto no banheiro rsrsrs",
-      imagem: "https://imgur.com/BPaIs2A",
+      imagem: "https://imgur.com/BPaIs2A.jpeg",
     },
   });
 
@@ -108,7 +108,7 @@ async function main() {
     data: {
       autor: "Bianca Luisa Teodoro Silva",
       descricao: "Eu e meus pastéis",
-      imagem: "https://imgur.com/3JO9noM",
+      imagem: "https://imgur.com/3JO9noM.jpeg",
     },
   });
 
@@ -116,7 +116,7 @@ async function main() {
     data: {
       autor: "Bianca Luisa Teodoro Silva",
       descricao: "Participando da feira de ciências da escola com meus pasteis.",
-      imagem: "https://imgur.com/oet5B39",
+      imagem: "https://imgur.com/oet5B39.jpeg",
     },
   });
 
@@ -124,7 +124,7 @@ async function main() {
     data: {
       autor: "Livia Oliveira Cruz",
       descricao: "eu e a bia fazendo paaaaz",
-      imagem: "https://imgur.com/MEBtgcr",
+      imagem: "https://imgur.com/MEBtgcr.jpeg",
     },
   });
 
@@ -132,7 +132,7 @@ async function main() {
     data: {
       autor: "Rebeca Gabrielly",
       descricao: "Tirando foto no banheiro bem iconicas.",
-      imagem: "https://imgur.com/9vRkrit",
+      imagem: "https://imgur.com/9vRkrit.jpeg",
     },
   });
 
@@ -140,7 +140,7 @@ async function main() {
     data: {
       autor: "bianca luisa",
       descricao: "Eu e a tsumoto.",
-      imagem: "https://imgur.com/bUXMq8E",
+      imagem: "https://imgur.com/bUXMq8E.jpeg",
     },
   });
 
@@ -148,7 +148,7 @@ async function main() {
     data: {
       autor: "livia Oliveira",
       descricao: "Sesi muuuuundo",
-      imagem: "https://imgur.com/ybt13lX",
+      imagem: "https://imgur.com/ybt13lX.jpeg",
     },
   });
 
@@ -156,7 +156,7 @@ async function main() {
     data: {
       autor: "Daniel Casalli",
       descricao: "eu de perto rs.",
-      imagem: "https://imgur.com/eAkc4Xe",
+      imagem: "https://imgur.com/eAkc4Xe.jpeg",
     },
   });
 
@@ -164,7 +164,7 @@ async function main() {
     data: {
       autor: "Daniel Casalli",
       descricao: "eu e a miotto na aulinha top do thiago.",
-      imagem: "https://imgur.com/oR7ENyp",
+      imagem: "https://imgur.com/oR7ENyp.jpeg",
     },
   });
 
@@ -172,7 +172,7 @@ async function main() {
     data: {
       autor: "daniel Casalli",
       descricao: "you are my sunshine my only sunshine.",
-      imagem: "https://imgur.com/IROAAxX",
+      imagem: "https://imgur.com/IROAAxX.jpeg",
     },
   });
 
@@ -180,7 +180,7 @@ async function main() {
     data: {
       autor: "Danilo do Valle Marchiori Jorge",
       descricao: "eu e a porto no jóia.",
-      imagem: "https://imgur.com/oBD3GHL",
+      imagem: "https://imgur.com/oBD3GHL.jpeg",
     },
   });
 
@@ -188,7 +188,7 @@ async function main() {
     data: {
       autor: "Emilio Henrique",
       descricao: "emilio.",
-      imagem: "https://imgur.com/nJotLX3",
+      imagem: "https://imgur.com/nJotLX3.jpeg",
     },
   });
 
@@ -196,7 +196,7 @@ async function main() {
     data: {
       autor: "Livia Oliveira",
       descricao: "Felipe dev atento.",
-      imagem: "https://imgur.com/AIwnjZu",
+      imagem: "https://imgur.com/AIwnjZu.jpeg",
     },
   });
 
@@ -204,7 +204,7 @@ async function main() {
     data: {
       autor: "Pedro Otávio de Andrade Braga",
       descricao: "trabalhando fazendo pasteis igual um condenado",
-      imagem: "https://imgur.com/JXnCMuD",
+      imagem: "https://imgur.com/JXnCMuD.jpeg",
     },
   });
 
@@ -212,7 +212,7 @@ async function main() {
     data: {
       autor: "Beatriz Miotto de Oliveira",
       descricao: "eu e os sitecrafters codando",
-      imagem: "https://imgur.com/0OWfbEi",
+      imagem: "https://imgur.com/0OWfbEi.jpeg",
     },
   });
 
@@ -220,7 +220,7 @@ async function main() {
     data: {
       autor: "Fernando Santos Evêncio da Silva",
       descricao: "codando c meus dois amores rs",
-      imagem: "https://imgur.com/Rd69wUT",
+      imagem: "https://imgur.com/Rd69wUT.jpeg",
     },
   });
 
@@ -228,7 +228,7 @@ async function main() {
     data: {
       autor: "Gabriela Emi Yamamoto",
       descricao: "comendo",
-      imagem: "https://imgur.com/qIktUI2",
+      imagem: "https://imgur.com/qIktUI2.jpeg",
     },
   });
 
@@ -236,7 +236,7 @@ async function main() {
     data: {
       autor: "Gabriela Emi Yamamoto",
       descricao: "instalação SO",
-      imagem: "https://imgur.com/CJB9VoY",
+      imagem: "https://imgur.com/CJB9VoY.jpeg",
     },
   });
 
@@ -244,7 +244,7 @@ async function main() {
     data: {
       autor: "Fábio Henrique Rabello Trevizolli",
       descricao: "recriando o poster de Clube dos 5",
-      imagem: "https://imgur.com/cbQ2iUW",
+      imagem: "https://imgur.com/cbQ2iUW.jpeg",
     },
   });
 
@@ -252,7 +252,7 @@ async function main() {
     data: {
       autor: "Gustavo Teixeira Lisboa",
       descricao: "só codar codar codar e codar.",
-      imagem: "https://imgur.com/KFZfr7S",
+      imagem: "https://imgur.com/KFZfr7S.jpeg",
     },
   });
 
@@ -260,7 +260,7 @@ async function main() {
     data: {
       autor: "Arthur Morais",
       descricao: "eu, gu e sunshine",
-      imagem: "https://imgur.com/cRljj76",
+      imagem: "https://imgur.com/cRljj76.jpeg",
     },
   });
 
@@ -268,7 +268,7 @@ async function main() {
     data: {
       autor: "Arthur Morais",
       descricao: "eu e o gu fazendo palhaçada",
-      imagem: "https://imgur.com/uxwYOo4",
+      imagem: "https://imgur.com/uxwYOo4.jpeg",
     },
   });
 
@@ -276,7 +276,7 @@ async function main() {
     data: {
       autor: "Gustavo Victor",
       descricao: "não aguento mais só codar html",
-      imagem: "https://imgur.com/ljIAqhr",
+      imagem: "https://imgur.com/ljIAqhr.jpeg",
     },
   });
 
@@ -284,7 +284,7 @@ async function main() {
     data: {
       autor: "Gustavo Victor",
       descricao: "Meu talento é ser P.O",
-      imagem: "https://imgur.com/MwsxVfl",
+      imagem: "https://imgur.com/MwsxVfl.jpeg",
     },
   });
 
@@ -292,7 +292,7 @@ async function main() {
     data: {
       autor: "Gustavo Victor",
       descricao: "Fica frio aí arthur",
-      imagem: "https://imgur.com/24jKRBX",
+      imagem: "https://imgur.com/24jKRBX.jpeg",
     },
   });
 
@@ -300,7 +300,7 @@ async function main() {
     data: {
       autor: "Gustavo Victor",
       descricao: "o mistério dos pastéis",
-      imagem: "https://imgur.com/6ymct3E",
+      imagem: "https://imgur.com/6ymct3E.jpeg",
     },
   });
 
@@ -308,7 +308,7 @@ async function main() {
     data: {
       autor: "Gustavo Victor Ferreira",
       descricao: "diálogo com o pedro ",
-      imagem: "https://imgur.com/7dCvnBV",
+      imagem: "https://imgur.com/7dCvnBV.jpeg",
     },
   });
 
@@ -316,7 +316,7 @@ async function main() {
     data: {
       autor: "Joao Stopiglia",
       descricao: "henrico só com o pokémon",
-      imagem: "https://imgur.com/Iz3Jr5G",
+      imagem: "https://imgur.com/Iz3Jr5G.jpeg",
     },
   });
 
@@ -324,7 +324,7 @@ async function main() {
     data: {
       autor: "Arthur Morais",
       descricao: "instalando manjaro no SENAI",
-      imagem: "https://imgur.com/SuElxjI",
+      imagem: "https://imgur.com/SuElxjI.jpeg",
     },
   });
 
@@ -332,7 +332,7 @@ async function main() {
     data: {
       autor: "Maria Eduarda de Andrade",
       descricao: "rock",
-      imagem: "https://imgur.com/VzXFLmf",
+      imagem: "https://imgur.com/VzXFLmf.jpeg",
     },
   });
 
@@ -340,7 +340,7 @@ async function main() {
     data: {
       autor: "Luiz Felipe",
       descricao: "eu e o jão ",
-      imagem: "https://imgur.com/2Y2hiA5",
+      imagem: "https://imgur.com/2Y2hiA5.jpeg",
     },
   });
 
@@ -348,7 +348,7 @@ async function main() {
     data: {
       autor: "João Stopiglia",
       descricao: "Eu e a duuuuuda",
-      imagem: "https://imgur.com/oFy2nVC",
+      imagem: "https://imgur.com/oFy2nVC.jpeg",
     },
   });
 
@@ -356,7 +356,7 @@ async function main() {
     data: {
       autor: "Pedro Henrique Urbano Escapalete",
       descricao: "garrafa, joao e eu",
-      imagem: "https://imgur.com/lGuaCsA",
+      imagem: "https://imgur.com/lGuaCsA.jpeg",
     },
   });
 
@@ -364,7 +364,7 @@ async function main() {
     data: {
       autor: "Beatriz Miotto de Oliveira",
       descricao: "fazendo biquinho na biblio",
-      imagem: "https://imgur.com/tmEEZ5R",
+      imagem: "https://imgur.com/tmEEZ5R.jpeg",
     },
   });
 
@@ -372,7 +372,7 @@ async function main() {
     data: {
       autor: "Gustavo teixeira Lisboa",
       descricao: "Fazendo trabalho de pokemon",
-      imagem: "https://imgur.com/CPClVY8",
+      imagem: "https://imgur.com/CPClVY8.jpeg",
     },
   });
 
@@ -380,7 +380,7 @@ async function main() {
     data: {
       autor: "Bianca Luisa Teodoro Silva",
       descricao: "Estou andando",
-      imagem: "https://imgur.com/xyTsQkq",
+      imagem: "https://imgur.com/xyTsQkq.jpeg",
     },
   });
 
@@ -388,7 +388,7 @@ async function main() {
     data: {
       autor: "Beatriz Miotto de Oliveira",
       descricao: "Com elas!!",
-      imagem: "https://imgur.com/vi34gKW",
+      imagem: "https://imgur.com/vi34gKW.jpeg",
     },
   });
 
@@ -396,7 +396,7 @@ async function main() {
     data: {
       autor: "Livia Oliveira Cruz",
       descricao: "Com a minha metadinha eu me sinto tão segurinha",
-      imagem: "https://imgur.com/mN0kDq6",
+      imagem: "https://imgur.com/mN0kDq6.jpeg",
     },
   });
 
@@ -404,7 +404,7 @@ async function main() {
     data: {
       autor: "Arthur Morais dos Santos",
       descricao: "fazendo meu filme fav c o guuu",
-      imagem: "https://imgur.com/JXnruxq",
+      imagem: "https://imgur.com/JXnruxq.jpeg",
     },
   });
 
@@ -412,7 +412,7 @@ async function main() {
     data: {
       autor: "Livia Oliveira Cruz",
       descricao: "Eu e a assombração",
-      imagem: "https://imgur.com/aJOEVjw",
+      imagem: "https://imgur.com/aJOEVjw.jpeg",
     },
   });
 
@@ -420,7 +420,7 @@ async function main() {
     data: {
       autor: "Livia Oliveira Cruz",
       descricao: "Mexendo no cardapio da minha pastelaria",
-      imagem: "https://imgur.com/mVVK4fo",
+      imagem: "https://imgur.com/mVVK4fo.jpeg",
     },
   });
 
@@ -428,7 +428,7 @@ async function main() {
     data: {
       autor: "Luiz Felipe",
       descricao: "?",
-      imagem: "https://imgur.com/V4mZvQI",
+      imagem: "https://imgur.com/V4mZvQI.jpeg",
     },
   });
 
@@ -436,7 +436,7 @@ async function main() {
     data: {
       autor: "Livia Oliveira Cruz",
       descricao: "Tatuagem inguaissss",
-      imagem: "https://imgur.com/pW7K0UM",
+      imagem: "https://imgur.com/pW7K0UM.jpeg",
     },
   });
 
@@ -444,7 +444,7 @@ async function main() {
     data: {
       autor: "Daniel Casalli",
       descricao: "Olhar de fallen angel",
-      imagem: "https://imgur.com/2f92e14",
+      imagem: "https://imgur.com/2f92e14.jpeg",
     },
   });
 
@@ -452,7 +452,7 @@ async function main() {
     data: {
       autor: "Luiz Felipe",
       descricao: "livia tirou foto nossa",
-      imagem: "https://imgur.com/ZLuHMRp",
+      imagem: "https://imgur.com/ZLuHMRp.jpeg",
     },
   });
 
@@ -460,7 +460,7 @@ async function main() {
     data: {
       autor: "Luiz Felipe",
       descricao: "vendo as notas eita",
-      imagem: "https://imgur.com/ofdsedO",
+      imagem: "https://imgur.com/ofdsedO.jpeg",
     },
   });
 
@@ -468,7 +468,7 @@ async function main() {
     data: {
       autor: "Luiz Felipe",
       descricao: "olho de peixe c o piva e a yasmin",
-      imagem: "https://imgur.com/7o5DzwX",
+      imagem: "https://imgur.com/7o5DzwX.jpeg",
     },
   });
 
@@ -476,7 +476,7 @@ async function main() {
     data: {
       autor: "Bianca Luisa Teodoro Silva",
       descricao: "Fazendo pose com as girls no auditório",
-      imagem: "https://imgur.com/O7L7va1",
+      imagem: "https://imgur.com/O7L7va1.jpeg",
     },
   });
 
@@ -484,7 +484,7 @@ async function main() {
     data: {
       autor: "Beatriz Miotto de Oliveira",
       descricao: "fazendo beijo c a bibis",
-      imagem: "https://imgur.com/lbkJpSt",
+      imagem: "https://imgur.com/lbkJpSt.jpeg",
     },
   });
 
@@ -492,7 +492,7 @@ async function main() {
     data: {
       autor: "Beatriz Miotto",
       descricao: "Formatando pc no laboratório",
-      imagem: "https://imgur.com/1F0OkxK",
+      imagem: "https://imgur.com/1F0OkxK.jpeg",
     },
   });
 
@@ -500,7 +500,7 @@ async function main() {
     data: {
       autor: "Rafael Santos Mendes",
       descricao: "mesa dos goats.",
-      imagem: "https://imgur.com/wmaJDkx",
+      imagem: "https://imgur.com/wmaJDkx.jpeg",
     },
   });
 
@@ -508,7 +508,7 @@ async function main() {
     data: {
       autor: "Murilo Milan Brustolin",
       descricao: "recriando o poster de Stranger Things com o edu",
-      imagem: "https://imgur.com/a/Vz7v1BW#pegYGN6",
+      imagem: "https://imgur.com/a/Vz7v1.jpegBW#pegYGN6",
     },
   });
 
@@ -516,7 +516,7 @@ async function main() {
     data: {
       autor: "Joao Pedro Piva Nogueira",
       descricao: "farmando aura",
-      imagem: "https://imgur.com/2mZyDGP",
+      imagem: "https://imgur.com/2mZyDGP.jpeg",
     },
   });
 
@@ -524,7 +524,7 @@ async function main() {
     data: {
       autor: "João Pedro Piva Nogueira",
       descricao: "Fazendo massagem no fernando",
-      imagem: "https://imgur.com/dvZuetd",
+      imagem: "https://imgur.com/dvZuetd.jpeg",
     },
   });
 
@@ -532,7 +532,7 @@ async function main() {
     data: {
       autor: "Livia oliveira Cruz",
       descricao: "piva sendo piva.",
-      imagem: "https://imgur.com/9IjIDNl",
+      imagem: "https://imgur.com/9IjIDNl.jpeg",
     },
   });
 
@@ -540,7 +540,7 @@ async function main() {
     data: {
       autor: "Livia Oliveira Cruz",
       descricao: "recriando cena do clube dos 5 com os dois patetas",
-      imagem: "https://imgur.com/a/Vz7v1BW#PX0Yacs",
+      imagem: "https://imgur.com/a/Vz7v1.jpegBW#PX0Yacs",
     },
   });
 
@@ -548,7 +548,7 @@ async function main() {
     data: {
       autor: "Fabio Henrique Rabello Trevizolli",
       descricao: "recriando o poster de ET",
-      imagem: "https://imgur.com/SEEySTd",
+      imagem: "https://imgur.com/SEEySTd.jpeg",
     },
   });
 
@@ -556,7 +556,7 @@ async function main() {
     data: {
       autor: "Murilo Milan Brustolin",
       descricao: "buuuuuu",
-      imagem: "https://imgur.com/fG5P1wV",
+      imagem: "https://imgur.com/fG5P1wV.jpeg",
     },
   });
 
@@ -564,7 +564,7 @@ async function main() {
     data: {
       autor: "João Victor Gomes de Souza",
       descricao: "Foto com a tropa",
-      imagem: "https://imgur.com/tmDfDQo",
+      imagem: "https://imgur.com/tmDfDQo.jpeg",
     },
   });
 
@@ -572,7 +572,7 @@ async function main() {
     data: {
       autor: "Victor Ferreira de Oliveira",
       descricao: "joia, login e muito codigo",
-      imagem: "https://imgur.com/BsHgyST",
+      imagem: "https://imgur.com/BsHgyST.jpeg",
     },
   });
 
@@ -580,7 +580,7 @@ async function main() {
     data: {
       autor: "Gustavo Victor Ferreira",
       descricao: "Cachorro aiiaiaiaiaiai",
-      imagem: "https://imgur.com/FYTA9VD",
+      imagem: "https://imgur.com/FYTA9VD.jpeg",
     },
   });
 
@@ -588,7 +588,7 @@ async function main() {
     data: {
       autor: "Emílio Henrique dos Santos Favoretto",
       descricao: "sala 1tds1",
-      imagem: "https://imgur.com/XpCHDCL",
+      imagem: "https://imgur.com/XpCHDCL.jpeg",
     },
   });
 
@@ -596,7 +596,7 @@ async function main() {
     data: {
       autor: "Fabio Henrique Rabello Trevizolli",
       descricao: "beijinho com o tupi",
-      imagem: "https://imgur.com/OyjPFIm",
+      imagem: "https://imgur.com/OyjPFIm.jpeg",
     },
   });
 
@@ -604,7 +604,7 @@ async function main() {
     data: {
       autor: "Pedro Henrique Urbano Escapalete",
       descricao: "mesa dos goats by tupi",
-      imagem: "https://imgur.com/DrMYmHv",
+      imagem: "https://imgur.com/DrMYmHv.jpeg",
     },
   });
 
@@ -612,7 +612,7 @@ async function main() {
     data: {
       autor: "Murilo Milan Brustolin",
       descricao: "preciso urgentemente de uma calça nova",
-      imagem: "https://imgur.com/Vuw97c9",
+      imagem: "https://imgur.com/Vuw97c9.jpeg",
     },
   });
 
@@ -620,7 +620,7 @@ async function main() {
     data: {
       autor: "Sunshine Sun",
       descricao: "eu e meus bests.",
-      imagem: "https://imgur.com/IROAAxX",
+      imagem: "https://imgur.com/IROAAxX.jpeg",
     },
   });
 
@@ -628,7 +628,7 @@ async function main() {
     data: {
       autor: "Yasmin Crisóstomo",
       descricao: "eu e meu momor codando e o luiz de vela.",
-      imagem: "https://imgur.com/Rd69wUT",
+      imagem: "https://imgur.com/Rd69wUT.jpeg",
     },
   });
 
@@ -636,7 +636,7 @@ async function main() {
     data: {
       autor: "Daniel Casalli",
       descricao: "Amo esse filme",
-      imagem: "https://imgur.com/cbQ2iUW",
+      imagem: "https://imgur.com/cbQ2iUW.jpeg",
     },
   });
 
@@ -644,7 +644,7 @@ async function main() {
     data: {
       autor: "Gustavo Victor Ferreira",
       descricao: "Cena top c meus amigos tops",
-      imagem: "https://imgur.com/8tyOlpI",
+      imagem: "https://imgur.com/8tyOlpI.jpeg",
     },
   });
 
@@ -652,7 +652,7 @@ async function main() {
     data: {
       autor: "Rafael Santos Mendes",
       descricao: "amamos o gusteivo mané",
-      imagem: "https://imgur.com/6DXPa6C",
+      imagem: "https://imgur.com/6DXPa6C.jpeg",
     },
   });
 
@@ -660,7 +660,7 @@ async function main() {
     data: {
       autor: "Daniel Casalli",
       descricao: "apresentação medo",
-      imagem: "https://imgur.com/VzXFLmf",
+      imagem: "https://imgur.com/VzXFLmf.jpeg",
     },
   });
 
@@ -668,7 +668,7 @@ async function main() {
     data: {
       autor: "Pedro Otávio de Andrade Braga",
       descricao: "Comendo Halls",
-      imagem: "https://imgur.com/6zlnN9k",
+      imagem: "https://imgur.com/6zlnN9k.jpeg",
     },
   });
 
@@ -676,7 +676,7 @@ async function main() {
     data: {
       autor: "João Pedro Piva Nogueira",
       descricao: "👍",
-      imagem: "https://imgur.com/3ho8WPj",
+      imagem: "https://imgur.com/3ho8WPj.jpeg",
     },
   });
 
@@ -684,7 +684,7 @@ async function main() {
     data: {
       autor: "João Pedro Piva Nogueira",
       descricao: "loouuuuusa",
-      imagem: "https://imgur.com/ceTCdYF",
+      imagem: "https://imgur.com/ceTCdYF.jpeg",
     },
   });
 
@@ -692,7 +692,7 @@ async function main() {
     data: {
       autor: "João Stopiglia",
       descricao: "Eu e o lzn",
-      imagem: "https://imgur.com/2Y2hiA5",
+      imagem: "https://imgur.com/2Y2hiA5.jpeg",
     },
   });
 
@@ -700,7 +700,7 @@ async function main() {
     data: {
       autor: "Arthur Morais",
       descricao: "Entrei no rasp",
-      imagem: "https://imgur.com/fw2vc8W",
+      imagem: "https://imgur.com/fw2vc8W.jpeg",
     },
   });
 
@@ -708,7 +708,7 @@ async function main() {
     data: {
       autor: "Danilo do Valle Marchiori Jorge",
       descricao: "rebeca nanando",
-      imagem: "https://imgur.com/bgthJq7",
+      imagem: "https://imgur.com/bgthJq7.jpeg",
     },
   });
 
@@ -716,7 +716,7 @@ async function main() {
     data: {
       autor: "Jão Stopiglia",
       descricao: "eu e as duas",
-      imagem: "https://imgur.com/x1Vd2xL",
+      imagem: "https://imgur.com/x1Vd2xL.jpeg",
     },
   });
 
@@ -724,7 +724,7 @@ async function main() {
     data: {
       autor: "Rebeca Gabrielly Moreira Alves",
       descricao: "prof mamprim",
-      imagem: "https://imgur.com/XC5sdnz",
+      imagem: "https://imgur.com/XC5sdnz.jpeg",
     },
   });
 
@@ -732,7 +732,7 @@ async function main() {
     data: {
       autor: "Cauã Tupinambá",
       descricao: "foto da sala",
-      imagem: "https://imgur.com/LD7twnj",
+      imagem: "https://imgur.com/LD7twnj.jpeg",
     },
   });
 
@@ -740,7 +740,7 @@ async function main() {
     data: {
       autor: "Lívia Oliveira Cruz",
       descricao: "Felipe Dev personagem",
-      imagem: "https://imgur.com/XEyniLT",
+      imagem: "https://imgur.com/XEyniLT.jpeg",
     },
   });
 
@@ -748,7 +748,7 @@ async function main() {
     data: {
       autor: "Livia Oliveira Cruz",
       descricao: "girls e a sunshine",
-      imagem: "https://imgur.com/3Ikcky3",
+      imagem: "https://imgur.com/3Ikcky3.jpeg",
     },
   });
 
@@ -756,7 +756,7 @@ async function main() {
     data: {
       autor: "João Stopiglia",
       descricao: "eu e o thales",
-      imagem: "https://imgur.com/f1a9oa5",
+      imagem: "https://imgur.com/f1a9oa5.jpeg",
     },
   });
 
@@ -764,7 +764,7 @@ async function main() {
     data: {
       autor: "Arthur Morais",
       descricao: "Gustavo codando",
-      imagem: "https://imgur.com/jIyWUWs",
+      imagem: "https://imgur.com/jIyWUWs.jpeg",
     },
   });
 
@@ -772,7 +772,7 @@ async function main() {
     data: {
       autor: "Cauã Tupinambá",
       descricao: "eu e o pivo só nas risadas",
-      imagem: "https://imgur.com/z9oe1zc",
+      imagem: "https://imgur.com/z9oe1zc.jpeg",
     },
   });
 
@@ -780,7 +780,7 @@ async function main() {
     data: {
       autor: "Cauã Tupinambá",
       descricao: "estou indignado",
-      imagem: "https://imgur.com/Fd3nTBG",
+      imagem: "https://imgur.com/Fd3nTBG.jpeg",
     },
   });
 
@@ -788,7 +788,7 @@ async function main() {
     data: {
       autor: "Maria Eduarda Braga",
       descricao: "Eu e o joãozinho",
-      imagem: "https://imgur.com/lGuaCsA",
+      imagem: "https://imgur.com/lGuaCsA.jpeg",
     },
   });
 
@@ -796,7 +796,7 @@ async function main() {
     data: {
       autor: "Cauã Tupinambá",
       descricao: "olhar atento",
-      imagem: "https://imgur.com/hkvhYSf",
+      imagem: "https://imgur.com/hkvhYSf.jpeg",
     },
   });
 
@@ -804,7 +804,7 @@ async function main() {
     data: {
       autor: "Cauã Tupinambá",
       descricao: "positivo e eu",
-      imagem: "https://imgur.com/76NSeB6",
+      imagem: "https://imgur.com/76NSeB6.jpeg",
     },
   });
 
