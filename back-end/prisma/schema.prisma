@@ -4,6 +4,7 @@ generator client {
 
 datasource db {
   provider = "postgresql"
+  url      = env("DATABASE_URL")
 }
 
 model Postagem {
@@ -14,11 +15,10 @@ model Postagem {
   imagem    String?
 }
 
-
 model Alunos {
-  id        Int      @id @default(autoincrement())
-  nome     String?
-  numeroAluno     Int?
-  email String?
-  senha    String?
+  id           Int      @id @default(autoincrement())
+  nome         String?
+  numeroAluno  Int?
+  email        String?
+  senha        String?
 }
