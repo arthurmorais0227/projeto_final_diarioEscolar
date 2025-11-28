@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: DynaPuff;
 }
 
 body {
@@ -18,7 +21,6 @@ header {
   justify-content: center;
   align-items: center;
   padding-right: 20px;
-  font-family: DynaPuff;
   position: fixed; 
   top: 0;
   left: 0;
@@ -113,16 +115,18 @@ body {
   color: #222;
 }
 
-.container {
+.container-filho {
   align-items: center;
   justify-content: center;
-  margin: 250px;
-  padding: 30px;
+  flex-direction: column;
+  gap: 30px;
+  margin: 200px;
+  padding: 10px;
   display: flex;
   grid-template-columns: 1fr 1fr;
-  gap: 40px;
   color: #a890bf ;
 }
+
 
 .faq-item {
   margin-bottom: 25px;
@@ -133,6 +137,7 @@ body {
 .faq-question {
   font-size: 18px;
   font-weight: 600;
+  line-height: 1.8;
 }
 
 .faq-toggle {
@@ -155,6 +160,7 @@ body {
   padding: 0px 20px; 
   border-radius: 6px;
   color: white;
+  line-height: 1.8; 
 }
 
 .faq-answer.open {
@@ -211,14 +217,16 @@ body {
 }
 
 footer {
-  margin-top: 200px;
+  margin-top: 350px;
   background-color: #a890bf;
   color: white;
   padding: 15px 0;
-  margin-top: 40px;
+  margin-top: 70px;
   font-family: DynaPuff;
-  border: 5px outset #9465c0;;
+  border: 5px outset #9465c0;
+  gap: 20px;
 }
+
 
 .titulo_footer {
   padding-top: 60px;
@@ -236,8 +244,30 @@ footer {
 .main_footer {
   display: flex;
   height: 200px;
-  gap: 30%;
-  margin-left: 50px;
+  gap: 20%;
+  margin-left: 20px;
+}
+
+
+.button {
+  width: 35%;
+  background-color: #f5b4b9;
+  border: none;
+  color: white;
+  font-size: 20px;
+  height: 55px;
+  font-family: DynaPuff;
+  border: 2px dashed #f58e97;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.button a  {
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .texto_botao {
@@ -307,21 +337,17 @@ footer {
 }
 
 .faq-answer {
-  /* *** CHAVES PARA O FECHAMENTO/TRANSIÇÃO SUAVE *** */
   max-height: 0; 
   overflow: hidden;
-  transition: max-height .4s ease;
-  
-  /* ... Outras propriedades de estilo ... */
+  transition: max-height .2s ease;
   margin-top: 10px;
   background: #b8b8f5;
   padding: 0px 20px; 
-  border-radius: 6px;
+  border-radius: 7px;
   color: white;
 }
 
 .faq-answer.open {
-  /* Esta classe é adicionada pelo JS */
-  padding: 20px; /* Altera o padding no estado aberto */
-  /* O max-height é definido pelo JavaScript */
+  padding: 20px; 
+  
 }
