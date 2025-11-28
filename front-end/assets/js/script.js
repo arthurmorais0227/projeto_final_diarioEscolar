@@ -1,8 +1,5 @@
 console.log("Script carregado com sucesso!");
 
-document.addEventListener("DOMContentLoaded", () => {
-  // FEED (caso exista no HTML)
-
   const dadosExemplo = {
     postagens: Array.from({ length: 10 }, (_, i) => {
       const autores = ["Sunshine", "Daniel", "Felipe Dev", "Arthur", "Maria"];
@@ -102,76 +99,84 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Lista de imagens da pasta banco_fotos2
-  let imagens = [
-    "../assets/img/banco_fotos2/1000123118.jpeg",
-    "../assets/img/banco_fotos2/1000138148.jpeg",
-    "../assets/img/banco_fotos2/bola senai.jpg",
-    "../assets/img/banco_fotos2/Captura de tela 2025-08-15 132028.png",
-    "../assets/img/banco_fotos2/felipe dev.jpg",
-    "../assets/img/banco_fotos2/Image_20251107_090709_007.jpeg",
-    "../assets/img/banco_fotos2/Image_20251107_090709_074.jpeg",
-    "../assets/img/banco_fotos2/Image_20251107_090709_103.jpeg",
-    "../assets/img/banco_fotos2/Image_20251107_090709_137.jpeg",
-    "../assets/img/banco_fotos2/Image_20251107_090709_169.jpeg",
-    "../assets/img/banco_fotos2/Image_20251107_090709_212.jpeg",
-    "../assets/img/banco_fotos2/Image_20251107_090709_230.jpeg",
-    "../assets/img/banco_fotos2/Image_20251107_090709_290.jpeg",
-    "../assets/img/banco_fotos2/Image_20251107_090709_331.jpeg",
-    "../assets/img/banco_fotos2/IMG-20251107-WA0032.jpeg",
-    "../assets/img/banco_fotos2/lívia e bianca - pulseiras.jpg",
-    "../assets/img/banco_fotos2/lívia e bianca.JPG",
-    "../assets/img/banco_fotos2/lívia e daniel.jpg",
-    "../assets/img/banco_fotos2/meninas no dia feliz (1).JPG",
-    "../assets/img/banco_fotos2/meninas no dia feliz.JPG",
-    "../assets/img/banco_fotos2/nos + felipe dev.WEBP",
-    "../assets/img/banco_fotos2/site do felipe dev.jpg",
-    "../assets/img/banco_fotos2/tupi e piva.jpg",
-    "../assets/img/banco_fotos2/tupi.jpg",
-    "../assets/img/banco_fotos2/turma 1tds1.jpg",
-    "../assets/img/banco_fotos2/WIN_20250523_09_43_58_Pro.jpg",
-    "../assets/img/banco_fotos2/WIN_20250530_09_51_00_Pro.jpg",
-    "../assets/img/banco_fotos2/WIN_20250801_16_03_40_Pro.jpg",
-    "../assets/img/banco_fotos2/WIN_20250811_16_10_48_Pro (1).jpg",
-    "../assets/img/banco_fotos2/WIN_20250901_13_32_27_Pro.jpg",
-    "../assets/img/banco_fotos2/WIN_20250901_13_32_33_Pro.jpg",
-    "../assets/img/banco_fotos2/WIN_20250926_11_23_12_Pro.jpg",
-    "../assets/img/banco_fotos2/WIN_20251003_13_30_20_Pro.jpg",
-    "../assets/img/banco_fotos2/WIN_20251003_13_59_14_Pro.jpg",
-    "../assets/img/banco_fotos2/WIN_20251003_15_56_13_Pro.jpg",
-    "../assets/img/banco_fotos2/WIN_20251003_15_56_39_Pro.jpg",
-    "../assets/img/banco_fotos2/WIN_20251003_20_20_20_Pro.jpg",
-    "../assets/img/banco_fotos2/WIN_20251009_13_59_14_Pro.jpg",
-    "../assets/img/banco_fotos2/WIN_20251013_14_09_06_Pro.jpg",
-    "../assets/img/banco_fotos2/WIN_20251017_08_05_08_Pro.jpg",
-    "../assets/img/banco_fotos2/WIN_20251017_14_13_11_Pro.jpg",
-  ];
 
-  // **AQUI entra o passo 3**
-  imagens = imagens.filter((src) => {
-    const img = new Image();
-    img.src = src;
-    return img.complete || img.width > 0;
+  document.addEventListener("DOMContentLoaded", () => {
+    // Lista de imagens da pasta banco_fotos2
+    let imagens = [
+      "../assets/img/banco_fotos2/1000123118.jpeg",
+      "../assets/img/banco_fotos2/1000138148.jpeg",
+      "../assets/img/banco_fotos2/bola senai.jpg",
+      "../assets/img/banco_fotos2/Captura de tela 2025-08-15 132028.png",
+      "../assets/img/banco_fotos2/felipe dev.jpg",
+      "../assets/img/banco_fotos2/Image_20251107_090709_007.jpeg",
+      "../assets/img/banco_fotos2/Image_20251107_090709_074.jpeg",
+      "../assets/img/banco_fotos2/Image_20251107_090709_103.jpeg",
+      "../assets/img/banco_fotos2/Image_20251107_090709_137.jpeg",
+      "../assets/img/banco_fotos2/Image_20251107_090709_169.jpeg",
+      "../assets/img/banco_fotos2/Image_20251107_090709_212.jpeg",
+      "../assets/img/banco_fotos2/Image_20251107_090709_230.jpeg",
+      "../assets/img/banco_fotos2/Image_20251107_090709_290.jpeg",
+      "../assets/img/banco_fotos2/Image_20251107_090709_331.jpeg",
+      "../assets/img/banco_fotos2/IMG-20251107-WA0032.jpeg",
+      "../assets/img/banco_fotos2/lívia e bianca - pulseiras.jpg",
+      "../assets/img/banco_fotos2/lívia e bianca.JPG",
+      "../assets/img/banco_fotos2/lívia e daniel.jpg",
+      "../assets/img/banco_fotos2/meninas no dia feliz (1).JPG",
+      "../assets/img/banco_fotos2/meninas no dia feliz.JPG",
+      "../assets/img/banco_fotos2/nos + felipe dev.WEBP",
+      "../assets/img/banco_fotos2/site do felipe dev.jpg",
+      "../assets/img/banco_fotos2/tupi e piva.jpg",
+      "../assets/img/banco_fotos2/tupi.jpg",
+      "../assets/img/banco_fotos2/turma 1tds1.jpg",
+      "../assets/img/banco_fotos2/WIN_20250523_09_43_58_Pro.jpg",
+      "../assets/img/banco_fotos2/WIN_20250530_09_51_00_Pro.jpg",
+      "../assets/img/banco_fotos2/WIN_20250801_16_03_40_Pro.jpg",
+      "../assets/img/banco_fotos2/WIN_20250811_16_10_48_Pro (1).jpg",
+      "../assets/img/banco_fotos2/WIN_20250901_13_32_27_Pro.jpg",
+      "../assets/img/banco_fotos2/WIN_20250901_13_32_33_Pro.jpg",
+      "../assets/img/banco_fotos2/WIN_20250926_11_23_12_Pro.jpg",
+      "../assets/img/banco_fotos2/WIN_20251003_13_30_20_Pro.jpg",
+      "../assets/img/banco_fotos2/WIN_20251003_13_59_14_Pro.jpg",
+      "../assets/img/banco_fotos2/WIN_20251003_15_56_13_Pro.jpg",
+      "../assets/img/banco_fotos2/WIN_20251003_15_56_39_Pro.jpg",
+      "../assets/img/banco_fotos2/WIN_20251003_20_20_20_Pro.jpg",
+      "../assets/img/banco_fotos2/WIN_20251009_13_59_14_Pro.jpg",
+      "../assets/img/banco_fotos2/WIN_20251013_14_09_06_Pro.jpg",
+      "../assets/img/banco_fotos2/WIN_20251017_08_05_08_Pro.jpg",
+      "../assets/img/banco_fotos2/WIN_20251017_14_13_11_Pro.jpg",
+    ];
+  
+    // Função para embaralhar o array de imagens (Fisher-Yates shuffle)
+    function shuffleArray(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]]; // Troca os elementos
+      }
+      return array;
+    }
+  
+    // Limita para 25 imagens
+    let maxFotos = 25;
+    imagens = shuffleArray(imagens).slice(0, maxFotos); // Embaralha as imagens e pega as primeiras 25
+  
+    let grid = document.getElementById("grid");
+    let n = 0;
+  
+    while (n < maxFotos) {
+      let span = weightedRand({ 1: 0.7, 2: 0.2, 3: 0.1 });
+      let color = weightedRand({ 1: 0.2, 2: 0.2, 3: 0.2, 4: 0.2, 5: 0.2 });
+  
+      // Escolhe imagem única da lista embaralhada
+      let url = imagens[n];
+  
+      let div = document.createElement("div");
+      div.className = `card span-${span} c-${color}`;
+      div.style.backgroundImage = `url('${url}')`;
+  
+      grid.appendChild(div);
+      n++;
+    }
   });
-
-  let grid = document.getElementById("grid");
-  let n = 0;
-
-  while (n < 40) {
-    let span = weightedRand({ 1: 0.7, 2: 0.2, 3: 0.1 });
-    let color = weightedRand({ 1: 0.2, 2: 0.2, 3: 0.2, 4: 0.2, 5: 0.2 });
-
-    // Escolhe imagem aleatória da sua pasta
-    let url = imagens[Math.floor(Math.random() * imagens.length)];
-
-    let div = document.createElement("div");
-    div.className = `card span-${span} c-${color}`;
-    div.style.backgroundImage = `url('${url}')`;
-
-    grid.appendChild(div);
-    n++;
-  }
-});
 
 function criarAviso(elemento, mensagem) {
   const aviso = document.createElement("div");
