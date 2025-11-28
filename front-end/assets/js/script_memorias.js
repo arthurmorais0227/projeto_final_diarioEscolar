@@ -108,7 +108,10 @@ document.addEventListener('DOMContentLoaded', () => {
       const placeholder = 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=';
       record.innerHTML = `
         <div class="recordacao_titulo">
-          <div class="autor"><h3>${autor}</h3></div>
+          <div class="autor">
+          <h3>${autor}</h3>
+          <small>ID: ${post.id}</small>
+          </div>
         </div>
         <div class="imagem_recordacao">
           <img class="lazy-img" data-src="${escapeHtml(imagemSrc)}" src="${placeholder}" alt="imagem da recordação" loading="lazy" onerror="this.onerror=null;this.src='/assets/img/myschooldiary.png'">

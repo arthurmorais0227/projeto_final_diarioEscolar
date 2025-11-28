@@ -195,29 +195,6 @@ function criarAviso(elemento, mensagem) {
   }, 500);
 }
 
-// --- Copiar EMAIL ---
-document.querySelectorAll(".int1 img").forEach((icon) => {
-  icon.style.cursor = "pointer";
-
-  icon.addEventListener("click", () => {
-    const email = icon.previousElementSibling.textContent.trim();
-    navigator.clipboard.writeText(email);
-
-    criarAviso(icon.parentElement, "Email copiado!");
-  });
-});
-
-// --- Copiar TELEFONE ---
-document.querySelectorAll(".int2 img").forEach((icon) => {
-  icon.style.cursor = "pointer";
-
-  icon.addEventListener("click", () => {
-    const telefone = icon.previousElementSibling.textContent.trim();
-    navigator.clipboard.writeText(telefone);
-
-    criarAviso(icon.parentElement, "Telefone copiado!");
-  });
-});
 
 document.addEventListener("DOMContentLoaded", () => {
   const heart = document.getElementById("heart");
@@ -363,6 +340,28 @@ if (!document.getElementById('memoriasList')) {
   }
 }
 
+// --- Copiar EMAIL ---
+document.querySelectorAll(".int1 img").forEach((icon) => {
+  icon.style.cursor = "pointer";
 
+  icon.addEventListener("click", () => {
+    const email = icon.previousElementSibling.textContent.trim();
+    navigator.clipboard.writeText(email);
+
+    criarAviso(icon.parentElement, "Email copiado!");
+  });
+});
+
+// --- Copiar TELEFONE ---
+document.querySelectorAll(".int2 img").forEach((icon) => {
+  icon.style.cursor = "pointer";
+
+  icon.addEventListener("click", () => {
+    const telefone = icon.previousElementSibling.textContent.trim();
+    navigator.clipboard.writeText(telefone);
+
+    criarAviso(icon.parentElement, "Telefone copiado!");
+  });
+});
 
 
