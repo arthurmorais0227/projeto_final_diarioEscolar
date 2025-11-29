@@ -1,38 +1,38 @@
 // Script externo para a página de memórias
 // Este código foi movido de memorias.html para um arquivo dedicado
 
-document.addEventListener('DOMContentLoaded', () => {
-  const list = document.getElementById('memoriasList');
-  const abrirPopupBtn = document.getElementById('abrirPopup');
-  const popup = document.getElementById('popupCriar');
-  const fecharPopupBtn = document.getElementById('fecharPopup');
-  const inputImagem = document.getElementById('inputImagem');
-  const previewImagem = document.getElementById('previewImagem');
-  const descricaoEl = document.getElementById('descricao');
-  const contadorDesc = document.getElementById('contadorDesc');
-  const salvarBtn = document.getElementById('salvarMemoria');
-  const inputAutor = document.getElementById('inputAutor');
+document.addEventListener("DOMContentLoaded", () => {
+  const list = document.getElementById("memoriasList");
+  const abrirPopupBtn = document.getElementById("abrirPopup");
+  const popup = document.getElementById("popupCriar");
+  const fecharPopupBtn = document.getElementById("fecharPopup");
+  const inputImagem = document.getElementById("inputImagem");
+  const previewImagem = document.getElementById("previewImagem");
+  const descricaoEl = document.getElementById("descricao");
+  const contadorDesc = document.getElementById("contadorDesc");
+  const salvarBtn = document.getElementById("salvarMemoria");
+  const inputAutor = document.getElementById("inputAutor");
 
   // estado temporário da imagem (data URL) para envio
   let imagemDataUrl = null;
 
   function escapeHtml(s) {
     return String(s)
-      .replace(/&/g, '&amp;')
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;')
-      .replace(/"/g, '&quot;')
-      .replace(/'/g, '&#39;');
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#39;");
   }
 
   async function loadMemorias() {
     try {
       // Tenta buscar o endpoint em várias portas comuns (3001, 3000) para tolerância
       const candidateUrls = [
-        'http://localhost:3001/postagens',
-        'http://localhost:3000/postagens',
+        "http://localhost:3001/postagens",
+        "http://localhost:3000/postagens",
         `${location.protocol}//${location.hostname}:3001/postagens`,
-        `${location.protocol}//${location.hostname}:3000/postagens`
+        `${location.protocol}//${location.hostname}:3000/postagens`,
       ];
 
       let resp = null;
@@ -44,29 +44,32 @@ document.addEventListener('DOMContentLoaded', () => {
             break;
           }
           // se não ok, guardar erro e tentar próximo
-          lastError = new Error('Status ' + (resp ? resp.status : 'no-response') + ' from ' + url);
+          lastError = new Error(
+            "Status " + (resp ? resp.status : "no-response") + " from " + url
+          );
         } catch (e) {
           lastError = e;
         }
       }
 
-      if (!resp) throw lastError || new Error('Nenhuma resposta do servidor');
-      if (!resp.ok) throw new Error('Erro ao buscar postagens: ' + resp.status);
+      if (!resp) throw lastError || new Error("Nenhuma resposta do servidor");
+      if (!resp.ok) throw new Error("Erro ao buscar postagens: " + resp.status);
       const data = await resp.json();
       const posts = data.postagens || [];
 
       // guardar cache local para busca/filtragem
       postsCache = posts.slice();
       renderPosts(postsCache);
-
     } catch (err) {
       console.error(err);
       const msg = err && err.message ? err.message : String(err);
-      const stack = err && err.stack ? err.stack : '';
+      const stack = err && err.stack ? err.stack : "";
       list.innerHTML = `
         <div class="erro_carregamento">
           <p>Erro ao carregar memórias: ${escapeHtml(msg)}</p>
-          <details style="white-space:pre-wrap; margin-top:8px;"><summary>Detalhes (stack)</summary>${escapeHtml(stack)}</details>
+          <details style="white-space:pre-wrap; margin-top:8px;"><summary>Detalhes (stack)</summary>${escapeHtml(
+            stack
+          )}</details>
           <p>Tente reiniciar o back-end e recarregar a página (F5).</p>
         </div>
       `;
@@ -80,32 +83,37 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // renderiza um conjunto de postagens (usado para busca/filtragem)
   function renderPosts(posts) {
-    list.innerHTML = '';
+    list.innerHTML = "";
     if (!posts || posts.length === 0) {
-      list.innerHTML = '<p>Nenhuma memória encontrada.</p>';
+      list.innerHTML = "<p>Nenhuma memória encontrada.</p>";
       return;
     }
 
-    posts.forEach(post => {
-      const record = document.createElement('div');
-      record.className = 'recordacao';
+    posts.forEach((post) => {
+      const record = document.createElement("div");
+      record.className = "recordacao";
 
-      const autor = escapeHtml(post.autor || 'Autor desconhecido');
-      const descricao = escapeHtml(post.descricao || '');
-      const imagemSrcRaw = post.imagem || '';
+      const autor = escapeHtml(post.autor || "Autor desconhecido");
+      const descricao = escapeHtml(post.descricao || "");
+      const imagemSrcRaw = post.imagem || "";
       let imagemSrc = imagemSrcRaw;
-      try {
-        if (imagemSrcRaw && !/^(https?:)?\/\//i.test(imagemSrcRaw) && !imagemSrcRaw.startsWith('/')) {
-          imagemSrc = '/assets/img/banco_fotos2/' + imagemSrcRaw;
-        }
-        if (imagemSrc && !imagemSrc.startsWith('/') && !/^https?:/i.test(imagemSrc)) {
-          imagemSrc = '/' + imagemSrc;
-        }
-      } catch (e) {
-        imagemSrc = imagemSrcRaw;
+
+      // Se for base64, NÃO ALTERAR
+      if (!imagemSrcRaw.startsWith("data:image")) {
+        // se for caminho de arquivo simples, então sim, aplicar lógica
+        try {
+          if (
+            imagemSrcRaw &&
+            !/^(https?:)?\/\//i.test(imagemSrcRaw) &&
+            !imagemSrcRaw.startsWith("/")
+          ) {
+            imagemSrc = "/assets/img/banco_fotos2/" + imagemSrcRaw;
+          }
+        } catch {}
       }
 
-      const placeholder = 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=';
+      const placeholder =
+        "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=";
       record.innerHTML = `
         <div class="recordacao_titulo">
           <div class="autor">
@@ -114,7 +122,9 @@ document.addEventListener('DOMContentLoaded', () => {
           </div>
         </div>
         <div class="imagem_recordacao">
-          <img class="lazy-img" data-src="${escapeHtml(imagemSrc)}" src="${placeholder}" alt="imagem da recordação" loading="lazy" onerror="this.onerror=null;this.src='/assets/img/myschooldiary.png'">
+          <img class="lazy-img" data-src="${escapeHtml(
+            imagemSrc
+          )}" src="${placeholder}" alt="imagem da recordação" loading="lazy" onerror="this.onerror=null;this.src='/assets/img/myschooldiary.png'">
         </div>
         <div class="descricao"><p>${descricao}</p></div>
       `;
@@ -129,48 +139,56 @@ document.addEventListener('DOMContentLoaded', () => {
   // IntersectionObserver lazy loader (re-usable)
   let _io = null;
   function setupLazyLoading() {
-    const lazyImages = document.querySelectorAll('img.lazy-img[data-src]');
+    const lazyImages = document.querySelectorAll("img.lazy-img[data-src]");
     if (_io) {
       // disconnect previous observer to avoid leaks
-      try { _io.disconnect(); } catch (e) {}
+      try {
+        _io.disconnect();
+      } catch (e) {}
       _io = null;
     }
 
-    if ('IntersectionObserver' in window) {
-      _io = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            const img = entry.target;
-            const src = img.dataset.src;
-            if (src) {
-              img.src = src;
-              img.removeAttribute('data-src');
-              img.addEventListener('load', () => img.classList.add('loaded'));
+    if ("IntersectionObserver" in window) {
+      _io = new IntersectionObserver(
+        (entries, observer) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const img = entry.target;
+              const src = img.dataset.src;
+              if (src) {
+                img.src = src;
+                img.removeAttribute("data-src");
+                img.addEventListener("load", () => img.classList.add("loaded"));
+              }
+              observer.unobserve(img);
             }
-            observer.unobserve(img);
-          }
-        });
-      }, {
-        root: null,
-        rootMargin: '200px',
-        threshold: 0.01
-      });
+          });
+        },
+        {
+          root: null,
+          rootMargin: "200px",
+          threshold: 0.01,
+        }
+      );
 
-      lazyImages.forEach(img => _io.observe(img));
+      lazyImages.forEach((img) => _io.observe(img));
     } else {
-      lazyImages.forEach(img => {
+      lazyImages.forEach((img) => {
         img.src = img.dataset.src;
-        img.removeAttribute('data-src');
-        img.addEventListener('load', () => img.classList.add('loaded'));
+        img.removeAttribute("data-src");
+        img.addEventListener("load", () => img.classList.add("loaded"));
       });
     }
   }
 
   // search/filter: campo existente em memorias.html
-  const filtroInput = document.getElementById('filtroMemorias');
+  const filtroInput = document.getElementById("filtroMemorias");
   function debounce(fn, wait = 250) {
     let t;
-    return (...args) => { clearTimeout(t); t = setTimeout(() => fn(...args), wait); };
+    return (...args) => {
+      clearTimeout(t);
+      t = setTimeout(() => fn(...args), wait);
+    };
   }
 
   function applyFilter(q) {
@@ -179,67 +197,78 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
     const term = String(q).trim().toLowerCase();
-    const filtered = postsCache.filter(p => {
+    const filtered = postsCache.filter((p) => {
       if (!p) return false;
       // match id exactly or numeric contains
       if (p.id && String(p.id) === term) return true;
       if (String(p.id).includes(term)) return true;
       if (p.autor && String(p.autor).toLowerCase().includes(term)) return true;
-      if (p.descricao && String(p.descricao).toLowerCase().includes(term)) return true;
+      if (p.descricao && String(p.descricao).toLowerCase().includes(term))
+        return true;
       return false;
     });
     renderPosts(filtered);
   }
 
   if (filtroInput) {
-    filtroInput.addEventListener('input', debounce((e) => applyFilter(e.target.value), 250));
+    filtroInput.addEventListener(
+      "input",
+      debounce((e) => applyFilter(e.target.value), 250)
+    );
   }
 
   // --- Popup / criar memória handlers ---
   function abrirPopup() {
-    if (popup) popup.style.display = 'flex';
+    if (popup) popup.style.display = "flex";
   }
 
   function fecharPopup() {
-    if (popup) popup.style.display = 'none';
+    if (popup) popup.style.display = "none";
     // limpar campos
-    if (inputImagem) { inputImagem.value = ''; imagemDataUrl = null; }
-    if (previewImagem) { previewImagem.style.display = 'none'; previewImagem.src = ''; }
-    if (descricaoEl) descricaoEl.value = '';
-    if (inputAutor) inputAutor.value = '';
-    if (contadorDesc) contadorDesc.textContent = '0/100';
+    if (inputImagem) {
+      inputImagem.value = "";
+      imagemDataUrl = null;
+    }
+    if (previewImagem) {
+      previewImagem.style.display = "none";
+      previewImagem.src = "";
+    }
+    if (descricaoEl) descricaoEl.value = "";
+    if (inputAutor) inputAutor.value = "";
+    if (contadorDesc) contadorDesc.textContent = "0/100";
   }
 
-  if (abrirPopupBtn) abrirPopupBtn.addEventListener('click', abrirPopup);
-  if (fecharPopupBtn) fecharPopupBtn.addEventListener('click', fecharPopup);
+  if (abrirPopupBtn) abrirPopupBtn.addEventListener("click", abrirPopup);
+  if (fecharPopupBtn) fecharPopupBtn.addEventListener("click", fecharPopup);
 
   // fechar ao clicar fora do conteúdo
-  if (popup) popup.addEventListener('click', (e) => {
-    if (e.target === popup) fecharPopup();
-  });
+  if (popup)
+    popup.addEventListener("click", (e) => {
+      if (e.target === popup) fecharPopup();
+    });
 
   // contador de caracteres
   if (descricaoEl && contadorDesc) {
-    descricaoEl.addEventListener('input', () => {
+    descricaoEl.addEventListener("input", () => {
       contadorDesc.textContent = `${descricaoEl.value.length}/100`;
     });
   }
 
   // preview da imagem e conversão para data URL
   if (inputImagem && previewImagem) {
-    inputImagem.addEventListener('change', () => {
+    inputImagem.addEventListener("change", () => {
       const file = inputImagem.files && inputImagem.files[0];
       if (!file) {
         imagemDataUrl = null;
-        previewImagem.style.display = 'none';
-        previewImagem.src = '';
+        previewImagem.style.display = "none";
+        previewImagem.src = "";
         return;
       }
       const reader = new FileReader();
       reader.onload = () => {
         imagemDataUrl = reader.result; // data:image/...
         previewImagem.src = imagemDataUrl;
-        previewImagem.style.display = 'block';
+        previewImagem.style.display = "block";
       };
       reader.readAsDataURL(file);
     });
@@ -247,25 +276,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Envia a nova memória para o backend
   if (salvarBtn) {
-    salvarBtn.addEventListener('click', async () => {
-      const autor = (inputAutor && inputAutor.value) ? inputAutor.value.trim() : 'Anônimo';
-      const descricao = descricaoEl ? descricaoEl.value.trim() : '';
+    salvarBtn.addEventListener("click", async () => {
+      const autor =
+        inputAutor && inputAutor.value ? inputAutor.value.trim() : "Anônimo";
+      const descricao = descricaoEl ? descricaoEl.value.trim() : "";
 
       // validar
       if (!descricao && !imagemDataUrl) {
-        alert('Por favor, adicione uma imagem ou uma descrição antes de salvar.');
+        alert(
+          "Por favor, adicione uma imagem ou uma descrição antes de salvar."
+        );
         return;
       }
 
       // corpo a ser enviado: imagem como data URL (se fornecida)
-      const payload = { autor, descricao, imagem: imagemDataUrl || '' };
+      const payload = { autor, descricao, imagem: imagemDataUrl || "" };
 
       // tentar enviar para as mesmas urls candidatas usadas no carregamento
       const candidateUrls = [
-        'http://localhost:3001/postagens',
-        'http://localhost:3000/postagens',
+        "http://localhost:3001/postagens",
+        "http://localhost:3000/postagens",
         `${location.protocol}//${location.hostname}:3001/postagens`,
-        `${location.protocol}//${location.hostname}:3000/postagens`
+        `${location.protocol}//${location.hostname}:3000/postagens`,
       ];
 
       let resp = null;
@@ -273,27 +305,37 @@ document.addEventListener('DOMContentLoaded', () => {
       for (const url of candidateUrls) {
         try {
           resp = await fetch(url, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(payload)
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload),
           });
           if (resp && resp.ok) break;
-          lastError = new Error('Status ' + (resp ? resp.status : 'no-response') + ' from ' + url);
+          lastError = new Error(
+            "Status " + (resp ? resp.status : "no-response") + " from " + url
+          );
         } catch (err) {
           lastError = err;
         }
       }
 
       if (!resp || !resp.ok) {
-        console.error('Erro ao enviar nova memória:', lastError, resp);
+        console.error("Erro ao enviar nova memória:", lastError, resp);
         // tentar obter mais detalhes do response (se houver)
-        let detalhe = '';
+        let detalhe = "";
         try {
-          if (resp && resp.text) detalhe = '\nResposta servidor: ' + (await resp.text()).slice(0, 500);
+          if (resp && resp.text)
+            detalhe =
+              "\nResposta servidor: " + (await resp.text()).slice(0, 500);
         } catch (e) {
           // ignora
         }
-        alert('Erro ao enviar memória. Verifique o servidor e tente novamente.\n\nDetalhe: ' + (lastError && lastError.message ? lastError.message : String(lastError)) + detalhe);
+        alert(
+          "Erro ao enviar memória. Verifique o servidor e tente novamente.\n\nDetalhe: " +
+            (lastError && lastError.message
+              ? lastError.message
+              : String(lastError)) +
+            detalhe
+        );
         return;
       }
 
