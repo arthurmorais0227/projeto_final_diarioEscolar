@@ -508,7 +508,7 @@ async function main() {
     data: {
       autor: "Murilo Milan Brustolin",
       descricao: "recriando o poster de Stranger Things com o edu",
-      imagem: "https://imgur.com/a/Vz7v1.jpegBW#pegYGN6",
+      imagem: "https://imgur.com/jG2P7bh.jpeg",
     },
   });
 
@@ -540,7 +540,7 @@ async function main() {
     data: {
       autor: "Livia Oliveira Cruz",
       descricao: "recriando cena do clube dos 5 com os dois patetas",
-      imagem: "https://imgur.com/a/Vz7v1.jpegBW#PX0Yacs",
+      imagem: "https://imgur.com/8tyOlpI.jpeg",
     },
   });
 
