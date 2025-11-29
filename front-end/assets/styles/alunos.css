@@ -62,7 +62,8 @@ header {
 /* MAIN AGORA É 2 COLUNAS LADO A LADO */
 main.conteudo {
   width: 100%;
-  min-height: calc(100vh - 150px);
+  /* CORREÇÃO: Removida a altura fixa 'min-height: calc(100vh - 150px)' 
+     para que o 'main' se adapte à altura da coluna de alunos, que é a mais longa. */
   display: grid;
   grid-template-columns: 50% 50%;
 }
@@ -70,6 +71,7 @@ main.conteudo {
 /* --- ESQUERDA --- */
 .alunos_pai {
   width: 100%;
+  /* CORREÇÃO: O background do .alunos_pai dita a altura da linha no grid */
   background-image: radial-gradient(circle, #fff1bc, #f5b4b9);
   padding-left: 20px;
   padding-bottom: 30px;
@@ -173,7 +175,10 @@ main.conteudo {
   display: flex;
   flex-direction: column;
   padding-left: 15px;
+  /* CORREÇÃO: padding-bottom igual ao .alunos_pai para o alinhamento inferior */
   padding-bottom: 30px;
+  /* CORREÇÃO: Ocupa 100% da altura da célula do grid (que é a altura de .alunos_pai) */
+  height: 100%; 
 }
 
 .grid {
@@ -186,7 +191,7 @@ main.conteudo {
   padding-right: 20px;
 }
 
-.grid_titulo{
+.grid_titulo {
   font-family: DynaPuff;
   justify-content: center;
   display: flex;
@@ -281,7 +286,7 @@ footer {
   cursor: pointer;
 }
 
-.button a  {
+.button a {
   text-decoration: none;
   cursor: pointer;
   color: white;
