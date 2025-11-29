@@ -195,7 +195,7 @@ header {
   justify-content: center;
   align-items: center;
   width: 600px;
-  text-align: left;
+  text-align: justify;
 }
 
 .fundo {

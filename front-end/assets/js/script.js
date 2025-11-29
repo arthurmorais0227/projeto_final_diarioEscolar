@@ -91,277 +91,176 @@ document.addEventListener("DOMContentLoaded", () => {
 
   elementosAnimar.forEach((el) => observador.observe(el));
 
-  // GRID DE IMAGENS
+  
+  // Note que tudo isso está dentro do bloco document.addEventListener("DOMContentLoaded", ...)
+  // que é onde ele deve ficar.
 
-  function weightedRand(spec) {
-    let sum = 0;
-    let r = Math.random();
-    for (let i in spec) {
-      sum += spec[i];
-      if (r <= sum) return i;
+  function criarAviso(elemento, mensagem) {
+    const aviso = document.createElement("div");
+    aviso.classList.add("copiado-popup");
+    aviso.textContent = mensagem;
+
+    elemento.style.position = "relative";
+    elemento.appendChild(aviso);
+
+    setTimeout(() => {
+      aviso.style.opacity = "1";
+      aviso.style.transform = "translateY(-25px)";
+    }, 10);
+
+    setTimeout(() => {
+      aviso.style.opacity = "0";
+      aviso.style.transform = "translateY(-10px)";
+      setTimeout(() => aviso.remove(), 250);
+    }, 500);
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const heart = document.getElementById("heart");
+    const interacoes = document.getElementById("interacoes");
+
+    // versões coloridas
+    const opcoesColoridas = {
+      hands_clapping: "./../assets/img/icons/hands-clapping_color.png",
+      laughing: "./../assets/img/icons/laughin_color.png",
+      like: "./../assets/img/icons/like_color.png",
+      heart_option: "./../assets/img/icons/heart_color.png",
+    };
+
+    // abrir menu de reações
+    heart.addEventListener("click", () => {
+      interacoes.style.display = "flex";
+
+      // animação de aparecimento
+      requestAnimationFrame(() => {
+        interacoes.style.opacity = "1";
+        interacoes.style.transform = "translateY(0)";
+      });
+
+      // esconder o coração
+      heart.style.opacity = "0";
+      setTimeout(() => (heart.style.display = "none"), 200);
+    });
+
+    // quando clicar em uma reação
+    document.querySelectorAll("#interacoes img").forEach((img) => {
+      img.addEventListener("click", () => {
+        const id = img.id;
+
+        // 1 — troca a imagem do coração pela versão colorida
+        heart.src = opcoesColoridas[id];
+        heart.src = opcoesColoridas[id];
+
+        // 2 — esconde o menu
+        interacoes.style.opacity = "0";
+        interacoes.style.transform = "translateY(8px)";
+        setTimeout(() => (interacoes.style.display = "none"), 200);
+
+        // 3 — mostra o coração de volta
+        heart.style.display = "block";
+        requestAnimationFrame(() => (heart.style.opacity = "1"));
+      });
+    });
+  });
+
+  // Se estamos na página de memórias, o arquivo `script_memorias.js` já gerencia o popup e envio.
+  // Para evitar handlers duplicados (dois autores aparecendo), só anexa estes listeners
+  // caso NÃO estejamos na página de memórias.
+  if (!document.getElementById("memoriasList")) {
+    const botaoCriar = document.querySelector(".criar_memoria button");
+    const popup = document.getElementById("popupCriar");
+    const fechar = document.getElementById("fecharPopup");
+
+    const inputImagem = document.getElementById("inputImagem");
+    const previewImagem = document.getElementById("previewImagem");
+
+    const descricao = document.getElementById("descricao");
+    const contador = document.getElementById("contadorDesc");
+
+    const btnSalvar = document.getElementById("salvarMemoria");
+
+    // 🔹 Função para resetar o popup
+    function resetarPopup() {
+      if (inputImagem) inputImagem.value = "";
+      if (previewImagem) {
+        previewImagem.src = "";
+        previewImagem.style.display = "none";
+      }
+
+      if (descricao) descricao.value = "";
+      if (contador) contador.textContent = "0/100";
+    }
+
+    // 🔹 Abrir popup
+    if (botaoCriar && popup) {
+      botaoCriar.addEventListener("click", () => {
+        popup.style.display = "flex";
+      });
+    }
+
+    // 🔹 Fechar popup
+    function fecharPopup() {
+      if (popup) popup.style.display = "none";
+      resetarPopup();
+    }
+
+    if (fechar) fechar.addEventListener("click", fecharPopup);
+    if (popup)
+      popup.addEventListener("click", (e) => {
+        if (e.target === popup) fecharPopup();
+      });
+
+    // 🔹 Preview da imagem
+    if (inputImagem && previewImagem) {
+      inputImagem.addEventListener("change", () => {
+        const arquivo = inputImagem.files[0];
+
+        if (!arquivo) {
+          previewImagem.style.display = "none";
+          return;
+        }
+
+        const url = URL.createObjectURL(arquivo);
+        previewImagem.src = url;
+        previewImagem.style.display = "block";
+      });
+    }
+
+    // 🔹 Contador de caracteres
+    if (descricao && contador) {
+      descricao.addEventListener("input", () => {
+        contador.textContent = `${descricao.value.length}/100`;
+      });
+    }
+
+    // 🔹 Botão salvar: envia ao backend (comportamento antigo)
+    if (btnSalvar) {
+      btnSalvar.addEventListener("click", async () => {
+        const arquivo = inputImagem ? inputImagem.files[0] : null;
+        const texto = descricao ? descricao.value : "";
+
+        if (!arquivo || texto.length === 0) {
+          alert("Preencha a imagem e a descrição!");
+          return;
+        }
+
+        const formData = new FormData();
+        formData.append("imagem", arquivo);
+        formData.append("descricao", texto);
+        formData.append("autor", "Arthur Morais"); // pode ser dinâmico
+
+        const resposta = await fetch("/api/postar", {
+          method: "POST",
+          body: formData,
+        });
+
+        const resultado = await resposta.json();
+        console.log(resultado);
+
+        alert("Memória criada com sucesso!");
+        fecharPopup();
+      });
     }
   }
 
-  // Lista de imagens da pasta banco_fotos2
-  let imagens = [
-    "../assets/img/banco_fotos2/1000123118.jpeg",
-    "../assets/img/banco_fotos2/1000138148.jpeg",
-    "../assets/img/banco_fotos2/bola senai.jpg",
-    "../assets/img/banco_fotos2/Captura de tela 2025-08-15 132028.png",
-    "../assets/img/banco_fotos2/felipe dev.jpg",
-    "../assets/img/banco_fotos2/Image_20251107_090709_007.jpeg",
-    "../assets/img/banco_fotos2/Image_20251107_090709_074.jpeg",
-    "../assets/img/banco_fotos2/Image_20251107_090709_103.jpeg",
-    "../assets/img/banco_fotos2/Image_20251107_090709_137.jpeg",
-    "../assets/img/banco_fotos2/Image_20251107_090709_169.jpeg",
-    "../assets/img/banco_fotos2/Image_20251107_090709_212.jpeg",
-    "../assets/img/banco_fotos2/Image_20251107_090709_230.jpeg",
-    "../assets/img/banco_fotos2/Image_20251107_090709_290.jpeg",
-    "../assets/img/banco_fotos2/Image_20251107_090709_331.jpeg",
-    "../assets/img/banco_fotos2/IMG-20251107-WA0032.jpeg",
-    "../assets/img/banco_fotos2/lívia e bianca - pulseiras.jpg",
-    "../assets/img/banco_fotos2/lívia e bianca.JPG",
-    "../assets/img/banco_fotos2/lívia e daniel.jpg",
-    "../assets/img/banco_fotos2/meninas no dia feliz (1).JPG",
-    "../assets/img/banco_fotos2/meninas no dia feliz.JPG",
-    "../assets/img/banco_fotos2/nos + felipe dev.WEBP",
-    "../assets/img/banco_fotos2/site do felipe dev.jpg",
-    "../assets/img/banco_fotos2/tupi e piva.jpg",
-    "../assets/img/banco_fotos2/tupi.jpg",
-    "../assets/img/banco_fotos2/turma 1tds1.jpg",
-    "../assets/img/banco_fotos2/WIN_20250523_09_43_58_Pro.jpg",
-    "../assets/img/banco_fotos2/WIN_20250530_09_51_00_Pro.jpg",
-    "../assets/img/banco_fotos2/WIN_20250801_16_03_40_Pro.jpg",
-    "../assets/img/banco_fotos2/WIN_20250811_16_10_48_Pro (1).jpg",
-    "../assets/img/banco_fotos2/WIN_20250901_13_32_27_Pro.jpg",
-    "../assets/img/banco_fotos2/WIN_20250901_13_32_33_Pro.jpg",
-    "../assets/img/banco_fotos2/WIN_20250926_11_23_12_Pro.jpg",
-    "../assets/img/banco_fotos2/WIN_20251003_13_30_20_Pro.jpg",
-    "../assets/img/banco_fotos2/WIN_20251003_13_59_14_Pro.jpg",
-    "../assets/img/banco_fotos2/WIN_20251003_15_56_13_Pro.jpg",
-    "../assets/img/banco_fotos2/WIN_20251003_15_56_39_Pro.jpg",
-    "../assets/img/banco_fotos2/WIN_20251003_20_20_20_Pro.jpg",
-    "../assets/img/banco_fotos2/WIN_20251009_13_59_14_Pro.jpg",
-    "../assets/img/banco_fotos2/WIN_20251013_14_09_06_Pro.jpg",
-    "../assets/img/banco_fotos2/WIN_20251017_08_05_08_Pro.jpg",
-    "../assets/img/banco_fotos2/WIN_20251017_14_13_11_Pro.jpg",
-  ];
-
-  // **AQUI entra o passo 3**
-  imagens = imagens.filter((src) => {
-    const img = new Image();
-    img.src = src;
-    return img.complete || img.width > 0;
-  });
-
-  let grid = document.getElementById("grid");
-  let n = 0;
-
-  while (n < 40) {
-    let span = weightedRand({ 1: 0.7, 2: 0.2, 3: 0.1 });
-    let color = weightedRand({ 1: 0.2, 2: 0.2, 3: 0.2, 4: 0.2, 5: 0.2 });
-
-    // Escolhe imagem aleatória da sua pasta
-    let url = imagens[Math.floor(Math.random() * imagens.length)];
-
-    let div = document.createElement("div");
-    div.className = `card span-${span} c-${color}`;
-    div.style.backgroundImage = `url('${url}')`;
-
-    grid.appendChild(div);
-    n++;
-  }
-
-  
 });
-
-function criarAviso(elemento, mensagem) {
-  const aviso = document.createElement("div");
-  aviso.classList.add("copiado-popup");
-  aviso.textContent = mensagem;
-
-  elemento.style.position = "relative";
-  elemento.appendChild(aviso);
-
-  setTimeout(() => {
-    aviso.style.opacity = "1";
-    aviso.style.transform = "translateY(-25px)";
-  }, 10);
-
-  setTimeout(() => {
-    aviso.style.opacity = "0";
-    aviso.style.transform = "translateY(-10px)";
-    setTimeout(() => aviso.remove(), 250);
-  }, 500);
-}
-
-
-document.addEventListener("DOMContentLoaded", () => {
-  const heart = document.getElementById("heart");
-  const interacoes = document.getElementById("interacoes");
-
-  // versões coloridas
-  const opcoesColoridas = {
-    hands_clapping: "./../assets/img/icons/hands-clapping_color.png",
-    laughing: "./../assets/img/icons/laughin_color.png",
-    like: "./../assets/img/icons/like_color.png",
-    heart_option: "./../assets/img/icons/heart_color.png",
-  };
-
-  // abrir menu de reações
-  heart.addEventListener("click", () => {
-    interacoes.style.display = "flex";
-
-    // animação de aparecimento
-    requestAnimationFrame(() => {
-      interacoes.style.opacity = "1";
-      interacoes.style.transform = "translateY(0)";
-    });
-
-    // esconder o coração
-    heart.style.opacity = "0";
-    setTimeout(() => (heart.style.display = "none"), 200);
-  });
-
-  // quando clicar em uma reação
-  document.querySelectorAll("#interacoes img").forEach((img) => {
-    img.addEventListener("click", () => {
-      const id = img.id;
-
-      // 1 — troca a imagem do coração pela versão colorida
-      heart.src = opcoesColoridas[id];
-      heart.src = opcoesColoridas[id];
-
-      // 2 — esconde o menu
-      interacoes.style.opacity = "0";
-      interacoes.style.transform = "translateY(8px)";
-      setTimeout(() => (interacoes.style.display = "none"), 200);
-
-      // 3 — mostra o coração de volta
-      heart.style.display = "block";
-      requestAnimationFrame(() => (heart.style.opacity = "1"));
-    });
-  });
-});
-
-// Se estamos na página de memórias, o arquivo `script_memorias.js` já gerencia o popup e envio.
-// Para evitar handlers duplicados (dois autores aparecendo), só anexa estes listeners
-// caso NÃO estejamos na página de memórias.
-if (!document.getElementById('memoriasList')) {
-  const botaoCriar = document.querySelector(".criar_memoria button");
-  const popup = document.getElementById("popupCriar");
-  const fechar = document.getElementById("fecharPopup");
-
-  const inputImagem = document.getElementById("inputImagem");
-  const previewImagem = document.getElementById("previewImagem");
-
-  const descricao = document.getElementById("descricao");
-  const contador = document.getElementById("contadorDesc");
-
-  const btnSalvar = document.getElementById("salvarMemoria");
-
-  // 🔹 Função para resetar o popup
-  function resetarPopup() {
-    if (inputImagem) inputImagem.value = "";
-    if (previewImagem) { previewImagem.src = ""; previewImagem.style.display = "none"; }
-
-    if (descricao) descricao.value = "";
-    if (contador) contador.textContent = "0/100";
-  }
-
-  // 🔹 Abrir popup
-  if (botaoCriar && popup) {
-    botaoCriar.addEventListener("click", () => {
-      popup.style.display = "flex";
-    });
-  }
-
-  // 🔹 Fechar popup
-  function fecharPopup() {
-    if (popup) popup.style.display = "none";
-    resetarPopup();
-  }
-
-  if (fechar) fechar.addEventListener("click", fecharPopup);
-  if (popup) popup.addEventListener("click", (e) => {
-    if (e.target === popup) fecharPopup();
-  });
-
-  // 🔹 Preview da imagem
-  if (inputImagem && previewImagem) {
-    inputImagem.addEventListener("change", () => {
-      const arquivo = inputImagem.files[0];
-
-      if (!arquivo) {
-        previewImagem.style.display = "none";
-        return;
-      }
-
-      const url = URL.createObjectURL(arquivo);
-      previewImagem.src = url;
-      previewImagem.style.display = "block";
-    });
-  }
-
-  // 🔹 Contador de caracteres
-  if (descricao && contador) {
-    descricao.addEventListener("input", () => {
-      contador.textContent = `${descricao.value.length}/100`;
-    });
-  }
-
-  // 🔹 Botão salvar: envia ao backend (comportamento antigo)
-  if (btnSalvar) {
-    btnSalvar.addEventListener("click", async () => {
-      const arquivo = inputImagem ? inputImagem.files[0] : null;
-      const texto = descricao ? descricao.value : '';
-
-      if (!arquivo || texto.length === 0) {
-        alert("Preencha a imagem e a descrição!");
-        return;
-      }
-
-      const formData = new FormData();
-      formData.append("imagem", arquivo);
-      formData.append("descricao", texto);
-      formData.append("autor", "Arthur Morais"); // pode ser dinâmico
-
-      const resposta = await fetch("/api/postar", {
-        method: "POST",
-        body: formData
-      });
-
-      const resultado = await resposta.json();
-      console.log(resultado);
-
-      alert("Memória criada com sucesso!");
-      fecharPopup();
-    });
-  }
-}
-
-// --- Copiar EMAIL ---
-document.querySelectorAll(".int1 img").forEach((icon) => {
-  icon.style.cursor = "pointer";
-
-  icon.addEventListener("click", () => {
-    const email = icon.previousElementSibling.textContent.trim();
-    navigator.clipboard.writeText(email);
-
-    criarAviso(icon.parentElement, "Email copiado!");
-  });
-});
-
-// --- Copiar TELEFONE ---
-document.querySelectorAll(".int2 img").forEach((icon) => {
-  icon.style.cursor = "pointer";
-
-  icon.addEventListener("click", () => {
-    const telefone = icon.previousElementSibling.textContent.trim();
-    navigator.clipboard.writeText(telefone);
-
-    criarAviso(icon.parentElement, "Telefone copiado!");
-  });
-});
-
-

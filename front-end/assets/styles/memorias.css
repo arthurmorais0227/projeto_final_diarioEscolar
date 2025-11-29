@@ -200,6 +200,11 @@ opacity: 1;
 transform: translateY(0);
 }
 
+
+input #filtroMemorias  {
+  border: 2px dashed #8f5fbb;
+}
+
 /* Responsividade: ajustada para usar column-count */
 @media (max-width: 900px) {
 .memorias_list {
