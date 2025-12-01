@@ -113,6 +113,7 @@ body {
   padding: 0;
   background: #fff;
   color: #222;
+  background-image: radial-gradient(circle, #fff1bc, #f5b4b9);
 }
 
 .container-filho {
@@ -125,13 +126,19 @@ body {
   display: flex;
   grid-template-columns: 1fr 1fr;
   color: #a890bf ;
+  background-color: rgb(255, 251, 251);
+  border-radius: 10px;
+  width: 1460px;
+  height: 690px;
+  
 }
+
 
 
 .faq-item {
   margin-bottom: 25px;
   position: relative;
-  cursor: pointer;
+  cursor: pointer
 }
 
 .faq-question {
@@ -148,7 +155,7 @@ body {
   line-height: 20px;
   transition: 0.2s;
   user-select: none;
-  color: #7878ff;
+  color:  #a890bf;
 }
 
 .faq-answer {
@@ -156,7 +163,7 @@ body {
   overflow: hidden;
   transition: max-height .4s ease;
   margin-top: 10px;
-  background: #b8b8f5;
+  background:#7878ff;
   padding: 0px 20px; 
   border-radius: 6px;
   color: white;
@@ -342,7 +349,7 @@ footer {
   overflow: hidden;
   transition: max-height .2s ease;
   margin-top: 10px;
-  background: #b8b8f5;
+  background:  #a890bf;
   padding: 0px 20px; 
   border-radius: 7px;
   color: white;
@@ -350,5 +357,6 @@ footer {
 
 .faq-answer.open {
   padding: 20px; 
+  color:  white; 
   
 }
