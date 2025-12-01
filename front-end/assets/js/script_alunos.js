@@ -1,5 +1,4 @@
 // GRID DE IMAGENS 🏞️
-
 function weightedRand(spec) {
   let sum = 0;
   let r = Math.random();
@@ -91,8 +90,6 @@ let imagens = [
   "https://imgur.com/76NSeB6.jpeg",
 ];
 
-// O .filter() foi removido daqui!
-
 let grid = document.getElementById("grid");
 if (grid) {
   // Verificação essencial para não dar erro se o elemento não existir
@@ -113,26 +110,110 @@ if (grid) {
   }
 }
 
-// --- Copiar EMAIL ---
-document.querySelectorAll(".int1 img").forEach((icon) => {
-  icon.style.cursor = "pointer";
+// ----------------------------------------------------------------------
+// --- CÓDIGO DE CÓPIA E EXIBIÇÃO DO POPUP PERTO DO ÍCONE ---
+// ----------------------------------------------------------------------
 
-  icon.addEventListener("click", () => {
-    const email = icon.previousElementSibling.textContent.trim();
-    navigator.clipboard.writeText(email);
+/**
+ * Cria e exibe um pop-up de aviso ao lado do elemento de ícone.
+ * @param {HTMLElement} parentElement - O contêiner (.int1 ou .int2) pai do ícone.
+ * @param {string} message - A mensagem a ser exibida (Ex: "E-mail copiado!").
+ */
+function showPopupNextToIcon(parentElement, message) {
+  // 1. Cria o elemento do pop-up
+  const popup = document.createElement('div');
+  popup.textContent = message;
+  popup.classList.add('copy-popup');
 
-    criarAviso(icon.parentElement, "Email copiado!");
+  // 2. Adiciona ao contêiner pai para posicionamento relativo ao ícone
+  parentElement.appendChild(popup);
+
+  // 3. Força o reflow para garantir a transição
+  void popup.offsetWidth; 
+
+  // 4. Exibe o pop-up
+  popup.classList.add('mostrar');
+
+  // 5. Remove o pop-up após 1.5 segundos
+  setTimeout(() => {
+    popup.classList.remove('mostrar');
+    // Remove o elemento do DOM após a animação de desaparecimento
+    setTimeout(() => {
+      popup.remove();
+    }, 300); 
+  }, 400); 
+}
+
+/**
+ * Copia o texto e mostra o aviso.
+ * @param {string} textToCopy - O texto a ser copiado.
+ * @param {HTMLElement} parentElement - O contêiner (.int1 ou .int2) pai do ícone.
+ * @param {string} message - A mensagem a ser exibida no aviso.
+ */
+function copyAndShowNotice(textToCopy, parentElement, message) {
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(textToCopy).then(() => {
+      showPopupNextToIcon(parentElement, message);
+    }).catch(err => {
+      console.error('Erro ao copiar o texto: ', err);
+      alert(`Não foi possível copiar automaticamente. Conteúdo: ${textToCopy}`);
+    });
+  } else {
+    // Fallback
+    alert(`Seu navegador não suporta cópia automática. Copie manualmente: ${textToCopy}`);
+  }
+}
+
+// ----------------------------------------------------
+// --- Adiciona evento de clique para E-MAIL (.int1) ---
+// ----------------------------------------------------
+
+document.querySelectorAll(".int1").forEach((container) => {
+  const icon = container.querySelector("img");
+  const tooltip = container.querySelector(".tooltip"); // Contém o e-mail
+
+  if (icon && tooltip) {
+    icon.style.cursor = "pointer";
+    
+    icon.addEventListener("click", (event) => {
+      event.stopPropagation(); 
+      const email = tooltip.textContent.trim();
+      // Passamos o 'container' como referência para o pop-up
+      copyAndShowNotice(email, container, "E-mail copiado!"); 
+    });
+  }
+});
+
+
+// -----------------------------------------------------
+// --- Adiciona evento de clique para TELEFONE (.int2) ---
+// -----------------------------------------------------
+
+document.querySelectorAll(".int2").forEach((container) => {
+  const icon = container.querySelector("img");
+  const tooltip = container.querySelector(".tooltip"); // Contém o telefone
+  
+  if (icon && tooltip) {
+    icon.style.cursor = "pointer";
+    
+    icon.addEventListener("click", (event) => {
+      event.stopPropagation();
+      const phone = tooltip.textContent.trim(); 
+      // Passamos o 'container' como referência para o pop-up
+      copyAndShowNotice(phone, container, "Telefone copiado!");
+    });
+  }
+});
+
+// --- Animação de elementos ---
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('mostrar');
+    } else {
+      entry.target.classList.remove('mostrar');
+    }
   });
 });
 
-// --- Copiar TELEFONE ---
-document.querySelectorAll(".int2 img").forEach((icon) => {
-  icon.style.cursor = "pointer";
-
-  icon.addEventListener("click", () => {
-    const telefone = icon.previousElementSibling.textContent.trim();
-    navigator.clipboard.writeText(telefone);
-
-    criarAviso(icon.parentElement, "Telefone copiado!");
-  });
-});
+document.querySelectorAll('.animar').forEach((el) => observer.observe(el));

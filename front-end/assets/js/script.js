@@ -95,26 +95,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // Note que tudo isso está dentro do bloco document.addEventListener("DOMContentLoaded", ...)
   // que é onde ele deve ficar.
 
-  function criarAviso(elemento, mensagem) {
-    const aviso = document.createElement("div");
-    aviso.classList.add("copiado-popup");
-    aviso.textContent = mensagem;
-
-    elemento.style.position = "relative";
-    elemento.appendChild(aviso);
-
-    setTimeout(() => {
-      aviso.style.opacity = "1";
-      aviso.style.transform = "translateY(-25px)";
-    }, 10);
-
-    setTimeout(() => {
-      aviso.style.opacity = "0";
-      aviso.style.transform = "translateY(-10px)";
-      setTimeout(() => aviso.remove(), 250);
-    }, 500);
-  }
-
   document.addEventListener("DOMContentLoaded", () => {
     const heart = document.getElementById("heart");
     const interacoes = document.getElementById("interacoes");
