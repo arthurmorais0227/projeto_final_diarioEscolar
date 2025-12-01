@@ -272,19 +272,6 @@ header {
   margin-top: 20px;
 }
 
-.publicacoes {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  gap: 30px;
-  overflow-x: auto;
-  overflow-y: hidden;
-  padding: 20px;
-  scroll-behavior: smooth;
-  margin-top: 30px;
-  margin-left: 30px;
-}
-
 .memorias-container {
   display: flex;
   flex-direction: row;
@@ -296,22 +283,6 @@ header {
   scroll-behavior: smooth;
   margin-top: 30px;
   margin-left: 30px;
-}
-
-.publicacoes::-webkit-scrollbar {
-  height: 8px;
-  
-}
-
-.publicacoes::-webkit-scrollbar-thumb {
-  background-color: #f5b4b9;
-  border-radius: 10px;
-  
-}
-
-.publicacoes::-webkit-scrollbar-thumb:hover {
-  background-color: #b296ca;
-  
 }
 
 .memorias-container::-webkit-scrollbar {
@@ -360,17 +331,6 @@ header {
 .feed:hover {
   box-shadow: 0px 0px 15px 5px #fff1bc;
   transform: scale(1.05);
-}
-
-.animar {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.7s ease-out;
-}
-
-.animar.mostrar {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 .video-cortado {
