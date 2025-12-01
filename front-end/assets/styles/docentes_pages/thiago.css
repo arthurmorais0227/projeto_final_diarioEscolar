@@ -11,7 +11,6 @@ body {
     height: 100vh;
     background-image: radial-gradient(circle, #fff1bc, #f5b4b9);
     }
-    
   
 
 header {
@@ -267,6 +266,7 @@ header {
   
   .prof-card img:hover {
     transform: translateY(-10px);
+    box-shadow: 0 12px 22px rgba(198, 113, 255, 0.6);
   }
   
   .prof-card h3 {
@@ -350,5 +350,44 @@ header {
   
   .btn-voltar a:hover {
     transform: scale(1.08);
+  }
+  
+  .titulo-materias {
+    font-family: "DynaPuff";
+    font-size: 48px;
+    color: #8b63b5;
+    text-align: center;
+  
+    margin-top: 120px; /* aumento do espaço depois do header */
+    margin-bottom: 15px;
+  
+    background: #f5b4b9;
+    width: fit-content;
+  
+    margin-left: auto;
+    margin-right: auto;
+  
+    padding: 12px 45px;
+    border-radius: 30px;
+    border: 4px dashed #a890bf;
+    
+    box-shadow: 0 5px 15px rgba(150, 80, 180, 0.25);
+  }
+  
+  .subtitulo-materias {
+    font-family: "Sour Gummy";
+    text-align: center;
+    font-size: 22px;
+  
+    color: #8650b9;
+    max-width: 750px;
+  
+    margin: 10px auto 70px auto; /* mais espaço embaixo também */
+    padding: 12px 25px;
+  
+    background: #fff1bc;
+    border-radius: 20px;
+    border: 3px solid #f5b4b9;
+    box-shadow: 0 3px 10px rgba(200, 150, 220, 0.2);
   }
   
