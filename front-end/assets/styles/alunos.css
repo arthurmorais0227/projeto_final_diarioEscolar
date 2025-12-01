@@ -359,19 +359,26 @@ footer {
 
 }
 
-#aviso-copiado {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: #9465c0;
+.copy-popup {
+  position: absolute;
+  top: 50%; 
+  left: 100%;
+  transform: translate(10px, -50%); 
+  background-color: #9465c0; 
   color: white;
-  padding: 12px 20px;
-  border-radius: 12px;
-  font-family: DynaPuff;
-  font-size: 18px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
   opacity: 0;
-  transition: opacity 0.3s ease;
-  z-index: 9999;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+  z-index: 100;
+}
+
+.copy-popup.mostrar {
+  opacity: 1;
+  transform: translate(20px, -50%); 
 }
 
 .copiado-popup {
