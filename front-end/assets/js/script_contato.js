@@ -5,30 +5,39 @@ faqItems.forEach(item => {
     const answer = item.querySelector('.faq-answer');
     const question = item.querySelector('.faq-question'); 
 
-    
-    const clickableElements = [toggle, question].filter(el => el); 
+    const clickableElements = [toggle, question].filter(el => el);
 
     clickableElements.forEach(element => {
         element.addEventListener('click', () => {
-            
-            
+
+            // -------- FECHAR TODOS OS OUTROS --------
+            faqItems.forEach(otherItem => {
+                if (otherItem !== item) {
+                    const otherAnswer = otherItem.querySelector('.faq-answer');
+                    const otherToggle = otherItem.querySelector('.faq-toggle');
+
+                    otherAnswer.classList.remove('open');
+                    otherAnswer.style.maxHeight = "0";
+
+                    if (otherToggle) otherToggle.textContent = '+';
+                }
+            });
+            // -----------------------------------------
+
+            // Alternar o atual
             answer.classList.toggle('open');
-            
-            
+
             if (answer.classList.contains('open')) {
-                
-                answer.style.maxHeight = (answer.scrollHeight + 40) + "px"; 
-               
+                answer.style.maxHeight = (answer.scrollHeight + 40) + "px";
                 if (toggle) toggle.textContent = '–';
             } else {
-                
                 answer.style.maxHeight = "0";
-                
                 if (toggle) toggle.textContent = '+';
             }
         });
     });
 });
+
 
 
 
