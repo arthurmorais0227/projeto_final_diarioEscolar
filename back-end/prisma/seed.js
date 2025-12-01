@@ -538,9 +538,9 @@ async function main() {
 
   await prisma.postagem.create({
     data: {
-      autor: "Livia Oliveira Cruz",
-      descricao: "recriando cena do clube dos 5 com os dois patetas",
-      imagem: "https://imgur.com/8tyOlpI.jpeg",
+      autor: "Murilo Milan Brustolin",
+      descricao: "buuuuuu",
+      imagem: "https://imgur.com/fG5P1wV.jpeg"
     },
   });
 
@@ -554,9 +554,9 @@ async function main() {
 
   await prisma.postagem.create({
     data: {
-      autor: "Murilo Milan Brustolin",
-      descricao: "buuuuuu",
-      imagem: "https://imgur.com/fG5P1wV.jpeg",
+      autor: "Livia Oliveira Cruz",
+      descricao: "recriando cena do clube dos 5 com os dois patetas",
+      imagem: "https://imgur.com/8tyOlpI.jpeg"
     },
   });
 
