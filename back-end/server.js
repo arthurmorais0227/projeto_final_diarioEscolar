@@ -1,7 +1,8 @@
 import express from "express";
 import cors from 'cors';
 import dotenv from "dotenv";
-import postagemRoutes from './src/Routes/postagemRoutes.js'
+import postagemRoutes from './src/Routes/postagemRoutes.js';
+import comentariosRoutes from "./src/Routes/comentarioRoutes.js"
 
 const app = express();
 
@@ -18,7 +19,7 @@ app.get("/", (req, res) => {
 });
 
 app.use('/postagens', postagemRoutes);
-app.use('/comentarios', comentariosRoutes)
+app.use('/comentarios', comentariosRoutes);
 
 app.listen(serverPort, () => {
     console.log(`🚀 Servidor rodando em http://localhost:${serverPort} 🚀`);
