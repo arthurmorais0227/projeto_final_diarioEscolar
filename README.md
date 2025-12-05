@@ -13,41 +13,41 @@ Os alunos podem visualizar as publicações no front-end, enquanto o backend ofe
 
 Node.js — Express — PostgreSQL — Prisma ORM
 
-**Node.js 22.x** – Ambiente JavaScript
+- **Node.js 22.x** – Ambiente JavaScript
 
-**Express 5.1.0** – Framework web
+- **Express 5.1.0** – Framework web
 
-**PostgreSQL 14+** – Banco relacional
+- **PostgreSQL 14+** – Banco relacional
 
-**Prisma ORM 6.x** – Modelagem, migrações e CRUD
+- **Prisma ORM 6.x** – Modelagem, migrações e CRUD
 
-**JWT (jsonwebtoken)** – Autenticação
+- **JWT (jsonwebtoken)** – Autenticação
 
-**bcryptjs** – Hash de senhas
+- **bcryptjs** – Hash de senhas
 
-**Postman** – Testes das rotas
+- **Postman** – Testes das rotas
 
 ## 🎨 Frontend
 
 HTML5 — CSS3 — JavaScript (ES6+)
 
-**HTML5** – Estrutura semântica
+- **HTML5** – Estrutura semântica
 
-**CSS3** – Grid, Flexbox, responsividade
+- **CSS3** – Grid, Flexbox, responsividade
 
-**JavaScript** – Consumo da API via GET, GETbyID
+- **JavaScript** – Consumo da API via GET, GETbyID
 
-**Figma** – Prototipação (lista e detalhes das memórias)
+- **Figma** – Prototipação (lista e detalhes das memórias)
 
 ## 🧰 Ferramentas
 
-**Git & GitHub** – Versionamento
+- **Git & GitHub** – Versionamento
 
-**VS Code** – Desenvolvimento
+- **VS Code** – Desenvolvimento
 
-**BrModeloWeb** – Modelagem do banco
+- **BrModeloWeb** – Modelagem do banco
 
-**Notion / Trello** – Organização e requisitos
+- **Notion / Trello** – Organização e requisitos
 
 # 📚 Storytelling / Problema
 
@@ -64,67 +64,67 @@ Tudo organizado, bonito e fácil de navegar.
 
 ## Front-end
 
-Listagem de postagens (GET)
+- Listagem de postagens (GET)
 
-Página de detalhes (GETbyID)
+- Página de detalhes (GETbyID)
 
-Layout responsivo e amigável
+- Layout responsivo e amigável
 
-Exibição de fotos, textos e autor
+- Exibição de fotos, textos e autor
 
-Filtros integrados com o backend (autor / data)
+- Filtros integrados com o backend (autor / data)
 
 ## Back-end
 
-CRUD completo via API:
+**CRUD completo via API:**
 
-Postagens
+- Postagens
 
-Comentários
+- Comentários
 
-Alunos
+- Alunos
 
-Validações:
+- Validações:
 
-Campos obrigatórios
+- Campos obrigatórios
 
-Erros tratados no Express
+- Erros tratados no Express
 
-Middlewares de autenticação (se aplicável)
+- Middlewares de autenticação (se aplicável)
 
 ## Banco de Dados (PostgreSQL)
 
 Tabelas:
 
-**alunos**
+- **alunos**
 
-**postagens**
+- **postagens**
 
 Regras:
 
-Mínimo **100 postagens cadastradas**
+- Mínimo **100 postagens cadastradas**
 
-Filtros por **autor**, **nome**, **id** e **descrição**
+- Filtros por **autor**, **nome**, **id** e **descrição**
 
-Relações normalizadas (1:N, N:1)
+- Relações normalizadas (1:N, N:1)
 
 # ⭐ Funcionalidades
 
-Cadastro, edição e exclusão de postagens
+- Cadastro, edição e exclusão de postagens
 
-Upload e exibição de fotos
+- Upload e exibição de fotos
 
-Comentários nas memórias
+- Comentários nas memórias
 
-Filtro por autor
+- Filtro por autor
 
-Filtro por data
+- Filtro por descrição
 
-Interface intuitiva para a turma
+- Interface intuitiva para a turma
 
-Visualização de detalhes da memória
+- Visualização de detalhes da memória
 
-Integração completa com API REST
+- Integração completa com API REST
 
 # 🤝 Colaboradores
 
