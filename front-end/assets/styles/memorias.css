@@ -592,6 +592,72 @@ footer {
   margin-top: 10px;
 }
 
+.comentarios-container {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 2px solid #e0e0e0;
+}
+
+.comentarios-container h3 {
+  color: #8f5fbb;
+  margin-bottom: 12px;
+  font-size: 18px;
+}
+
+#comentariosList {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 16px;
+  max-height: 200px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 12px;
+}
+
+#comentariosList li {
+  padding: 8px 0;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+#comentariosList li:last-child {
+  border-bottom: none;
+}
+
+#comentariosList strong {
+  color: #8f5fbb;
+}
+
+#novoComentario {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-family: DynaPuff;
+  font-size: 14px;
+  resize: vertical;
+  min-height: 80px;
+  margin-bottom: 10px;
+}
+
+#adicionarComentario {
+  background-color: #8f5fbb;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: DynaPuff;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+#adicionarComentario:hover {
+  background-color: #7a4c9c;
+}
+
 @media (max-width: 600px) {
   .detalhes-flex-container {
     flex-direction: column;
