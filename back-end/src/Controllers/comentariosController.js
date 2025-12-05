@@ -114,3 +114,53 @@ export const criar = async (req, res) => {
         });
     }
 };
+
+export const deletar = async (req, res) => {
+    try {
+        const id = parseInt(req.params.id);
+        const deletado = await ComentarioModel.deletar(id);
+
+        if (!deletado) {
+            return res.status(404).json({
+                erro: "Comentário não encontrado para deletar.",
+                id
+            });
+        }
+
+        res.status(200).json({
+            mensagem: "Comentário deletado com sucesso!"
+        });
+    } catch (error) {
+        res.status(500).json({
+            erro: 'Erro ao deletar comentário.',
+            detalhes: error.message
+        });
+    }
+};
+
+export const atualizar = async (req, res) => {
+    try {
+        const id = parseInt(req.params.id);
+        const dados = req.body;
+
+        const atualizado = await ComentarioModel.atualizar(id, dados);
+
+        if (!atualizado) {
+            return res.status(404).json({
+                erro: "Comentário não encontrado para atualizar.",
+                id
+            });
+        }
+
+        res.status(200).json({
+            mensagem: "Comentário atualizado com sucesso!",
+            comentario: atualizado
+        });
+
+    } catch (error) {
+        res.status(500).json({
+            erro: 'Erro ao atualizar comentário.',
+            detalhes: error.message
+        });
+    }
+};
