@@ -373,8 +373,8 @@ footer {
 .contatos {
   display: flex;
   height: 100%;
-  width: 40%;
-  gap: 90px;
+  width:40%;
+  gap: 100px;
 }
 
 .fileira1, .fileira2 {
