@@ -22,7 +22,7 @@ model Comentario {
   autor       String?
   comentario  String?
   data        DateTime  @default(now())
-
+  
   id_postagem Int
   postagem    Postagem  @relation(fields: [id_postagem], references: [id])
 }
