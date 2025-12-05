@@ -15,6 +15,22 @@ export const listarTodos = async (req, res) => {
             return;
         }
 
+        let resultado = postagens;
+
+        const { autor, descricao } = req.query;
+
+            if (autor) {
+                resultado = resultado.filter(
+                (a) => a.autor.toLowerCase() === autor.toLowerCase()
+                );
+            }
+
+            if (descricao) {
+                resultado = resultado.filter(
+                (d) => d.descricao.toLowerCase() === descricao.toLowerCase()
+                );
+            }
+
         const postagensFiltradas = typeof limite === 'number' && !isNaN(limite) ? postagens.slice(0, limite) : postagens;
 
         res.status(200).json({
