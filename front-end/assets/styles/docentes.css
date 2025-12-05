@@ -411,3 +411,26 @@ footer {
   width: auto;
 
 }
+
+  .container {
+    position: relative;
+    display: inline-block;
+  }
+
+  .popup {
+    display: none;
+    position: absolute;
+    top: -40px; 
+    left: 0;
+    padding: 8px 12px;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    font-size: 14px;
+    white-space: nowrap;
+  }
+
+  .container:hover .popup {
+    display: block;
+  }
+  
