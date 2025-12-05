@@ -125,3 +125,12 @@ Interface intuitiva para a turma
 Visualização de detalhes da memória
 
 Integração completa com API REST
+
+# 🤝 Colaboradores
+
+- Arthur Morais
+- Beatriz Miotto
+- Bianca Luisa
+- Lívia Oliveira
+- Gustavo Victor
+- Daniel Casalli
