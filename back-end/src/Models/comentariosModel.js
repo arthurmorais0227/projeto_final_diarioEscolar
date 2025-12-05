@@ -13,28 +13,19 @@ export const encontreUm = async (id) => {
     })
 }
 
+export const encontreComPorPostagem = async (id_postagem) => {
+    return await prisma.comentario.findMany({
+        where: { id_postagem: Number(id_postagem) },
+        orderBy: { id: 'asc' }
+    });
+}
+
 export const criar = async (dado) => {
     return await prisma.comentario.create({
         data: {
-            autor: dado.autor,
+            autor: dado.autor || 'Anônimo',
             comentario: dado.comentario,
-            data: dado.data,
+            id_postagem: Number(dado.id_postagem)
         }
-    })
-}
-
-export const deletar = async (id) => {
-    return await prisma.comentario.delete({
-        where: { id: Number(id) }
-    })
-}
-
-export const atualizar = async (id, dado) => {
-    return await prisma.comentario.update({
-        where: { id: Number(id) },
-        data: {
-            ...(dado.autor && { autor: dado.autor }),
-            ...(dado.comentario && { comentario: dado.comentario }),
-        }
-    })
+    });
 }

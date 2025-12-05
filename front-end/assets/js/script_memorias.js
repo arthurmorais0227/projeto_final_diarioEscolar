@@ -189,6 +189,104 @@ document.addEventListener("DOMContentLoaded", () => {
     return null;
   }
 
+  // busca comentários de uma postagem pelo id da postagem
+  async function fetchComentariosPorPostagem(id_postagem) {
+    if (!id_postagem && id_postagem !== 0) return [];
+    const candidateUrls = [
+      "http://localhost:3001/comentarios/postagem",
+      "http://localhost:3000/comentarios/postagem",
+      `${location.protocol}//${location.hostname}:3001/comentarios/postagem`,
+      `${location.protocol}//${location.hostname}:3000/comentarios/postagem`,
+    ];
+
+    let lastError = null;
+    for (const base of candidateUrls) {
+      const url = `${base}/${encodeURIComponent(id_postagem)}`;
+      try {
+        const resp = await fetch(url);
+        if (resp && resp.ok) {
+          const data = await resp.json();
+          return data.comentarios || data.comentario || [];
+        }
+      } catch (e) {
+        lastError = e;
+      }
+    }
+    return [];
+  }
+
+  // renderiza lista de comentários no UL
+  function renderComentarios(comentarios, containerUL) {
+    if (!containerUL) return;
+    containerUL.innerHTML = "";
+    
+    if (!comentarios || comentarios.length === 0) {
+      containerUL.innerHTML = "<li style=\"text-align: center; color: #999;\">Nenhum comentário ainda</li>";
+      return;
+    }
+
+    comentarios.forEach((com) => {
+      const li = document.createElement("li");
+      const autor = escapeHtml(com.autor || "Anônimo");
+      const texto = escapeHtml(com.comentario || "");
+      li.innerHTML = `<strong>${autor}:</strong> ${texto}`;
+      containerUL.appendChild(li);
+    });
+  }
+
+  // adiciona um novo comentário e atualiza a lista
+  async function adicionarNovoComentario(id_postagem, containerUL, textareaEl) {
+    if (!textareaEl || !textareaEl.value.trim()) {
+      alert("Por favor, escreva um comentário.");
+      return;
+    }
+
+    const autorComentario = prompt("Seu nome (opcional):") || "Anônimo";
+    const textoComentario = textareaEl.value.trim();
+
+    const payload = {
+      autor: autorComentario,
+      comentario: textoComentario,
+      id_postagem: id_postagem
+    };
+
+    const candidateUrls = [
+      "http://localhost:3001/comentarios",
+      "http://localhost:3000/comentarios",
+      `${location.protocol}//${location.hostname}:3001/comentarios`,
+      `${location.protocol}//${location.hostname}:3000/comentarios`,
+    ];
+
+    let resp = null;
+    let lastError = null;
+    for (const url of candidateUrls) {
+      try {
+        resp = await fetch(url, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        });
+        if (resp && resp.ok) break;
+        lastError = new Error(
+          "Status " + (resp ? resp.status : "no-response") + " from " + url
+        );
+      } catch (err) {
+        lastError = err;
+      }
+    }
+
+    if (!resp || !resp.ok) {
+      console.error("Erro ao enviar comentário:", lastError);
+      alert("Erro ao enviar comentário. Tente novamente.");
+      return;
+    }
+
+    // sucesso — limpar e recarregar comentários
+    textareaEl.value = "";
+    const comentarios = await fetchComentariosPorPostagem(id_postagem);
+    renderComentarios(comentarios, containerUL);
+  }
+
   // abre o popup de detalhes preenchendo os campos
   async function openDetalhes(id, fallbackPost) {
     let post = null;
@@ -211,8 +309,11 @@ document.addEventListener("DOMContentLoaded", () => {
       "detalheDescricaoValue"
     );
     const detalheIdValue = document.getElementById("detalheIdValue");
+    const comentariosList = document.getElementById("comentariosList");
+    const novoComentario = document.getElementById("novoComentario");
+    const adicionarComentario = document.getElementById("adicionarComentario");
 
-    // preencher (com labels já no HTML)
+    // preencher dados da postagem
     if (detalheAutorValue)
       detalheAutorValue.textContent = post.autor || "Autor desconhecido";
     if (detalheDescricaoValue)
@@ -220,6 +321,30 @@ document.addEventListener("DOMContentLoaded", () => {
     if (detalheIdValue)
       detalheIdValue.textContent = post.id != null ? String(post.id) : "-";
     if (detalheImagem) detalheImagem.src = resolveImageSrc(post.imagem || "");
+
+    // buscar comentários da postagem
+    if (comentariosList) {
+      comentariosList.innerHTML = "<li style=\"text-align: center; color: #999;\">Carregando comentários...</li>";
+      try {
+        const comentarios = await fetchComentariosPorPostagem(post.id);
+        renderComentarios(comentarios, comentariosList);
+      } catch (e) {
+        console.error("Erro ao buscar comentários:", e);
+        comentariosList.innerHTML = "<li style=\"text-align: center; color: #999;\">Erro ao carregar comentários</li>";
+      }
+    }
+
+    // limpar e preparar field de novo comentário
+    if (novoComentario) novoComentario.value = "";
+
+    // remover listeners antigos
+    if (adicionarComentario) {
+      const novoBtn = adicionarComentario.cloneNode(true);
+      adicionarComentario.parentNode.replaceChild(novoBtn, adicionarComentario);
+      novoBtn.addEventListener("click", async () => {
+        await adicionarNovoComentario(post.id, comentariosList, novoComentario);
+      });
+    }
 
     // mostrar popup
     if (popupDetalhes) popupDetalhes.style.display = "flex";

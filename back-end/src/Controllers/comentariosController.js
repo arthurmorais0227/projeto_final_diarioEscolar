@@ -58,82 +58,59 @@ export const listarUm = async (req, res) => {
     }
 };
 
+export const listarComPorPostagem = async (req, res) => {
+    try {
+        const id_postagem = parseInt(req.params.id_postagem);
+        const comentarios = await ComentarioModel.encontreComPorPostagem(id_postagem);
+
+        if(!comentarios || comentarios.length === 0){
+            res.status(200).json({
+                total: 0,
+                mensagem: 'Não há comentários para esta postagem.',
+                comentarios: []
+            })
+            return;
+        }
+
+        res.status(200).json({
+            total: comentarios.length,
+            mensagem: 'Comentários encontrados:',
+            comentarios: comentarios
+        })
+
+    } catch (error) {
+        res.status(500).json({
+            erro: 'Erro interno de servidor.',
+            detalhes: error.message,
+            status: 500
+        })
+    }
+};
+
 export const criar = async (req, res) => {
     try {
-        const { autor, comentario } = req.body;
+        const { autor, comentario, id_postagem } = req.body;
 
-        const dado = { autor, comentario };
+        if (!id_postagem) {
+            return res.status(400).json({
+                erro: 'id_postagem é obrigatório.',
+                status: 400
+            });
+        }
 
-        const novaComentario = await ComentarioModel.criar(dado);
+        const dado = { autor, comentario, id_postagem };
+
+        const novoComentario = await ComentarioModel.criar(dado);
     
         res.status(201).json({
-            mensagem: 'Comentario criada com sucesso!',
+            mensagem: 'Comentário criado com sucesso!',
             comentario: novoComentario
         });
 
     } catch (error) {
         res.status(500).json({
-            erro: 'erro ao enviar comentário.',
+            erro: 'Erro ao enviar comentário.',
             detalhes: error.message
         });
     }
 };
-
-export const deletar = async (req, res) => {
-    try {
-        const id = parseInt(req.params.id)
-
-        const comentarioExiste = await ComentarioModel.encontreUm(id);
-
-        if(!comentarioExiste){
-            return res.status(404).json({
-                erro: 'A comentario com esse id não foi encontrada.',
-                id: id
-            })
-        }
-
-        await ComentarioModel.deletar(id)
-
-        res.status(200).json({
-            message: 'comentario apagado com sucesso.',
-            comentarioRemovida: comentarioExiste
-        })
-
-    } catch (error) {
-        res.status(500).json({
-            erro: 'Erro ao apagar comentário.',
-            detalhes: error.message
-        })
-        
-    }
-}
-
-export const atualizar = async (req, res) => {
-    try {
-    
-    const id = parseInt(req.params.id);
-    const dados = req.body;
-
-    const comentarioExiste = await ComentarioModel.encontreUm(id);
-
-    if(!comentarioExiste) {
-        return res.status(404).json({
-            erro: 'Esse comentario não existe',
-            id: id
-        })
-    }
-
-    const comentarioAtualizado = await ComentarioModel.atualizar(id, dados)
-
-    return res.status(200).json({
-        mensagem: 'comentario atualizado com sucesso!',
-        comentario: comentarioAtualizado
-    })
-
-    } catch (error) {
-        res.status(500).json({
-            erro: 'Erro ao atualizar o comentário.',
-            detalhes: error.message
-        })
-    }
-}
