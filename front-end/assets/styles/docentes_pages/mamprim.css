@@ -381,3 +381,30 @@ header {
   border: 3px solid #f5b4b9;
   box-shadow: 0 3px 10px rgba(200, 150, 220, 0.2);
 }
+
+.popup-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.popup-message {
+  position: absolute;
+  top: 70px;   
+  left: 50%; 
+  transform: translateX(-50%);
+  background: rgb(44, 42, 42);
+  color: rgb(240, 240, 240);
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  white-space: nowrap;
+  z-index: 10;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+  text-align: center; 
+}
+
+.popup-wrapper:hover .popup-message {
+  opacity: 1;
+}
