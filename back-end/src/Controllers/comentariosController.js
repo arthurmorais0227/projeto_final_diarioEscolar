@@ -57,3 +57,60 @@ export const listarUm = async (req, res) => {
         })
     }
 };
+
+export const listarComPorPostagem = async (req, res) => {
+    try {
+        const id_postagem = parseInt(req.params.id_postagem);
+        const comentarios = await ComentarioModel.encontreComPorPostagem(id_postagem);
+
+        if(!comentarios || comentarios.length === 0){
+            res.status(200).json({
+                total: 0,
+                mensagem: 'Não há comentários para esta postagem.',
+                comentarios: []
+            })
+            return;
+        }
+
+        res.status(200).json({
+            total: comentarios.length,
+            mensagem: 'Comentários encontrados:',
+            comentarios: comentarios
+        })
+
+    } catch (error) {
+        res.status(500).json({
+            erro: 'Erro interno de servidor.',
+            detalhes: error.message,
+            status: 500
+        })
+    }
+};
+
+export const criar = async (req, res) => {
+    try {
+        const { autor, comentario, id_postagem } = req.body;
+
+        if (!id_postagem) {
+            return res.status(400).json({
+                erro: 'id_postagem é obrigatório.',
+                status: 400
+            });
+        }
+
+        const dado = { autor, comentario, id_postagem };
+
+        const novoComentario = await ComentarioModel.criar(dado);
+    
+        res.status(201).json({
+            mensagem: 'Comentário criado com sucesso!',
+            comentario: novoComentario
+        });
+
+    } catch (error) {
+        res.status(500).json({
+            erro: 'Erro ao enviar comentário.',
+            detalhes: error.message
+        });
+    }
+};
