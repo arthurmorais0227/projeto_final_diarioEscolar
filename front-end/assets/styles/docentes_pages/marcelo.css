@@ -219,22 +219,11 @@ header {
     color: #b296ca;
   }
 
-  /* ⬆️ CONTAINER GERAL */
 .materias-container {
     padding-top: 40px;
     padding-bottom: 80px;
   }
   
-  /* TÍTULO */
-  .titulo-materias {
-    text-align: center;
-    font-family: DynaPuff;
-    font-size: 45px;
-    color: #7e4cae;
-    margin-bottom: 50px;
-  }
-  
-  /* 🧑‍🏫 FOTO DOS DOIS PROFESSORES */
   .professores-topo {
     display: flex;
     justify-content: center;
@@ -282,7 +271,6 @@ header {
     margin-top: 5px;
   }
   
-  /* 🔧 BOX DAS MATÉRIAS */
   .materia {
     background: #fff1bc;
     border-radius: 25px;
@@ -321,7 +309,6 @@ header {
     font-size: 22px;
   }
   
-  /* DIVISOR */
   .divisor {
     width: 70%;
     margin: 50px auto;
@@ -329,7 +316,6 @@ header {
     border-top: 4px dashed #c78cda;
   }
   
-  /* BOTÃO */
   .btn-voltar {
     text-align: center;
     margin-top: 40px;
@@ -347,23 +333,19 @@ header {
   transition: transform .3s ease, box-shadow .3s ease;
 }
 
-/* EFEITO AO PASSAR O MOUSE */
 .btn-voltar a:hover {
-  transform: translateY(-4px); /* levanta igual os quadradinhos */
-  box-shadow: 0 0 18px rgba(227, 127, 176, 0.6); /* brilho atrás */
+  transform: translateY(-4px); 
+  box-shadow: 0 0 18px rgba(227, 127, 176, 0.6);
 }
 
  .subtitulo-materias {
     font-family: "Sour Gummy";
     text-align: center;
     font-size: 22px;
-  
     color: #8650b9;
     max-width: 750px;
-  
-    margin: 10px auto 70px auto; /* mais espaço embaixo também */
+    margin: 10px auto 70px auto; 
     padding: 12px 25px;
-  
     background: #fff1bc;
     border-radius: 20px;
     border: 3px solid #f5b4b9;
@@ -375,7 +357,7 @@ header {
     font-size: 48px;
     color: #8b63b5;
     text-align: center;
-    margin-top: 70px; /* aumento do espaço depois do header */
+    margin-top: 70px; 
     margin-bottom: 15px;
     background: #f5b4b9;
     width: fit-content;
