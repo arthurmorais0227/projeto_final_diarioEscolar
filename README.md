@@ -59,3 +59,69 @@ No **front-end**: alunos visualizam memórias, fotos e detalhes.
 No **back-end**: CRUD completo de postagens, comentários, alunos e validações.
 
 Tudo organizado, bonito e fácil de navegar.
+
+# ✔️ Escopo do Projeto
+
+## Front-end
+
+Listagem de postagens (GET)
+
+Página de detalhes (GETbyID)
+
+Layout responsivo e amigável
+
+Exibição de fotos, textos e autor
+
+Filtros integrados com o backend (autor / data)
+
+## Back-end
+
+CRUD completo via API:
+
+Postagens
+
+Comentários
+
+Alunos
+
+Validações:
+
+Campos obrigatórios
+
+Erros tratados no Express
+
+Middlewares de autenticação (se aplicável)
+
+## Banco de Dados (PostgreSQL)
+
+Tabelas:
+
+**alunos**
+
+**postagens**
+
+Regras:
+
+Mínimo **100 postagens cadastradas**
+
+Filtros por **autor**, **nome**, **id** e **descrição**
+
+Relações normalizadas (1:N, N:1)
+
+# ⭐ Funcionalidades
+
+Cadastro, edição e exclusão de postagens
+
+Upload e exibição de fotos
+
+Comentários nas memórias
+
+Filtro por autor
+
+Filtro por data
+
+Interface intuitiva para a turma
+
+Visualização de detalhes da memória
+
+Integração completa com API REST
