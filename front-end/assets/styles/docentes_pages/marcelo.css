@@ -7,10 +7,10 @@
 }
 
 body {
-  width: 100%;
-  height: 100vh;
-  background-color: #fefdf6;
-}
+    width: 100%;
+    height: 100vh;
+    background-image: radial-gradient(circle, #fff1bc, #f5b4b9);
+    }
 
 header {
   background-color: #a890bf;
@@ -336,18 +336,20 @@ header {
   }
   
   .btn-voltar a {
-    text-decoration: none;
-    background: #f5b4b9;
-    padding: 15px 30px;
-    border-radius: 15px;
-    font-family: DynaPuff;
-    border: 2px dashed #e37fb0;
-    color: white;
-    font-size: 22px;
-    transition: transform .3s ease;
-  }
-  
-  .btn-voltar a:hover {
-    transform: scale(1.08);
-  }
+  text-decoration: none;
+  background: #f5b4b9;
+  padding: 15px 30px;
+  border-radius: 15px;
+  font-family: DynaPuff;
+  border: 2px dashed #e37fb0;
+  color: white;
+  font-size: 22px;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+
+.btn-voltar a:hover {
+  box-shadow: 0 0 18px rgba(227, 127, 176, 0.6); /* brilho atrás */
+}
+
   
