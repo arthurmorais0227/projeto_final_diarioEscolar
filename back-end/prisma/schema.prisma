@@ -8,9 +8,21 @@ datasource db {
 }
 
 model Postagem {
-  id        Int      @id @default(autoincrement())
-  autor     String?
-  descricao String?
-  data      DateTime @default(now())
-  imagem    String?
+  id          Int          @id @default(autoincrement())
+  autor       String?
+  descricao   String?
+  data        DateTime     @default(now())
+  imagem      String?
+
+  comentarios Comentario[]
+}
+
+model Comentario {
+  id          Int       @id @default(autoincrement())
+  autor       String?
+  comentario  String?
+  data        DateTime  @default(now())
+
+  id_postagem Int
+  postagem    Postagem  @relation(fields: [id_postagem], references: [id])
 }

@@ -1,11 +1,93 @@
-import { PrismaClient } from "@prisma/client";
+// Arquivo: prisma/seed.js
+import { PrismaClient } from "@prisma/client"; // Corrigido para import
 
 const prisma = new PrismaClient();
 
-async function main() {
-  await prisma.postagem.deleteMany({});
+// Dados e Lógica do SEGUNDO SEED (Comentários) - Integrados aqui
+// ----------------------------------------------------------------
+const comentariosBase = [
+  "Muito bom!", "Achei massa 😂", "Ficou incrível!",
+  "Gostei demais!", "Sensacional!", "KKKKKK top",
+  "Mandou bem demais!", "Amei essa!", "Que demais!",
+  "Altas memórias!", "Kkkkk adorei", "Foto muito boa!"
+];
 
-  await prisma.$executeRaw`ALTER SEQUENCE "Postagem_id_seq" RESTART WITH 1;`; // Para PostgreSQL
+const autoresTurma = [
+  "Arthur Morais",
+  "Murilo Milan Brustolin",
+  "Gabriela Emi Yamamoto",
+  "Gustavo Victor Ferreira",
+  "Victor Ferreira",
+  "Bianca Luisa Teodoro Silva",
+  "Beatriz Miotto de Oliveira",
+  "Livia Oliveira Cruz",
+  "Daniel Casalli",
+  "João Stopiglia",
+  "Pedro Otávio Braga",
+  "Gustavo Lisboa",
+  "Rafael Santos Mendes",
+  "João Piva",
+  "Cauã Tupinambá",
+  "Yasmin Crisóstomo",
+  "Maria Eduarda",
+  "Sunshine Sun"
+];
+
+function gerarComentario(descricao) {
+  const base = comentariosBase[Math.floor(Math.random() * comentariosBase.length)];
+
+  if (descricao.toLowerCase().includes("foto")) return base + " 📸";
+  if (descricao.toLowerCase().includes("github")) return "Estilo programador 😎";
+  if (descricao.toLowerCase().includes("amigos")) return "Amizade é tudo!";
+  if (descricao.toLowerCase().includes("trabalho")) return "Brabo demais 💼";
+  if (descricao.toLowerCase().includes("praia")) return "Queria estar aí 🌅";
+
+  return base;
+}
+
+async function criarComentarios(prisma) {
+  console.log("⏳ Criando comentários...");
+
+  const totalPosts = await prisma.postagem.count();
+
+  for (let id = 1; id <= totalPosts; id++) {
+    const postagem = await prisma.postagem.findUnique({ where: { id } });
+
+    if (postagem) {
+      await prisma.comentario.createMany({
+        data: [
+          {
+            autor: autoresTurma[Math.floor(Math.random() * autoresTurma.length)],
+            comentario: gerarComentario(postagem.descricao),
+            id_postagem: id,
+          },
+          {
+            autor: autoresTurma[Math.floor(Math.random() * autoresTurma.length)],
+            comentario: gerarComentario(postagem.descricao),
+            id_postagem: id,
+          },
+        ],
+      });
+    }
+  }
+
+  console.log(`💬 ${totalPosts * 2} comentários criados!`);
+}
+// ----------------------------------------------------------------
+
+async function main() {
+  // 1. Limpeza e Reset da Sequência
+  await prisma.postagem.deleteMany({});
+  await prisma.comentario.deleteMany({});
+
+  // Para PostgreSQL
+  await prisma.$executeRaw`ALTER SEQUENCE "Postagem_id_seq" RESTART WITH 1;`;
+  await prisma.$executeRaw`ALTER SEQUENCE "Comentario_id_seq" RESTART WITH 1;`;
+
+  console.log("🔥 Dados existentes limpos e sequências resetadas.");
+
+  // 2. Criação das Postagens
+  console.log("⏳ Criando postagens...");
 
   await prisma.postagem.create({
     data: {
@@ -807,14 +889,21 @@ async function main() {
       imagem: "https://imgur.com/76NSeB6.jpeg",
     },
   });
+  
+  console.log("✅ Postagens inseridas com sucesso!");
+  
+  // 3. Criação dos Comentários (Segundo Seed)
+  await criarComentarios(prisma);
 }
 
-console.log("🌸| Seeds inseridas com sucesso!");
+console.log("🌸| Iniciando o Seed...");
 
 main()
   .catch((e) => {
+    console.error("❌ ERRO durante o seeding:", e);
     throw e;
   })
   .finally(async () => {
     await prisma.$disconnect();
+    console.log("✨ Seeding concluído!");
   });
