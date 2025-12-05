@@ -1,11 +1,11 @@
-# MySchoolDiary
+# 📒 MySchoolDiary
 
 Plataforma digital interativa para registrar memórias, postagens e momentos da turma 1TDS1 ao longo do ano.
 Os alunos podem visualizar as publicações no front-end, enquanto o backend oferece CRUD completo com postagens, comentários e fotos.
 
 # 📸 Preview
 
-<img src="/front-end/assets/img/preview.png" width="300" />
+<img src="/front-end/assets/img/preview.png" width="900" />
 
 # 🛠️ Tecnologias Utilizadas
 
@@ -48,3 +48,14 @@ HTML5 — CSS3 — JavaScript (ES6+)
 **BrModeloWeb** – Modelagem do banco
 
 **Notion / Trello** – Organização e requisitos
+
+# 📚 Storytelling / Problema
+
+A turma 1TDS1 queria guardar lembranças do ano — fotos, histórias, postagens e momentos marcantes.
+Para isso, nasceu o **MySchoolDiary**, um diário digital interativo onde cada memória da turma ganha espaço para ser vista, curtida e relembrada.
+
+No **front-end**: alunos visualizam memórias, fotos e detalhes.
+
+No **back-end**: CRUD completo de postagens, comentários, alunos e validações.
+
+Tudo organizado, bonito e fácil de navegar.
