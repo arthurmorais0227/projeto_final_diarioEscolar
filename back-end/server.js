@@ -18,6 +18,7 @@ app.get("/", (req, res) => {
 });
 
 app.use('/postagens', postagemRoutes);
+app.use('/comentarios', comentariosRoutes)
 
 app.listen(serverPort, () => {
     console.log(`🚀 Servidor rodando em http://localhost:${serverPort} 🚀`);
