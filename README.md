@@ -26,3 +26,15 @@ Node.js — Express — PostgreSQL — Prisma ORM
 **bcryptjs** – Hash de senhas
 
 **Postman** – Testes das rotas
+
+## 🎨 Frontend
+
+HTML5 — CSS3 — JavaScript (ES6+)
+
+**HTML5** – Estrutura semântica
+
+**CSS3** – Grid, Flexbox, responsividade
+
+**JavaScript** – Consumo da API via GET, GETbyID
+
+**Figma** – Prototipação (lista e detalhes das memórias)
