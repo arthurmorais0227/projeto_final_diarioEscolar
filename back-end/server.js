@@ -2,6 +2,7 @@ import express from "express";
 import cors from 'cors';
 import dotenv from "dotenv";
 import postagemRoutes from './src/Routes/postagemRoutes.js'
+import comentariosRoutes from './src/Routes/comentariosRoutes.js'
 
 const app = express();
 
