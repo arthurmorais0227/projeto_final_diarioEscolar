@@ -67,12 +67,7 @@
         <h2>Criar Memória</h2>
 
         <label>Autor:</label>
-        <input
-          type="text"
-          id="inputAutor"
-          placeholder="Seu nome (opcional)"
-          required
-        />
+        <input type="text" id="inputAutor" placeholder="Seu nome" required />
 
         <label>Imagem:</label>
         <input type="file" id="inputImagem" accept="image/*" />
@@ -130,6 +125,32 @@
         <button class="popup-salvar" id="salvarMemoria">Salvar</button>
       </div>
     </div>
+    <!-- Popup de detalhes da recordação -->
+    <div class="popup" id="popupDetalhes" style="display: none">
+      <div class="popup-conteudo">
+        <span class="popup-fechar" id="fecharDetalhes">&times;</span>
+        <h2>Detalhes da Memória</h2>
+        <div class="detalhes-flex-container">
+          <img
+            id="detalheImagem"
+            src="/assets/img/myschooldiary.png"
+            alt="imagem"
+            class="detalhe-imagem"
+          />
+          <div class="detalhes-texto-container">
+            <p class="detalhe-info">
+              <strong>Autor:</strong>
+              <p id="detalheAutorValue">Autor desconhecido</p>
+            </p>
+            <p class="detalhe-info"><strong>Descrição:</strong></p>
+            <p id="detalheDescricaoValue" class="detalhe-descricao-valor">—</p>
+            <p class="detalhe-id">
+              <strong>id:</strong> <span id="detalheIdValue">-</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
     <footer class="animar">
       <div class="titulo_footer">
         <h1>Vamos conversar!</h1>
@@ -167,9 +188,9 @@
       </div>
       <div class="logos_footer">
         <div class="icones_footer">
-          <img src="../assets/img/github.png" alt="">
-          <img src="../assets/img/instagram_roxo.png" alt="">
-          <img src="../assets/img/linkedin_roxo.png" alt="">
+          <img src="../assets/img/github.png" alt="" />
+          <img src="../assets/img/instagram_roxo.png" alt="" />
+          <img src="../assets/img/linkedin_roxo.png" alt="" />
         </div>
       </div>
     </footer>
