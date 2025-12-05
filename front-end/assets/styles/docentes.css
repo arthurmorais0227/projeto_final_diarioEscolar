@@ -412,25 +412,29 @@ footer {
 
 }
 
-  .container {
-    position: relative;
-    display: inline-block;
-  }
+.popup-wrapper {
+  position: relative;
+  display: inline-block;
+}
 
-  .popup {
-    display: none;
-    position: absolute;
-    top: -40px; 
-    left: 0;
-    padding: 8px 12px;
-    background-color: black;
-    color: white;
-    border-radius: 5px;
-    font-size: 14px;
-    white-space: nowrap;
-  }
+.popup-message {
+  position: absolute;
+  top: 70px;   
+  left: 50%; 
+  transform: translateX(-50%);
+  background: rgb(44, 42, 42);
+  color: rgb(240, 240, 240);
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  white-space: nowrap;
+  z-index: 10;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+  text-align: center; 
+}
 
-  .container:hover .popup {
-    display: block;
-  }
-  
+.popup-wrapper:hover .popup-message {
+  opacity: 1;
+}
