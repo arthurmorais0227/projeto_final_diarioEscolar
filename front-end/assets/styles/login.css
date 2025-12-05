@@ -178,7 +178,7 @@ main h2 {
 }
 
 .botao button {
-  margin: 20px auto;
+  margin: 40px auto;
   display: block;
   width: 140px;
   height: 42px;
@@ -189,6 +189,8 @@ main h2 {
   font-weight: bold;
   font-family: Sour Gummy;
   background-color: white;
+  text-decoration: none;
+
 }
 
 .cadastro a {

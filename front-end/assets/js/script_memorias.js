@@ -274,6 +274,62 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  //camera
+  const abrirCameraBtn = document.getElementById("abrirCameraBtn");
+  const capturarFotoBtn = document.getElementById("capturarFotoBtn");
+  const camera = document.getElementById("camera");
+  let stream; // armazenar a câmera ativa
+
+  // abrir a câmera quando solicitado
+  if (abrirCameraBtn) {
+    abrirCameraBtn.addEventListener("click", async () => {
+      try {
+        stream = await navigator.mediaDevices.getUserMedia({ video: true });
+
+        if (camera) {
+          camera.srcObject = stream;
+          camera.style.display = "block";
+        }
+        if (capturarFotoBtn) capturarFotoBtn.style.display = "block";
+      } catch (err) {
+        alert("Não foi possível acessar a câmera");
+        console.error(err);
+      }
+    });
+  }
+
+  // capturar foto: desenhar no canvas, obter dataURL e armazenar em imagemDataUrl
+  if (capturarFotoBtn) {
+    capturarFotoBtn.addEventListener("click", () => {
+      const canvas = document.createElement("canvas");
+
+      canvas.width = (camera && camera.videoWidth) || 640;
+      canvas.height = (camera && camera.videoHeight) || 480;
+
+      const ctx = canvas.getContext("2d");
+      if (camera) ctx.drawImage(camera, 0, 0, canvas.width, canvas.height);
+
+      const dataURL = canvas.toDataURL("image/png");
+
+      // guarda o dataURL para envio no salvar
+      imagemDataUrl = dataURL;
+
+      // mostra no preview (mesmo comportamento do input file)
+      if (previewImagem) {
+        previewImagem.src = dataURL;
+        previewImagem.style.display = "block";
+      }
+
+      // fecha a câmera
+      if (stream) {
+        stream.getTracks().forEach((track) => track.stop());
+        stream = null;
+      }
+      if (camera) camera.style.display = "none";
+      if (capturarFotoBtn) capturarFotoBtn.style.display = "none";
+    });
+  }
+
   // Envia a nova memória para o backend
   if (salvarBtn) {
     salvarBtn.addEventListener("click", async () => {

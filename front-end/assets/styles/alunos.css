@@ -59,19 +59,15 @@ header {
   transform: scale(1.1);
 }
 
-/* MAIN AGORA É 2 COLUNAS LADO A LADO */
 main.conteudo {
-  width: 100%;
-  /* CORREÇÃO: Removida a altura fixa 'min-height: calc(100vh - 150px)' 
-     para que o 'main' se adapte à altura da coluna de alunos, que é a mais longa. */
   display: grid;
   grid-template-columns: 50% 50%;
+  align-items: stretch;
 }
 
 /* --- ESQUERDA --- */
 .alunos_pai {
   width: 100%;
-  /* CORREÇÃO: O background do .alunos_pai dita a altura da linha no grid */
   background-image: radial-gradient(circle, #fff1bc, #f5b4b9);
   padding-left: 20px;
   padding-bottom: 30px;
@@ -175,10 +171,8 @@ main.conteudo {
   display: flex;
   flex-direction: column;
   padding-left: 15px;
-  /* CORREÇÃO: padding-bottom igual ao .alunos_pai para o alinhamento inferior */
   padding-bottom: 30px;
-  /* CORREÇÃO: Ocupa 100% da altura da célula do grid (que é a altura de .alunos_pai) */
-  height: 100%; 
+  height: auto;
 }
 
 .grid {
@@ -300,7 +294,6 @@ footer {
   width: 30%;
 }
 
-
 .texto_botao button {
   width: 35%;
   background-color: #f5b4b9;
@@ -356,15 +349,14 @@ footer {
 .icones_footer img {
   height: 60px;
   width: auto;
-
 }
 
 .copy-popup {
   position: absolute;
-  top: 50%; 
+  top: 50%;
   left: 100%;
-  transform: translate(10px, -50%); 
-  background-color: #9465c0; 
+  transform: translate(10px, -50%);
+  background-color: #9465c0;
   color: white;
   padding: 4px 8px;
   border-radius: 4px;
@@ -378,7 +370,7 @@ footer {
 
 .copy-popup.mostrar {
   opacity: 1;
-  transform: translate(20px, -50%); 
+  transform: translate(20px, -50%);
 }
 
 .copiado-popup {
