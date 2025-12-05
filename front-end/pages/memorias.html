@@ -77,6 +77,38 @@
         <label>Imagem:</label>
         <input type="file" id="inputImagem" accept="image/*" />
 
+        <!-- --- BLOCO DA CÂMERA --- -->
+        <div style="margin-top: 10px">
+          <button id="abrirCameraBtn">Abrir Câmera</button>
+
+          <video
+            id="camera"
+            autoplay
+            playsinline
+            style="
+              display: none;
+              width: 150px;
+              margin-top: 10px;
+              border-radius: 10px;
+            "
+          ></video>
+
+          <button id="capturarFotoBtn" style="display: none; margin-top: 10px">
+            Capturar Foto
+          </button>
+        </div>
+
+        <!-- Preview da foto capturada OU da imagem escolhida -->
+        <img
+          id="previewImagem"
+          style="
+            display: none;
+            width: 150px;
+            margin-top: 10px;
+            border-radius: 10px;
+          "
+        />
+
         <!-- PREVIEW -->
         <img
           id="previewImagem"
@@ -105,11 +137,20 @@
       <div class="main_footer">
         <div class="texto_botao">
           <div class="texto">
-            <p>Este projeto foi criado pelos estudantes do curso de Desenvolvimento de Sistemas como forma de eternizar as memórias da turma 1TDS1. Aqui reunimos fotos, experiências e momentos importantes que representam nossa trajetória escolar. O My School Diary é um espaço feito com dedicação, criatividade e colaboração. Agradecemos a sua visita!</p>
+            <p>
+              Este projeto foi criado pelos estudantes do curso de
+              Desenvolvimento de Sistemas como forma de eternizar as memórias da
+              turma 1TDS1. Aqui reunimos fotos, experiências e momentos
+              importantes que representam nossa trajetória escolar. O My School
+              Diary é um espaço feito com dedicação, criatividade e colaboração.
+              Agradecemos a sua visita!
+            </p>
           </div>
-            <div class="button">
-              <a href="/pages/contato.html" class="menu-link">Entre em contato!</a>
-            </div>
+          <div class="button">
+            <a href="/pages/contato.html" class="menu-link"
+              >Entre em contato!</a
+            >
+          </div>
         </div>
         <div class="contatos">
           <div class="fileira1">
