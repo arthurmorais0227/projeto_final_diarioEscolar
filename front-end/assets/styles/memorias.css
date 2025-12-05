@@ -317,6 +317,17 @@ input #filtroMemorias {
   z-index: 999;
 }
 
+#abrirCameraBtn,
+#capturarFotoBtn {
+  border: 2px dashed #8f5fbb;
+  color: #8f5fbb;
+  background-color: white;
+  font-family: DynaPuff;
+  border-radius: 10px;
+  width: 120px;
+  height: 30px;
+}
+
 .popup-conteudo {
   background: white;
   width: 400px;
