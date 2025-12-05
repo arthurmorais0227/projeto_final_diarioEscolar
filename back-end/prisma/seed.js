@@ -1,12 +1,11 @@
-import { PrismaClient } from '@prisma/client';
+import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
 async function main() {
-
   await prisma.postagem.deleteMany({});
 
-  await prisma.$executeRaw`ALTER SEQUENCE "Postagem_id_seq" RESTART WITH 1;`;  // Para PostgreSQL
+  await prisma.$executeRaw`ALTER SEQUENCE "Postagem_id_seq" RESTART WITH 1;`; // Para PostgreSQL
 
   await prisma.postagem.create({
     data: {
@@ -115,7 +114,8 @@ async function main() {
   await prisma.postagem.create({
     data: {
       autor: "Bianca Luisa Teodoro Silva",
-      descricao: "Participando da feira de ciências da escola com meus pasteis.",
+      descricao:
+        "Participando da feira de ciências da escola com meus pasteis.",
       imagem: "https://imgur.com/oet5B39.jpeg",
     },
   });
@@ -540,7 +540,7 @@ async function main() {
     data: {
       autor: "Murilo Milan Brustolin",
       descricao: "buuuuuu",
-      imagem: "https://imgur.com/fG5P1wV.jpeg"
+      imagem: "https://imgur.com/fG5P1wV.jpeg",
     },
   });
 
@@ -556,7 +556,7 @@ async function main() {
     data: {
       autor: "Livia Oliveira Cruz",
       descricao: "recriando cena do clube dos 5 com os dois patetas",
-      imagem: "https://imgur.com/8tyOlpI.jpeg"
+      imagem: "https://imgur.com/8tyOlpI.jpeg",
     },
   });
 
@@ -807,13 +807,12 @@ async function main() {
       imagem: "https://imgur.com/76NSeB6.jpeg",
     },
   });
-
-};
+}
 
 console.log("🌸| Seeds inseridas com sucesso!");
 
 main()
-  .catch(e => {
+  .catch((e) => {
     throw e;
   })
   .finally(async () => {

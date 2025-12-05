@@ -130,10 +130,111 @@ document.addEventListener("DOMContentLoaded", () => {
       `;
 
       list.appendChild(record);
+
+      // tornar clicável: abre popup de detalhes (tentamos buscar por id no servidor, senão usamos o objeto local)
+      record.style.cursor = "pointer";
+      record.addEventListener("click", async () => {
+        try {
+          await openDetalhes(post.id, post);
+        } catch (e) {
+          console.error("Erro abrindo detalhes:", e);
+        }
+      });
     });
 
     // after DOM updated, (re)attach lazy loader
     setupLazyLoading();
+  }
+
+  // helper para resolver src de imagem (mesma lógica usada ao renderizar)
+  function resolveImageSrc(imagemSrcRaw) {
+    if (!imagemSrcRaw) return "/assets/img/myschooldiary.png";
+    if (String(imagemSrcRaw).startsWith("data:image")) return imagemSrcRaw;
+    try {
+      if (
+        imagemSrcRaw &&
+        !/^(https?:)?\/\//i.test(imagemSrcRaw) &&
+        !imagemSrcRaw.startsWith("/")
+      ) {
+        return "/assets/img/banco_fotos2/" + imagemSrcRaw;
+      }
+    } catch {}
+    return imagemSrcRaw;
+  }
+
+  // tenta buscar post por id no backend; retorna objeto ou null
+  async function fetchPostById(id) {
+    if (!id && id !== 0) return null;
+    const candidateUrls = [
+      "http://localhost:3001/postagens",
+      "http://localhost:3000/postagens",
+      `${location.protocol}//${location.hostname}:3001/postagens`,
+      `${location.protocol}//${location.hostname}:3000/postagens`,
+    ];
+
+    let lastError = null;
+    for (const base of candidateUrls) {
+      const url = `${base}/${encodeURIComponent(id)}`;
+      try {
+        const resp = await fetch(url);
+        if (resp && resp.ok) {
+          const data = await resp.json();
+          // assumir que o endpoint retorna o objeto diretamente ou { post: ... }
+          return data.postagem || data.post || data || null;
+        }
+      } catch (e) {
+        lastError = e;
+      }
+    }
+    return null;
+  }
+
+  // abre o popup de detalhes preenchendo os campos
+  async function openDetalhes(id, fallbackPost) {
+    let post = null;
+    try {
+      post = await fetchPostById(id);
+    } catch (e) {
+      console.warn("Erro ao buscar por id, usando fallback:", e);
+    }
+    post = post || fallbackPost || null;
+    if (!post) {
+      alert("Detalhes não disponíveis para esta memória.");
+      return;
+    }
+
+    const popupDetalhes = document.getElementById("popupDetalhes");
+    const fecharDetalhes = document.getElementById("fecharDetalhes");
+    const detalheImagem = document.getElementById("detalheImagem");
+    const detalheAutorValue = document.getElementById("detalheAutorValue");
+    const detalheDescricaoValue = document.getElementById(
+      "detalheDescricaoValue"
+    );
+    const detalheIdValue = document.getElementById("detalheIdValue");
+
+    // preencher (com labels já no HTML)
+    if (detalheAutorValue)
+      detalheAutorValue.textContent = post.autor || "Autor desconhecido";
+    if (detalheDescricaoValue)
+      detalheDescricaoValue.textContent = post.descricao || "";
+    if (detalheIdValue)
+      detalheIdValue.textContent = post.id != null ? String(post.id) : "-";
+    if (detalheImagem) detalheImagem.src = resolveImageSrc(post.imagem || "");
+
+    // mostrar popup
+    if (popupDetalhes) popupDetalhes.style.display = "flex";
+
+    // fechar handlers
+    if (fecharDetalhes) {
+      fecharDetalhes.onclick = () => {
+        if (popupDetalhes) popupDetalhes.style.display = "none";
+      };
+    }
+    if (popupDetalhes) {
+      popupDetalhes.onclick = (e) => {
+        if (e.target === popupDetalhes) popupDetalhes.style.display = "none";
+      };
+    }
   }
 
   // IntersectionObserver lazy loader (re-usable)
