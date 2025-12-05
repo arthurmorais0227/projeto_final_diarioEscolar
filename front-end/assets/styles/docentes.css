@@ -419,9 +419,9 @@ footer {
 
 .popup-message {
   position: absolute;
-  top: 70px;   
+  top: 45%;   
   left: 50%; 
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
   background: rgb(44, 42, 42);
   color: rgb(240, 240, 240);
   padding: 6px 12px;
