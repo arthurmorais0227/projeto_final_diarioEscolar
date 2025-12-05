@@ -94,9 +94,7 @@ Tudo organizado, bonito e fácil de navegar.
 
 ## Banco de Dados (PostgreSQL)
 
-Tabelas:
-
-- **alunos**
+Tabela:
 
 - **postagens**
 
@@ -105,8 +103,6 @@ Regras:
 - Mínimo **100 postagens cadastradas**
 
 - Filtros por **autor**, **nome**, **id** e **descrição**
-
-- Relações normalizadas (1:N, N:1)
 
 # ⭐ Funcionalidades
 
