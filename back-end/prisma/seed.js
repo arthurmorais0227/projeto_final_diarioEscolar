@@ -10,7 +10,7 @@ async function main() {
 
   await prisma.postagem.create({
     data: {
-      autor: "Arhur Morais",
+      autor: "Arthur Morais",
       descricao: "Fazendo pose para a foto do github.",
       imagem: "https://imgur.com/xmt2zAj.jpeg",
     },
