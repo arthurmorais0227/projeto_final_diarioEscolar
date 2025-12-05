@@ -5,7 +5,7 @@ Os alunos podem visualizar as publicações no front-end, enquanto o backend ofe
 
 # 📸 Preview
 
-<img src="/front-end/assets/img/preview.png" width="900" />
+<img src="/front-end/assets/img/preview.png" width="850" />
 
 # 🛠️ Tecnologias Utilizadas
 
