@@ -38,3 +38,13 @@ HTML5 — CSS3 — JavaScript (ES6+)
 **JavaScript** – Consumo da API via GET, GETbyID
 
 **Figma** – Prototipação (lista e detalhes das memórias)
+
+## 🧰 Ferramentas
+
+**Git & GitHub** – Versionamento
+
+**VS Code** – Desenvolvimento
+
+**BrModeloWeb** – Modelagem do banco
+
+**Notion / Trello** – Organização e requisitos
