@@ -98,6 +98,13 @@ export const criar = async (req, res) => {
             });
         }
 
+        if(!comentario){
+            return  res.status(400).json({
+                erro: 'comentario é obrigatório.',
+                status: 400
+            });
+        }
+
         const dado = { autor, comentario, id_postagem };
 
         const novoComentario = await ComentarioModel.criar(dado);
@@ -128,7 +135,8 @@ export const deletar = async (req, res) => {
         }
 
         res.status(200).json({
-            mensagem: "Comentário deletado com sucesso!"
+            mensagem: "Comentário deletado com sucesso!",
+            comentario: deletado
         });
     } catch (error) {
         res.status(500).json({
