@@ -85,6 +85,18 @@ header {
   cursor: pointer;
 }
 
+#filtroMes {
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 2px dashed #8f5fbb;
+  background-color: white;
+  font-family: DynaPuff;
+  outline: none;
+  cursor: pointer;
+  color: #8f5fbb;
+  font-weight: 500;
+}
+
 .recordacao_titulo h3 {
   color: #8f5fbb;
 }
