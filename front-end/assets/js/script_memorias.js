@@ -81,6 +81,41 @@ document.addEventListener("DOMContentLoaded", () => {
   // cache das postagens carregadas
   let postsCache = [];
 
+  // helper para formatar data (YYYY-MM-DD ou ISO format -> DD/MM/YYYY)
+  function formatarData(dataStr) {
+    if (!dataStr) return "";
+    
+    try {
+      // Tenta diferentes formatos
+      let date = null;
+      
+      if (typeof dataStr === "string") {
+        // Formato ISO: YYYY-MM-DD ou YYYY-MM-DDTHH:MM:SS
+        const isoMatch = dataStr.match(/(\d{4})-(\d{2})-(\d{2})/);
+        if (isoMatch) {
+          const [, year, month, day] = isoMatch;
+          return `${day}/${month}/${year}`;
+        }
+        
+        // Tenta fazer parse direto
+        date = new Date(dataStr);
+      } else if (dataStr instanceof Date) {
+        date = dataStr;
+      }
+      
+      if (date && !isNaN(date.getTime())) {
+        const day = String(date.getDate()).padStart(2, "0");
+        const month = String(date.getMonth() + 1).padStart(2, "0");
+        const year = date.getFullYear();
+        return `${day}/${month}/${year}`;
+      }
+    } catch (e) {
+      console.warn("Erro ao formatar data:", e);
+    }
+    
+    return "";
+  }
+
   // renderiza um conjunto de postagens (usado para busca/filtragem)
   function renderPosts(posts) {
     list.innerHTML = "";
@@ -96,6 +131,17 @@ document.addEventListener("DOMContentLoaded", () => {
       const autor = escapeHtml(post.autor || "Autor desconhecido");
       const descricao = escapeHtml(post.descricao || "");
       const imagemSrcRaw = post.imagem || "";
+      
+      // Tentar extrair data de diferentes campos
+      let dataFormatada = "";
+      if (post.data_criacao) {
+        dataFormatada = formatarData(post.data_criacao);
+      } else if (post.data) {
+        dataFormatada = formatarData(post.data);
+      } else if (post.created_at) {
+        dataFormatada = formatarData(post.created_at);
+      }
+      
       let imagemSrc = imagemSrcRaw;
 
       // Se for base64, NÃO ALTERAR
@@ -118,7 +164,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="recordacao_titulo">
           <div class="autor">
           <h3>${autor}</h3>
-          <small>ID: ${post.id}</small>
+          <small>ID: ${post.id} ${dataFormatada ? "• " + dataFormatada : ""}</small>
           </div>
         </div>
         <div class="imagem_recordacao">
@@ -409,6 +455,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // search/filter: campo existente em memorias.html
   const filtroInput = document.getElementById("filtroMemorias");
+  const filtroMesSelect = document.getElementById("filtroMes");
+  
   function debounce(fn, wait = 250) {
     let t;
     return (...args) => {
@@ -417,30 +465,71 @@ document.addEventListener("DOMContentLoaded", () => {
     };
   }
 
-  function applyFilter(q) {
-    if (!q) {
-      renderPosts(postsCache);
-      return;
+  function applyFilters(q = "", mes = "") {
+    let filtered = postsCache.slice();
+
+    // Filtro por texto
+    if (q) {
+      const term = String(q).trim().toLowerCase();
+      filtered = filtered.filter((p) => {
+        if (!p) return false;
+        // match id exactly or numeric contains
+        if (p.id && String(p.id) === term) return true;
+        if (String(p.id).includes(term)) return true;
+        if (p.autor && String(p.autor).toLowerCase().includes(term)) return true;
+        if (p.descricao && String(p.descricao).toLowerCase().includes(term))
+          return true;
+        return false;
+      });
     }
-    const term = String(q).trim().toLowerCase();
-    const filtered = postsCache.filter((p) => {
-      if (!p) return false;
-      // match id exactly or numeric contains
-      if (p.id && String(p.id) === term) return true;
-      if (String(p.id).includes(term)) return true;
-      if (p.autor && String(p.autor).toLowerCase().includes(term)) return true;
-      if (p.descricao && String(p.descricao).toLowerCase().includes(term))
-        return true;
-      return false;
-    });
+
+    // Filtro por mês
+    if (mes) {
+      filtered = filtered.filter((p) => {
+        if (!p) return false;
+        // Tentar extrair mês de diferentes formatos de data
+        let postMonth = null;
+        
+        // Formato ISO: YYYY-MM-DD ou data/datetime
+        if (p.data_criacao) {
+          const dataStr = String(p.data_criacao);
+          const monthMatch = dataStr.match(/(\d{4})-(\d{2})-/);
+          if (monthMatch) postMonth = monthMatch[2];
+        }
+        
+        // Alternativa: campo "data"
+        if (!postMonth && p.data) {
+          const dataStr = String(p.data);
+          const monthMatch = dataStr.match(/(\d{4})-(\d{2})-/);
+          if (monthMatch) postMonth = monthMatch[2];
+        }
+
+        // Alternativa: campo "created_at"
+        if (!postMonth && p.created_at) {
+          const dataStr = String(p.created_at);
+          const monthMatch = dataStr.match(/(\d{4})-(\d{2})-/);
+          if (monthMatch) postMonth = monthMatch[2];
+        }
+
+        if (postMonth === mes) return true;
+        return false;
+      });
+    }
+
     renderPosts(filtered);
   }
 
   if (filtroInput) {
     filtroInput.addEventListener(
       "input",
-      debounce((e) => applyFilter(e.target.value), 250)
+      debounce((e) => applyFilters(e.target.value, filtroMesSelect ? filtroMesSelect.value : ""), 250)
     );
+  }
+
+  if (filtroMesSelect) {
+    filtroMesSelect.addEventListener("change", (e) => {
+      applyFilters(filtroInput ? filtroInput.value : "", e.target.value);
+    });
   }
 
   // --- Popup / criar memória handlers ---
