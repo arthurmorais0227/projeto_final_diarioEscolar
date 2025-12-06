@@ -17,21 +17,33 @@ export const listarTodos = async (req, res) => {
 
         let resultado = postagens;
 
-        const { autor, descricao } = req.query;
+        const { autor, descricao, data } = req.query;
 
-            if (autor) {
-                resultado = resultado.filter(
-                (a) => a.autor.toLowerCase() === autor.toLowerCase()
-                );
-            }
+        // Filtro por autor
+        if (autor) {
+            resultado = resultado.filter(
+                (a) => a.autor.toLowerCase().includes(autor.toLowerCase())
+            );
+        }
 
-            if (descricao) {
-                resultado = resultado.filter(
-                (d) => d.descricao.toLowerCase() === descricao.toLowerCase()
-                );
-            }
+        // Filtro por descrição
+        if (descricao) {
+            resultado = resultado.filter(
+                (d) => d.descricao.toLowerCase().includes(descricao.toLowerCase())
+            );
+        }
 
-        const postagensFiltradas = typeof limite === 'number' && !isNaN(limite) ? postagens.slice(0, limite) : postagens;
+        // Filtro por data (mês no formato YYYY-MM)
+        if (data) {
+            resultado = resultado.filter(
+                (p) => {
+                    const dataMes = new Date(p.data).toISOString().substring(0, 7);
+                    return dataMes === data;
+                }
+            );
+        }
+
+        const postagensFiltradas = typeof limite === 'number' && !isNaN(limite) ? resultado.slice(0, limite) : resultado;
 
         res.status(200).json({
             total: postagensFiltradas.length,
