@@ -97,7 +97,7 @@ export const criar = async (req, res) => {
                 status: 400
             });
         }
-
+        
         if(!comentario){
             return  res.status(400).json({
                 erro: 'comentario é obrigatório.',
@@ -150,7 +150,7 @@ export const atualizar = async (req, res) => {
     try {
         const id = parseInt(req.params.id);
         const dados = req.body;
-
+        
         const atualizado = await ComentarioModel.atualizar(id, dados);
 
         if (!atualizado) {

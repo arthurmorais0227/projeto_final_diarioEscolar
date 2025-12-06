@@ -16,7 +16,7 @@ export const encontreUm = async (id) => {
 export const criar = async (dado) => {
     return await prisma.postagem.create({
         data: {
-            autor: dado.autor,
+            autor: dado.autor || 'Anônimo',
             descricao: dado.descricao,
             data: dado.data,
             imagem: dado.imagem

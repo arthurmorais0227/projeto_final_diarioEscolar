@@ -34,7 +34,7 @@ export const atualizar = async (id, dados) => {
     return await prisma.comentario.update({
         where: { id: Number(id) },
         data: {
-            autor: dados.autor,
+            autor: dados.autor || 'Anônimo',
             comentario: dados.comentario,
             id_postagem: dados.id_postagem
         }
