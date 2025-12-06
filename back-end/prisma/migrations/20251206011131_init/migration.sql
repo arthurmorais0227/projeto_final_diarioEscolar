@@ -21,4 +21,4 @@ CREATE TABLE "Comentario" (
 );
 
 -- AddForeignKey
-ALTER TABLE "Comentario" ADD CONSTRAINT "Comentario_id_postagem_fkey" FOREIGN KEY ("id_postagem") REFERENCES "Postagem"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE "Comentario" ADD CONSTRAINT "Comentario_id_postagem_fkey" FOREIGN KEY ("id_postagem") REFERENCES "Postagem"("id") ON DELETE CASCADE ON UPDATE CASCADE;

@@ -24,5 +24,5 @@ model Comentario {
   data        DateTime  @default(now())
   
   id_postagem Int
-  postagem    Postagem  @relation(fields: [id_postagem], references: [id])
+  postagem    Postagem  @relation(fields: [id_postagem], references: [id], onDelete: Cascade)
 }
