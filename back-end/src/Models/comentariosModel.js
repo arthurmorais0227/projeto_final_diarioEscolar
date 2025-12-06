@@ -29,3 +29,29 @@ export const criar = async (dado) => {
         }
     });
 }
+
+export const atualizar = async (id, dados) => {
+    return await prisma.comentario.update({
+        where: { id: Number(id) },
+        data: {
+            autor: dados.autor,
+            comentario: dados.comentario,
+            id_postagem: dados.id_postagem
+        }
+    });
+}
+
+export const deletar = async (id) => {
+    try {
+        const deletado = await prisma.comentario.delete({
+            where: { id: Number(id) }
+        });
+
+        return deletado; // se deu certo, retorna o registro deletado
+    } catch (error) {
+        if (error.code === 'P2025') {
+            return null; // registro não existe
+        }
+        throw error; // outros erros do Prisma
+    }
+};
