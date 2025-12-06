@@ -1,18 +1,61 @@
 import * as PostagemModel from "../Models/postagemModel.js";
 
 export const listarTodos = async (req, res) => {
-  try {
-    // Se o cliente fornecer ?limite=N, usa esse limite; caso contrário retorna todas as postagens
-    const limite = req.query.limite ? parseInt(req.query.limite) : undefined;
-    const postagens = await PostagemModel.encontreTodos();
+    try {
+        // Se o cliente fornecer ?limite=N, usa esse limite; caso contrário retorna todas as postagens
+        const limite = req.query.limite ? parseInt(req.query.limite) : undefined;
+        const postagens = await PostagemModel.encontreTodos();
 
-    if (!postagens || postagens.length === 0) {
-      res.status(404).json({
-        total: 0,
-        mensagem: "Não há postagens na lista.",
-        postagens: [],
-      });
-      return;
+        if(!postagens || postagens.length === 0){
+            res.status(404).json({
+                total: 0,
+                mensagem: 'Não há postagens na lista.',
+                postagens: []
+            })
+            return;
+        }
+
+        let resultado = postagens;
+
+        const { autor, descricao, data } = req.query;
+
+        // Filtro por autor
+        if (autor) {
+            resultado = resultado.filter(
+                (a) => a.autor.toLowerCase().includes(autor.toLowerCase())
+            );
+        }
+
+        // Filtro por descrição
+        if (descricao) {
+            resultado = resultado.filter(
+                (d) => d.descricao.toLowerCase().includes(descricao.toLowerCase())
+            );
+        }
+
+        // Filtro por data (mês no formato YYYY-MM)
+        if (data) {
+            resultado = resultado.filter(
+                (p) => {
+                    const dataMes = new Date(p.data).toISOString().substring(0, 7);
+                    return dataMes === data;
+                }
+            );
+        }
+
+        const postagensFiltradas = typeof limite === 'number' && !isNaN(limite) ? resultado.slice(0, limite) : resultado;
+
+        res.status(200).json({
+            total: postagensFiltradas.length,
+            mensagem: 'Lista de postagens:',
+            postagens: postagensFiltradas
+        })
+    } catch (error) {
+        res.status(500).json({
+            erro: 'Erro interno de servidor.',
+            detalhes: error.message,
+            status: 500
+        });
     }
 
     let resultado = postagens;
