@@ -57,41 +57,7 @@ export const listarTodos = async (req, res) => {
             status: 500
         });
     }
-
-    let resultado = postagens;
-
-    const { autor, descricao } = req.query;
-
-    if (autor) {
-      resultado = resultado.filter(
-        (a) => a.autor.toLowerCase() === autor.toLowerCase()
-      );
-    }
-
-    if (descricao) {
-      resultado = resultado.filter(
-        (d) => d.descricao.toLowerCase() === descricao.toLowerCase()
-      );
-    }
-
-    const postagensFiltradas =
-      typeof limite === "number" && !isNaN(limite)
-        ? postagens.slice(0, limite)
-        : postagens;
-
-    res.status(200).json({
-      total: postagensFiltradas.length,
-      mensagem: "Lista de postagens:",
-      postagens: postagensFiltradas,
-    });
-  } catch (error) {
-    res.status(500).json({
-      erro: "Erro interno de servidor.",
-      detalhes: error.message,
-      status: 500,
-    });
-  }
-};
+}
 
 export const listarUm = async (req, res) => {
   try {
