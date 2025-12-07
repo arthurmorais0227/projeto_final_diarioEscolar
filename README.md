@@ -93,6 +93,7 @@ Tudo organizado, bonito e fácil de navegar.
 Tabela:
 
 - **postagens**
+- **comentarios**
 
 Regras:
 
