@@ -1,61 +1,99 @@
-**Leitura do Banco de Dados**
+📚 MySchoolDiary_db — Banco de Dados do Projeto MySchoolDiary
 
-Este arquivo descreve a lógica do banco de dados encontrada no `backup.sql` do projeto. O dump é de um banco PostgreSQL (base `MySchoolDiary_db`) e contém dados e instruções para recriar o banco.
+Este repositório contém o backup completo do banco de dados MySchoolDiary_db, utilizado no projeto MySchoolDiary.
+O banco foi gerado via PostgreSQL (pg_dump) e contém as tabelas principais do sistema: Aluno, Postagem (caso exista no seu projeto) e Comentario.
 
-**Visão Geral**
-- **Tipo de banco**: PostgreSQL (dump gerado por `pg_dump`, contém comandos `CREATE DATABASE` e `COPY`).
-- **Codificação / Locale**: `UTF8`, locale `Portuguese_Brazil.1252` (conforme cabeçalho do dump).
+🗄️ Estrutura do Banco de Dados
+📌 Informações gerais
 
-**Tabelas principais (identificadas no dump)**
-- **`Postagem`**: colunas observadas: `id`, `autor`, `descricao`, `data`, `imagem`.
-  - `id`: identificador da postagem (inteiro).
-  - `autor`: nome do autor (string).
-  - `descricao`: texto da postagem.
-  - `data`: carimbo de data/hora (`timestamp` nos dados `COPY`).
-  - `imagem`: URL ou caminho da imagem.
-- **`Comentario`**: colunas observadas: `id`, `autor`, `comentario`, `data`, `id_postagem`.
-  - `id`: identificador do comentário (inteiro).
-  - `autor`: nome de quem comentou.
-  - `comentario`: texto do comentário.
-  - `data`: timestamp do comentário.
-  - `id_postagem`: referência à postagem comentada (chave estrangeira esperada para `Postagem.id`).
+SGBD: PostgreSQL
 
-**Relacionamentos e regras (resumo lógico)**
-- Cada `Comentario` está ligado a exatamente uma `Postagem` através de `Comentario.id_postagem -> Postagem.id`.
-- Espera-se que os campos `id` sejam chaves primárias em suas respectivas tabelas.
-- Comportamentos típicos esperados (não explicitamente verificados no trecho lido, mas comuns ao modelo):
-  - `ON DELETE CASCADE` ou `RESTRICT` para `id_postagem` — verifique a definição de tabela no dump se precisar do comportamento exato.
+Codificação: UTF-8
 
-**Como restaurar o backup (instruções rápidas)**
-- Método direto (o arquivo `backup.sql` já contém `CREATE DATABASE`):
+Locale: Portuguese_Brazil.1252
 
-```
-psql -U postgres -f backup.sql
-```
+Versão usada no dump: PostgreSQL 17.6
 
- - Se preferir criar manualmente a base e depois importar:
+📁 Tabelas
 
-```
-psql -U postgres -c "CREATE DATABASE \"MySchoolDiary_db\";"
-psql -U postgres -d MySchoolDiary_db -f backup.sql
-```
+A seguir estão as tabelas incluídas no backup.
 
-- Em Windows PowerShell, ajuste o usuário (`-U`) e autenticação conforme sua configuração (pode usar `-h` para host e `-p` para porta).
+👨‍🎓 Tabela Aluno
 
-**Como inspecionar o esquema após restaurar**
-- Conecte-se com `psql -U postgres -d MySchoolDiary_db` e use os metacomandos:
-  - `\dt` : lista de tabelas.
-  - `\d+ Postagem` : mostra colunas, tipos, índices e constraints da tabela `Postagem`.
-  - `\d+ Comentario` : mostra detalhes de `Comentario` e a FK para `Postagem`.
+Armazena os dados dos alunos cadastrados no sistema.
 
-**Observações e próximos passos recomendados**
-- O arquivo `backup.sql` contém os dados (via `COPY`) — use os comandos acima para restaurar em um servidor PostgreSQL compatível.
-- Se quiser documentação precisa e automática do esquema (colunas, tipos, PK, FK, índices), posso:
-  - extrair e incluir aqui as declarações `CREATE TABLE` completas do `backup.sql`, ou
-  - gerar um diagrama ER simplificado em texto ou imagem.
-- Se o banco em produção usar outro SGBD, informe qual para que eu gere instruções de migração específicas.
+Campo	Tipo	Descrição
+id	Int	Identificador único do aluno
+nome	String	Nome completo do aluno
+email	String	E-mail institucional
+telefone	String	Telefone do aluno
+aluno_foto	String	Caminho da imagem do aluno
 
-**Arquivo relacionado**
-- `backup.sql` : dump SQL incluído neste diretório — contém as instruções necessárias para recriar o banco e os dados.
+➡ Total de registros: 31 alunos
+➡ As fotos são armazenadas como caminhos para /assets/img/alunos/...
 
- 
+💬 Tabela Comentario
+
+Armazena os comentários feitos nas postagens.
+
+Campo	Tipo	Descrição
+id	Int	Identificador único do comentário
+autor	String	Nome de quem comentou
+comentario	String	Conteúdo do comentário
+data	Timestamp	Data/hora do comentário
+id_postagem	Int	ID da postagem relacionada
+
+➡ Total de registros: 120+ comentários
+➡ Relacionamento: cada comentário pertence a uma postagem (id_postagem)
+
+🛢️ Backup incluído
+
+O arquivo SQL contém:
+
+✔ Criação do banco de dados
+✔ Configurações iniciais do PostgreSQL
+✔ Dados completos das tabelas Aluno e Comentario
+✔ Inserções com COPY (método mais rápido do PostgreSQL)
+
+🔄 Como restaurar o banco
+1. Criar o banco e restaurar
+psql -U postgres -f MySchoolDiary_db.sql
+
+
+Ou, caso queira restaurar dentro de um banco já existente:
+
+psql -U postgres -d MySchoolDiary_db -f MySchoolDiary_db.sql
+
+2. Usando pgAdmin
+
+Clique em Restore
+
+Selecione o arquivo .sql
+
+Execute a restauração
+
+🧪 Como usar no projeto
+
+O banco foi pensado para integrar um backend em Node.js utilizando Prisma.
+
+Exemplo de schema.prisma para compatibilidade:
+
+model Aluno {
+  id         Int    @id @default(autoincrement())
+  nome       String?
+  email      String?
+  telefone   String?
+  aluno_foto String?
+}
+
+model Comentario {
+  id          Int      @id @default(autoincrement())
+  autor       String?
+  comentario   String?
+  data        DateTime @default(now())
+  id_postagem Int
+}
+
+📦 Arquivo incluído
+📁 /database
+│── MySchoolDiary_db.sql   ← backup completo do banco
