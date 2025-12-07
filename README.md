@@ -21,10 +21,6 @@ Node.js — Express — PostgreSQL — Prisma ORM
 
 - **Prisma ORM 6.x** – Modelagem, migrações e CRUD
 
-- **JWT (jsonwebtoken)** – Autenticação
-
-- **bcryptjs** – Hash de senhas
-
 - **Postman** – Testes das rotas
 
 ## 🎨 Frontend
