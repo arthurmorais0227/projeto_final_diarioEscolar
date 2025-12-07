@@ -1,0 +1,24 @@
+BACK:
+
+npm install prisma@6.16.3 @prisma/client@6.16.3
+
+npm i express nodemon
+
+DATABASE_URL="postgresql://postgres:suasenha@localhost:5432/hogwarts_db" (mudar o que for necessário)
+
+npx prisma migrate dev --name init
+
+npx prisma generate
+
+npm run seed 
+
+npm run dev
+
+FRONT:
+
+npx http-server .
+
+
+ENTRE EM:
+
+http://localhost:8080/index.html
