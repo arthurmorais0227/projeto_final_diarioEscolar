@@ -175,13 +175,5 @@ Como adicionar um novo endpoint (passos rápidos)
 4. Atualizar `prisma/schema.prisma` se precisar de nova tabela e rodar migration.
 5. Escrever testes para o endpoint.
 
-Observações finais
-- O projeto já possui rotas básicas para `postagens` e `comentarios`. Use este documento como referência para estender e padronizar novas funcionalidades.
-- Se quiser, eu posso:
-  - Gerar um `README.md` com este conteúdo na raiz do `back-end`.
-  - Adicionar exemplos de payloads mais detalhados para cada endpoint.
-  - Incluir instruções de deploy (Heroku, Railway, Vercel - backend). 
 
----
-Arquivo gerado automaticamente para documentação do backend.
 
