@@ -163,8 +163,8 @@ document.addEventListener("DOMContentLoaded", () => {
       record.innerHTML = `
         <div class="recordacao_titulo">
           <div class="autor">
-          <h3>${autor}</h3>
-          <small>ID: ${post.id} ${dataFormatada ? "• " + dataFormatada : ""}</small>
+          <h3>${escapeHtml(post.alunoNome || post.autor || 'Autor desconhecido')}</h3>
+          <small>Post ID: ${post.id} ${dataFormatada ? "• " + dataFormatada : ""}</small>
           </div>
         </div>
         <div class="imagem_recordacao">

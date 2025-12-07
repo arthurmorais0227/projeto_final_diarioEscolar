@@ -41,6 +41,39 @@ const autoresTurma = [
   "Sunshine Sun",
 ];
 
+const alunosData = [
+  { nome: "Ana Clara Cremasco Luiz", email: "ana.c.luiz@aluno.senai.br", telefone: "(11) 90000-0006", aluno_foto: "/assets/img/alunos/anac.png" },
+  { nome: "Arthur Morais dos Santos", email: "arthur.m.santos20@aluno.senai.br", telefone: "(11) 90000-0001", aluno_foto: "/assets/img/alunos/arthur.png" },
+  { nome: "Beatriz Miotto de Oliveira", email: "beatriz.oliveira@aluno.senai.br", telefone: "(11) 90000-0002", aluno_foto: "/assets/img/alunos/beatriz.png" },
+  { nome: "Bianca Luisa Teodoro Silva", email: "bianca.silva@aluno.senai.br", telefone: "(11) 90000-0003", aluno_foto: "/assets/img/alunos/bianca.png" },
+  { nome: "Cauã Tupinambá Guimarães de Oliveira Pinto", email: "caua.t.pinto@aluno.senai.br", telefone: "(11) 90000-0006", aluno_foto: "/assets/img/alunos/tupi.png" },
+  { nome: "Daniel Casalli", email: "daniel.casalli@aluno.senai.br", telefone: "(11) 90000-0004", aluno_foto: "/assets/img/alunos/daniel.png" },
+  { nome: "Danilo do Valle Marchiori Jorge", email: "danilo.v.jorge@aluno.senai.br", telefone: "(11) 90000-0006", aluno_foto: "/assets/img/alunos/danilo.png" },
+  { nome: "Emílio Henrique dos Santos Favoretto", email: "emilio.favoretto@aluno.senai.br", telefone: "(11) 90000-0006", aluno_foto: "/assets/img/alunos/emilio.png" },
+  { nome: "Fabio Henrique Rabello Trevizolli", email: "fabio.trevizolli@aluno.senai.br", telefone: "(11) 90000-0006", aluno_foto: "/assets/img/alunos/fabio.png" },
+  { nome: "Fernando Santos Evêncio da Silva", email: "fernando.s.silva22@aluno.senai.br", telefone: "(11) 90000-0006", aluno_foto: "/assets/img/alunos/fernando.png" },
+  { nome: "Gabriela Emi Yamamoto", email: "gabriela.yamamoto@aluno.senai.br", telefone: "(11) 90000-0006", aluno_foto: "/assets/img/alunos/gabi.png" },
+  { nome: "Gustavo Teixeira Lisboa", email: "gustavo.t.lisboa@aluno.senai.br", telefone: "(11) 90000-0006", aluno_foto: "/assets/img/alunos/lisboa.png" },
+  { nome: "Gustavo Victor Ferreira", email: "gustavo.ferreira@aluno.senai.br", telefone: "(11) 90000-0005", aluno_foto: "/assets/img/alunos/gustavo.png" },
+  { nome: "João Pedro Piva Nogueira", email: "joao.p.nogueira@aluno.senai.br", telefone: "(11) 90000-0006", aluno_foto: "/assets/img/alunos/piva.png" },
+  { nome: "João Pedro Rodrigues Stopiglia", email: "joao.r.stopiglia@aluno.senai.br", telefone: "(11) 90000-0006", aluno_foto: "/assets/img/alunos/stopiglia.png" },
+  { nome: "João Victor da Silva Gomes", email: "joao.v.gomes50@aluno.senai.br", telefone: "(11) 90000-0006", aluno_foto: "/assets/img/alunos/joaovictor.png" },
+  { nome: "Julia Erlo Figueiredo de Miranda", email: "julia.e.miranda@aluno.senai.br", telefone: "(11) 90000-0006", aluno_foto: "/assets/img/alunos/julia.png" },
+  { nome: "Lívia Oliveira Cruz", email: "livia.cruz@aluno.senai.br", telefone: "(11) 90000-0006", aluno_foto: "/assets/img/alunos/livia.png" },
+  { nome: "Luiz Felipe Allage", email: "luiz.felipe14@aluno.senai.br", telefone: "(11) 90000-0006", aluno_foto: "/assets/img/alunos/luizfelipe.png" },
+  { nome: "Manuela Maestro", email: "manuela.maestro@aluno.senai.br", telefone: "(11) 90000-0006", aluno_foto: "/assets/img/alunos/semfoto.png" },
+  { nome: "Maria Eduarda Braga Ferreira", email: "maria.e.ferreira77@aluno.senai.br", telefone: "(11) 90000-0006", aluno_foto: "/assets/img/alunos/semfoto.png" },
+  { nome: "Maria Eduarda de Andrade", email: "maria.e.andrade17@aluno.senai.br", telefone: "(11) 90000-0006", aluno_foto: "/assets/img/alunos/andrade.png" },
+  { nome: "Murilo Milan Brustólin", email: "murilo.brustolin@aluno.senai.br", telefone: "(11) 90000-0006", aluno_foto: "/assets/img/alunos/murilo.png" },
+  { nome: "Nicolly Rodrigues de Souza Santos", email: "nicolly.r.santos10@aluno.senai.br", telefone: "(11) 90000-0006", aluno_foto: "/assets/img/alunos/nicolly.png" },
+  { nome: "Pedro Henrique Urbano Escapalete", email: "pedro.escapalete@aluno.senai.br", telefone: "(11) 90000-0006", aluno_foto: "/assets/img/alunos/urbano.png" },
+  { nome: "Pedro Otávio de Andrade Braga", email: "pedro.o.braga6@aluno.senai.br", telefone: "(11) 90000-0006", aluno_foto: "/assets/img/alunos/pedrootavio.png" },
+  { nome: "Rafael Santos Mendes", email: "rafael.s.mendes@aluno.senai.br", telefone: "(11) 90000-0006", aluno_foto: "/assets/img/alunos/rafael.png" },
+  { nome: "Rebeca Gabrielly Moreira Alves", email: "rebeca.g.alve@aluno.senai.br", telefone: "(11) 90000-0006", aluno_foto: "/assets/img/alunos/rebeca.png" },
+  { nome: "Victor Ferreira de Oliveira", email: "victor.f.oliveira14@aluno.senai.br", telefone: "(11) 90000-0006", aluno_foto: "/assets/img/alunos/victorferreira.png" },
+  { nome: "Yasmin Crisostomo de Oliveira", email: "yasmin.c.oliveira19@aluno.senai.br", telefone: "(11) 90000-0006", aluno_foto: "/assets/img/alunos/yasminc.png" },
+  { nome: "Yasmin Isabele Porto", email: "yasmin.i.porto@aluno.senai.br", telefone: "(11) 90000-0006", aluno_foto: "/assets/img/alunos/yasminp.png" },
+];
 function gerarComentario(descricao) {
   const base =
     comentariosBase[Math.floor(Math.random() * comentariosBase.length)];
@@ -94,12 +127,14 @@ async function criarComentarios(prisma) {
 
 async function main() {
   // 1. Limpeza e Reset da Sequência
-  await prisma.postagem.deleteMany({});
   await prisma.comentario.deleteMany({});
+  await prisma.postagem.deleteMany({});
+  await prisma.aluno.deleteMany({});
 
-  // Para PostgreSQL
+  // Para PostgreSQL - resetar sequências
   await prisma.$executeRaw`ALTER SEQUENCE "Postagem_id_seq" RESTART WITH 1;`;
   await prisma.$executeRaw`ALTER SEQUENCE "Comentario_id_seq" RESTART WITH 1;`;
+  await prisma.$executeRaw`ALTER SEQUENCE "Aluno_id_seq" RESTART WITH 1;`;
 
   console.log("🔥 Dados existentes limpos e sequências resetadas.");
 
@@ -1009,7 +1044,16 @@ async function main() {
 
   console.log("✅ Postagens inseridas com sucesso!");
 
-  // 3. Criação dos Comentários (Segundo Seed)
+  // 3. Criação dos Alunos a partir do `alunosData`
+  console.log("⏳ Criando alunos...");
+  if (alunosData.length) {
+    await prisma.aluno.createMany({ data: alunosData });
+    console.log(`👨‍🎓 ${alunosData.length} alunos criados!`);
+  }
+
+  // 3b. Vinculação automática entre postagens e alunos removida intencionalmente.
+  // Caso precise relacionar postagens a alunos no futuro, reimplemente aqui.
+  // 4. Criação dos Comentários (Segundo Seed)
   await criarComentarios(prisma);
 }
 

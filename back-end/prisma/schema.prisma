@@ -26,3 +26,11 @@ model Comentario {
   id_postagem Int
   postagem    Postagem  @relation(fields: [id_postagem], references: [id], onDelete: Cascade)
 }
+
+model Aluno {
+  id       Int     @id @default(autoincrement())
+  nome     String
+  email    String  @unique
+  telefone String?
+  aluno_foto String?
+}

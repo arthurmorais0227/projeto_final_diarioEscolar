@@ -20,5 +20,19 @@ CREATE TABLE "Comentario" (
     CONSTRAINT "Comentario_pkey" PRIMARY KEY ("id")
 );
 
+-- CreateTable
+CREATE TABLE "Aluno" (
+    "id" SERIAL NOT NULL,
+    "nome" TEXT NOT NULL,
+    "email" TEXT NOT NULL,
+    "telefone" TEXT,
+    "aluno_foto" TEXT,
+
+    CONSTRAINT "Aluno_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateIndex
+CREATE UNIQUE INDEX "Aluno_email_key" ON "Aluno"("email");
+
 -- AddForeignKey
 ALTER TABLE "Comentario" ADD CONSTRAINT "Comentario_id_postagem_fkey" FOREIGN KEY ("id_postagem") REFERENCES "Postagem"("id") ON DELETE CASCADE ON UPDATE CASCADE;

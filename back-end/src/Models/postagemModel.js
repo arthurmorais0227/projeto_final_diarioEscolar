@@ -19,7 +19,7 @@ export const criar = async (dado) => {
             autor: dado.autor || 'Anônimo',
             descricao: dado.descricao,
             data: dado.data,
-            imagem: dado.imagem
+            imagem: dado.imagem,
         }
     })
 }
@@ -37,7 +37,7 @@ export const atualizar = async (id, dado) => {
             ...(dado.autor && { autor: dado.autor }),
             ...(dado.descricao && { descricao: dado.descricao }),
             ...(dado.data && { data: dado.data }),
-            ...(dado.imagem && { imagem: dado.imagem })
+            ...(dado.imagem && { imagem: dado.imagem }),
         }
     })
 }
