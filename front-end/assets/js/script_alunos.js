@@ -110,6 +110,111 @@ if (grid) {
   }
 }
 
+// ----------------------
+// Renderização dinâmica dos alunos
+// ----------------------
+async function fetchAndRenderAlunos() {
+  const container = document.querySelector('.alunos_geral');
+  if (!container) return;
+
+  // Limpa as divs estáticas (serão recriadas a partir do banco)
+  container.innerHTML = '';
+
+  try {
+    // Tenta primeiro o endpoint relativo (mesma origem). Se a página estiver servida
+    // de um host diferente (ex: http://localhost:8080), isso falhará — então tentamos
+    // um fallback para o backend local (porta 3001 padrão do servidor).
+    let resp = null;
+    const tryRelative = () => fetch('/alunos');
+    const tryAbsolute = () => fetch('http://localhost:3001/alunos');
+
+    // Se estivermos num arquivo local (file://) ou origem diferente, pule o relativo.
+    if (window.location.protocol === 'file:') {
+      resp = await tryAbsolute();
+    } else {
+      try {
+        resp = await tryRelative();
+        // Se o servidor estático respondeu 404/500, resp.ok será false;
+        // nesse caso tentamos o backend absoluto como fallback.
+        if (!resp.ok) {
+          resp = await tryAbsolute();
+        }
+      } catch (e) {
+        // falha de rede com o relativo — tenta absoluto
+        resp = await tryAbsolute();
+      }
+    }
+
+    if (!resp) throw new Error('Sem resposta do servidor');
+    if (!resp.ok) throw new Error(`Resposta não OK (${resp.status})`);
+    const json = await resp.json();
+    const alunos = json.alunos || [];
+
+    alunos.forEach((a) => {
+      const alunoDiv = document.createElement('div');
+      alunoDiv.className = 'aluno';
+
+      const nomeDiv = document.createElement('div');
+      nomeDiv.className = 'nome_aluno';
+
+      const img = document.createElement('img');
+      img.src = a.aluno_foto && a.aluno_foto.length ? a.aluno_foto : './../assets/img/alunos/semfoto.png';
+      img.alt = '';
+
+      const p = document.createElement('p');
+      p.textContent = a.nome || 'Aluno';
+
+      nomeDiv.appendChild(img);
+      nomeDiv.appendChild(p);
+
+      const interacoes = document.createElement('div');
+      interacoes.className = 'interacoes';
+
+      const int1 = document.createElement('div');
+      int1.className = 'int1';
+      const spanEmail = document.createElement('span');
+      spanEmail.className = 'tooltip';
+      spanEmail.textContent = a.email || '';
+      const emailIcon = document.createElement('img');
+      emailIcon.src = './../assets/img/email.png';
+      emailIcon.alt = '';
+      int1.appendChild(spanEmail);
+      int1.appendChild(emailIcon);
+
+      const int2 = document.createElement('div');
+      int2.className = 'int2';
+      const spanTel = document.createElement('span');
+      spanTel.className = 'tooltip';
+      spanTel.textContent = a.telefone || '';
+      const telIcon = document.createElement('img');
+      telIcon.src = './../assets/img/telefone.png';
+      telIcon.alt = '';
+      int2.appendChild(spanTel);
+      int2.appendChild(telIcon);
+
+      interacoes.appendChild(int1);
+      interacoes.appendChild(int2);
+
+      alunoDiv.appendChild(nomeDiv);
+      alunoDiv.appendChild(interacoes);
+
+      container.appendChild(alunoDiv);
+    });
+
+    // Depois de inserir, reaplica os listeners de cópia
+    attachCopyHandlers();
+  } catch (error) {
+    console.error('Erro ao buscar alunos:', error);
+    // Se falhar, não remove a aparência - opcional: mostrar mensagem
+    const errMsg = document.createElement('p');
+    errMsg.textContent = 'Não foi possível carregar a lista de alunos.';
+    container.appendChild(errMsg);
+  }
+}
+
+// Chama a função (tenta obter alunos do backend)
+fetchAndRenderAlunos();
+
 // ----------------------------------------------------------------------
 // --- CÓDIGO DE CÓPIA E EXIBIÇÃO DO POPUP PERTO DO ÍCONE ---
 // ----------------------------------------------------------------------
@@ -168,21 +273,37 @@ function copyAndShowNotice(textToCopy, parentElement, message) {
 // --- Adiciona evento de clique para E-MAIL (.int1) ---
 // ----------------------------------------------------
 
-document.querySelectorAll(".int1").forEach((container) => {
-  const icon = container.querySelector("img");
-  const tooltip = container.querySelector(".tooltip"); // Contém o e-mail
+function attachCopyHandlers() {
+  document.querySelectorAll(".int1").forEach((container) => {
+    const icon = container.querySelector("img");
+    const tooltip = container.querySelector(".tooltip"); // Contém o e-mail
 
-  if (icon && tooltip) {
-    icon.style.cursor = "pointer";
-    
-    icon.addEventListener("click", (event) => {
-      event.stopPropagation(); 
-      const email = tooltip.textContent.trim();
-      // Passamos o 'container' como referência para o pop-up
-      copyAndShowNotice(email, container, "E-mail copiado!"); 
-    });
-  }
-});
+    if (icon && tooltip && !icon.dataset.copyAttached) {
+      icon.style.cursor = "pointer";
+      icon.dataset.copyAttached = '1';
+      icon.addEventListener("click", (event) => {
+        event.stopPropagation();
+        const email = tooltip.textContent.trim();
+        copyAndShowNotice(email, container, "E-mail copiado!");
+      });
+    }
+  });
+
+  document.querySelectorAll(".int2").forEach((container) => {
+    const icon = container.querySelector("img");
+    const tooltip = container.querySelector(".tooltip"); // Contém o telefone
+
+    if (icon && tooltip && !icon.dataset.copyAttached) {
+      icon.style.cursor = "pointer";
+      icon.dataset.copyAttached = '1';
+      icon.addEventListener("click", (event) => {
+        event.stopPropagation();
+        const phone = tooltip.textContent.trim();
+        copyAndShowNotice(phone, container, "Telefone copiado!");
+      });
+    }
+  });
+}
 
 
 // -----------------------------------------------------
@@ -217,3 +338,6 @@ const observer = new IntersectionObserver((entries) => {
 });
 
 document.querySelectorAll('.animar').forEach((el) => observer.observe(el));
+
+// Caso existam elementos estáticos já na página (antes do fetch), também aplica handlers
+attachCopyHandlers();

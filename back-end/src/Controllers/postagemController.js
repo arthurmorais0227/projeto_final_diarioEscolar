@@ -1,4 +1,6 @@
 import * as PostagemModel from "../Models/postagemModel.js";
+import { PrismaClient } from '@prisma/client';
+const prisma = new PrismaClient();
 
 export const listarTodos = async (req, res) => {
     try {
@@ -46,9 +48,9 @@ export const listarTodos = async (req, res) => {
         const postagensFiltradas = typeof limite === 'number' && !isNaN(limite) ? resultado.slice(0, limite) : resultado;
 
         res.status(200).json({
-            total: postagensFiltradas.length,
-            mensagem: 'Lista de postagens:',
-            postagens: postagensFiltradas
+          total: postagensFiltradas.length,
+          mensagem: 'Lista de postagens:',
+          postagens: postagensFiltradas
         })
     } catch (error) {
         res.status(500).json({
@@ -74,7 +76,7 @@ export const listarUm = async (req, res) => {
 
     res.status(200).json({
       message: "Postagem encontrada:",
-      postagem,
+      postagem: postagem,
     });
   } catch (error) {
     res.status(500).json({
